@@ -8,8 +8,9 @@ public class HumanoidBehavior : MonoBehaviour {
 
 	Vector2[] path;
 	int targetIndex;
+	float refreshTime = 0.25f;
 
-	void Start() {
+	protected virtual void Start() {
 		StartCoroutine (RefreshPath ());
 	}
 
@@ -25,7 +26,7 @@ public class HumanoidBehavior : MonoBehaviour {
 				StartCoroutine ("FollowPath");
 			}
 
-			yield return new WaitForSeconds (.25f);
+			yield return new WaitForSeconds (refreshTime);
 		}
 	}
 		
