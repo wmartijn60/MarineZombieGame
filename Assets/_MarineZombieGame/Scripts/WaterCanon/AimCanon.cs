@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class AimCanon : MonoBehaviour
 {
+    [SerializeField]private Transform origin;
+    [SerializeField]private ParticleSystem beam;
+
     void Update()
     {
-        Vector2 mouse = Input.mousePosition;
-        Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector2(
-                                                            mouse.x,
-                                                            transform.position.y));
-        Vector2 forward = mouseWorld - new Vector2(transform.position.x, transform.position.y);
-        transform.rotation = Quaternion.LookRotation(new Vector3(forward.x, -forward.y), Vector3.up);
+        Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = Input.mousePosition - pos;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle -90, Vector3.forward);
+
+        beam.startLifetime = Vector2.Distance(origin.position, dir) / 200 /1.9f;
+        
     }
 }

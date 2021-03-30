@@ -7,6 +7,7 @@ public class WaterPressure : MonoBehaviour
     [SerializeField] private float maxCapacity = 100;
     [SerializeField] private float energyCost;
     [SerializeField] private float rechargeRate;
+    [SerializeField] private float rechargeTreshhold = 5;
     
     [SerializeField] private GameObject beam;
 
@@ -40,16 +41,16 @@ public class WaterPressure : MonoBehaviour
         {
             pressure = maxCapacity;
         }
-        else if(!Input.GetKey(KeyCode.Mouse0))
+        else if(!Input.GetKey(KeyCode.Mouse0) || isCharging)
         {
             pressure += rechargeRate * Time.deltaTime;
         }
 
-        if (pressure < 0 && beam.activeSelf)
+        if (pressure <= 0 && beam.activeSelf)
         {
             isCharging = true;
         }
-        else if (pressure >= 5)
+        else if (pressure >= rechargeTreshhold)
         {
             isCharging = false;
         }
