@@ -9,8 +9,8 @@ public class WaveSystem : MonoBehaviour
 
     public List<Transform> spawnPoints = new List<Transform>();
     
-    void SendWave()
+    public void SendWave()
     {
-
+        Zombie.Instantiate(spawnPoints[Random.Range(0, spawnPoints.Count)]);
     }
 }
