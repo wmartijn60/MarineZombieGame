@@ -10,10 +10,12 @@ public class HumanoidBehavior : MonoBehaviour {
 	private int targetIndex;
 	private float refreshTime = 0.25f;
 	[SerializeField] private HealthSystem health;
+    private Animator anim;
 
 	protected virtual void Start() {
 		health.died += Die;
-		StartCoroutine (RefreshPath ());
+        anim = GetComponent<Animator>();
+        StartCoroutine (RefreshPath ());
 	}
 
 	IEnumerator RefreshPath() {
@@ -26,7 +28,8 @@ public class HumanoidBehavior : MonoBehaviour {
 				path = Pathfinding.RequestPath (transform.position, target.position);
 				StopCoroutine ("FollowPath");
 				StartCoroutine ("FollowPath");
-			}
+                anim.SetBool("isRunning", true);
+            }
 
 			yield return new WaitForSeconds (refreshTime);
 		}
