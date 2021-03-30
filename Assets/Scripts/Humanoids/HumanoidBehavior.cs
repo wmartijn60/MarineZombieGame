@@ -6,11 +6,13 @@ public class HumanoidBehavior : MonoBehaviour {
 	public Transform target;
 	public float speed = 20;
 
-	Vector2[] path;
-	int targetIndex;
-	float refreshTime = 0.25f;
+	private Vector2[] path;
+	private int targetIndex;
+	private float refreshTime = 0.25f;
+	[SerializeField] private HealthSystem health;
 
 	protected virtual void Start() {
+		health.died += Die;
 		StartCoroutine (RefreshPath ());
 	}
 
@@ -50,6 +52,11 @@ public class HumanoidBehavior : MonoBehaviour {
 			}
 		}
 	}
+
+	private void Die() {
+		// play death animation
+		Destroy(gameObject, 0f); // change time depending on animation duration
+    }
 
 	public void OnDrawGizmos() {
 		if (path != null) {

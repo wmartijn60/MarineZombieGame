@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField]
-    private Image healthBar;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private float maxHealth = 25;
     private float health;
-    private float maxHealth = 25;
+    public delegate void Died();
+    public Died died;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage) {
         health -= damage;
         if(healthBar != null) healthBar.fillAmount = health / maxHealth;
+        if(health <= 0) died();
     }
 
     private void ResetHealth() {

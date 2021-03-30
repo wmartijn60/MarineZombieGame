@@ -471,28 +471,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &934331772 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2061404648}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &934331775
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934331772}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!1 &1154733742
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,37 +746,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1154733746}
-    - target: {fileID: 934331774, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
-      propertyPath: attackRange
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 934331774, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
-      propertyPath: visionRange
-      value: 
-      objectReference: {fileID: 934331775}
-    - target: {fileID: 934331778, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633760090261847717, guid: 40a1146128ded514cb15d8a676b2f4e0,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0,
         type: 3}
       propertyPath: m_Name
       value: Zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 4633760090261847768, guid: 40a1146128ded514cb15d8a676b2f4e0,
-        type: 3}
-      propertyPath: m_Simulated
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4633760090261847770, guid: 40a1146128ded514cb15d8a676b2f4e0,
         type: 3}
@@ -952,11 +903,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1154733746}
-    - target: {fileID: 8683545781735434104, guid: 1941a73cead5ba74098d607c101d6ea1,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8683545781735434105, guid: 1941a73cead5ba74098d607c101d6ea1,
         type: 3}
       propertyPath: m_RootOrder
@@ -1015,11 +961,6 @@ PrefabInstance:
     - target: {fileID: 8683545781735434111, guid: 1941a73cead5ba74098d607c101d6ea1,
         type: 3}
       propertyPath: m_Name
-      value: Survivor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8683545781735434111, guid: 1941a73cead5ba74098d607c101d6ea1,
-        type: 3}
-      propertyPath: m_TagString
       value: Survivor
       objectReference: {fileID: 0}
     m_RemovedComponents: []

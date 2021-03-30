@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Zombie : HumanoidBehavior
 {
-    private int damage;
+    private int damage = 1;
     private float range = 1f;
     [SerializeField] CircleCollider2D visionRange;
-    [SerializeField] CircleCollider2D attackRange;
 
 
     protected override void Start()
@@ -24,10 +23,14 @@ public class Zombie : HumanoidBehavior
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (target.tag == "Survivor" && collision == target.GetComponent<Collider2D>()) {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("target tag: " + target.tag);
-        Debug.Log("collision tag: " + collision.gameObject.tag);
         if (target.tag == "Survivor" && collision.gameObject.tag == "Survivor")
         {
             Attack();
@@ -36,6 +39,6 @@ public class Zombie : HumanoidBehavior
 
     public void Attack()
     {
-        Debug.Log("DIE!!!!!!!!");
+        target.GetComponent<HealthSystem>().TakeDamage(damage);
     }
 }
