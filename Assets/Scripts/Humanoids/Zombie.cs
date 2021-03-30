@@ -26,12 +26,12 @@ public class Zombie : HumanoidBehavior
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("I'm here");
-        Debug.Log(collision.collider.name);
-        /*if (target.tag != "Survivor" && collision.gameObject.tag == "Survivor")
+        Debug.Log("target tag: " + target.tag);
+        Debug.Log("collision tag: " + collision.gameObject.tag);
+        if (target.tag == "Survivor" && collision.gameObject.tag == "Survivor")
         {
             Attack();
-        }*/
+        }
     }
 
     public void Attack()
