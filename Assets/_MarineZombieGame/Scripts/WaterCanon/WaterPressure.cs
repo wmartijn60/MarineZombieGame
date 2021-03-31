@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaterPressure : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class WaterPressure : MonoBehaviour
     [SerializeField] private float rechargeTreshhold = 5;
     
     [SerializeField] private GameObject beam;
+    [SerializeField] private Slider pressureBar;
+    [SerializeField] private Slider repressureBar;
 
     private float pressure;
     private bool isCharging = false;
@@ -18,6 +21,7 @@ public class WaterPressure : MonoBehaviour
     {
         pressure = maxCapacity;
         beam.SetActive(false);
+        repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
     }
 
     void Update()
@@ -31,6 +35,7 @@ public class WaterPressure : MonoBehaviour
         {
             beam.SetActive(true);
             pressure = pressure - energyCost * Time.deltaTime;
+            pressureBar.value = 100 / maxCapacity * pressure;
         }
         else
         {
@@ -44,6 +49,7 @@ public class WaterPressure : MonoBehaviour
         else if(!Input.GetKey(KeyCode.Mouse0) || isCharging)
         {
             pressure += rechargeRate * Time.deltaTime;
+            pressureBar.value = 100 / maxCapacity * pressure;
         }
 
         if (pressure <= 0 && beam.activeSelf)
@@ -54,5 +60,19 @@ public class WaterPressure : MonoBehaviour
         {
             isCharging = false;
         }
+
+              
+    }
+
+    public void SetRepressureValue(int v)
+    {
+        rechargeTreshhold = v;
+        repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
+    }
+
+    public void IncreaseCapacity(int v)
+    {
+        maxCapacity += v;
+        pressureBar.value = 100 / maxCapacity * pressure;
     }
 }

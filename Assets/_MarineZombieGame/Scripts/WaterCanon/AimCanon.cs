@@ -14,7 +14,15 @@ public class AimCanon : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle -90, Vector3.forward);
 
-        beam.startLifetime = Vector2.Distance(origin.position, dir) / 200 /1.9f;
+        if (0.28f < Vector2.Distance(origin.position, dir) / 200 / 1.9f)
+        {
+            beam.startLifetime = Vector2.Distance(origin.position, dir) / 200 / 1.9f;
+        }
+        else
+        {
+            beam.startLifetime = 0.28f;
+        }
+        
         
     }
 }
