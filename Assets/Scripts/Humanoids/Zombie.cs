@@ -35,6 +35,7 @@ public class Zombie : HumanoidBehavior
         {
             Attack();
         }
+        
     }
 
     public void Attack()

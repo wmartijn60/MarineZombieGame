@@ -58,7 +58,8 @@ public class HumanoidBehavior : MonoBehaviour {
 
 	private void Die() {
 		// play death animation
-		Destroy(gameObject, 0f); // change time depending on animation duration
+		anim.SetBool("isAlive", false);
+		Destroy(gameObject, 1f); // change time depending on animation duration
     }
 
 	public void OnDrawGizmos() {
