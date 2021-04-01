@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class WaterDamage : MonoBehaviour
 {
+    [SerializeField] private int damage;
     [SerializeField] private ParticleSystem beam;
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log(other.name);
+        if (other.tag == "Zombie")
+        {
+            other.GetComponent<HealthSystem>().TakeDamage(damage);
+        }
     }
 }

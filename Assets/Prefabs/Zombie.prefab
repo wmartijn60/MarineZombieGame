@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 934331774}
   - component: {fileID: 1790944072149001592}
   - component: {fileID: 934331775}
-  - component: {fileID: 887937705}
   - component: {fileID: 4323364910761937091}
+  - component: {fileID: 1414686839}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -98,11 +98,11 @@ Rigidbody2D:
   m_GameObject: {fileID: 4633760090261847719}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.19634955
+  m_LinearDrag: 1.5
+  m_AngularDrag: 1.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 2
+  speed: 1
   health: {fileID: 1790944072149001592}
   visionRange: {fileID: 934331775}
 --- !u!114 &1790944072149001592
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 1
+  maxHealth: 50
 --- !u!58 &934331775
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +171,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!95 &887937705
+--- !u!210 &4323364910761937091
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633760090261847719}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+--- !u!95 &1414686839
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -184,20 +195,9 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 58a13e1ad18ea0b4d9c214bb4407696f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!210 &4323364910761937091
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4633760090261847719}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
