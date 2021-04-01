@@ -10,7 +10,7 @@ public class HumanoidBehavior : MonoBehaviour {
 	private int targetIndex;
 	private float refreshTime = 0.25f;
 	[SerializeField] private HealthSystem health;
-    private Animator anim;
+    public Animator anim;
 
 	protected virtual void Start() {
 		health.died += Die;

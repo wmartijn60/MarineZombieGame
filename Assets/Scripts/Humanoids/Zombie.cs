@@ -19,13 +19,19 @@ public class Zombie : HumanoidBehavior
     {
         if (target.tag != "Survivor" && collision.tag == "Survivor")
         {
+            
             target = collision.transform;
+            collision.GetComponent<HealthSystem>().died += FindNewTarget;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if (target.tag == "Survivor" && collision == target.GetComponent<Collider2D>()) {
+        if (target.tag == "Survivor" && collision == target.GetComponent<Collider2D>())
+        {
+            anim.SetBool("isAttacking", false);
+            target.GetComponent<HealthSystem>().died -= FindNewTarget;
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            
         }
     }
 
@@ -40,6 +46,36 @@ public class Zombie : HumanoidBehavior
 
     public void Attack()
     {
+        anim.SetBool("isAttacking", true);
         target.GetComponent<HealthSystem>().TakeDamage(damage);
+    }
+
+    private void FindNewTarget()
+    {
+        Debug.Log("Hey");
+        List<Collider2D> possibleTargets = new List<Collider2D>();
+        ContactFilter2D filter = new ContactFilter2D();
+        visionRange.OverlapCollider(filter, possibleTargets);
+        Collider2D newTarget = null;
+
+        for (int i = 0; i < possibleTargets.Count; i++)
+        {
+            if (possibleTargets[i].tag == "Survivor" && possibleTargets[i] != target.GetComponent<Collider2D>())
+            {
+                newTarget = possibleTargets[i];
+                break;
+            }
+        }
+
+        anim.SetBool("isAttacking", false);
+
+        if (newTarget != null)
+        {
+            target = newTarget.transform;
+            newTarget.GetComponent<HealthSystem>().died += FindNewTarget;
+        } else
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 }
