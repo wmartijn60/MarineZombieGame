@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 326700432929461344, guid: 70ea27c52585a3f43b61e3a23348e4db,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -508
+      value: -520
       objectReference: {fileID: 0}
     - target: {fileID: 326700432929461344, guid: 70ea27c52585a3f43b61e3a23348e4db,
         type: 3}
@@ -1477,8 +1477,8 @@ Canvas:
   m_GameObject: {fileID: 1112597094}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2073845816}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1487,7 +1487,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1112597098
 RectTransform:
@@ -1793,15 +1793,45 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7604596071577289464, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604596071973727555, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604596072064222279, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604596072667913629, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7604596072988007361, guid: 38a23e37ce44b7546b58625a53bce7e1,
         type: 3}
       propertyPath: CollisionModule.type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7604596072988007362, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7604596072988007391, guid: 38a23e37ce44b7546b58625a53bce7e1,
         type: 3}
       propertyPath: damage
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604596073079858523, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a23e37ce44b7546b58625a53bce7e1, type: 3}
