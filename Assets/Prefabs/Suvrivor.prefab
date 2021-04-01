@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8683545781735434107}
   - component: {fileID: 8683545781735434052}
   - component: {fileID: -7414941121214898940}
+  - component: {fileID: 5339202673426038946}
   m_Layer: 0
   m_Name: Suvrivor
   m_TagString: Survivor
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 3
+  speed: 1
   health: {fileID: -7414941121214898940}
 --- !u!114 &-7414941121214898940
 MonoBehaviour:
@@ -151,3 +152,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 1
+--- !u!95 &5339202673426038946
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683545781735434111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
