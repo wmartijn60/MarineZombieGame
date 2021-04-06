@@ -6,6 +6,7 @@ public class AimCanon : MonoBehaviour
 {
     [SerializeField]private Transform origin;
     [SerializeField]private ParticleSystem beam;
+    [SerializeField]private GameObject impact;
 
     void Update()
     {
@@ -22,7 +23,26 @@ public class AimCanon : MonoBehaviour
         {
             beam.startLifetime = 0.28f;
         }
-        
-        
+
+        if (beam.gameObject.activeSelf)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 200f);
+            Debug.DrawRay(transform.position, dir, Color.green);
+            if (hit.collider != null)
+            {
+                impact.transform.position = hit.point;
+                impact.SetActive(true);
+            }
+            else
+            {
+                impact.SetActive(false);
+            }
+
+
+        }
+        else if (impact.activeSelf)
+        {
+            impact.SetActive(false);
+        }
     }
 }

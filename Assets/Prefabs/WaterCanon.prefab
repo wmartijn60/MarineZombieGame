@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 3975406164359004538}
   beam: {fileID: 7604596072988007361}
+  impact: {fileID: 0}
 --- !u!1 &7604596071555871014
 GameObject:
   m_ObjectHideFlags: 0
@@ -38162,6 +38163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302e6830c4c8e1541b6134d01477c12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   beam: {fileID: 7604596072988007361}
 --- !u!1 &7604596073079858525
 GameObject:
