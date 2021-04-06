@@ -12,17 +12,22 @@ public class HumanoidBehavior : MonoBehaviour {
 	[SerializeField] private HealthSystem health;
     public Animator anim;
 
-	protected virtual void Start() {
+	protected virtual void Start() 
+	{
 		health.died += Die;
         anim = GetComponent<Animator>();
         StartCoroutine (RefreshPath ());
 	}
 
-	IEnumerator RefreshPath() {
+	IEnumerator RefreshPath() 
+	{
 		Vector2 targetPositionOld = (Vector2)target.position + Vector2.up; // ensure != to target.position initially
 			
-		while (true) {
-			if (targetPositionOld != (Vector2)target.position) {
+		while (true) 
+		{
+			if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
+			if (targetPositionOld != (Vector2)target.position) 
+			{
 				targetPositionOld = (Vector2)target.position;
 
 				path = Pathfinding.RequestPath (transform.position, target.position);
@@ -35,13 +40,17 @@ public class HumanoidBehavior : MonoBehaviour {
 		}
 	}
 		
-	IEnumerator FollowPath() {
-		if (path.Length > 0) {
+	IEnumerator FollowPath() 
+	{
+		if (path.Length > 0)
+		{
 			targetIndex = 0;
 			Vector2 currentWaypoint = path [0];
 
-			while (true) {
-				if ((Vector2)transform.position == currentWaypoint) {
+			while (true)
+			{
+				if ((Vector2)transform.position == currentWaypoint)
+				{
 					targetIndex++;
 					if (targetIndex >= path.Length) {
 						yield break;
@@ -56,22 +65,28 @@ public class HumanoidBehavior : MonoBehaviour {
 		}
 	}
 
-	private void Die() {
+	private void Die() 
+	{
 		// play death animation
 		anim.SetBool("isAlive", false);
-		Destroy(gameObject, 1f); // change time depending on animation duration
+		Destroy(gameObject, 0.1f); // change time depending on animation duration
     }
 
-	public void OnDrawGizmos() {
-		if (path != null) {
-			for (int i = targetIndex; i < path.Length; i ++) {
+	public void OnDrawGizmos() 
+	{
+		if (path != null)
+		{
+			for (int i = targetIndex; i < path.Length; i ++)
+			{
 				Gizmos.color = Color.green;
 				//Gizmos.DrawCube((Vector3)path[i], Vector3.one *.5f);
 
-				if (i == targetIndex) {
+				if (i == targetIndex) 
+				{
 					Gizmos.DrawLine(transform.position, path[i]);
 				}
-				else {
+				else 
+				{
 					Gizmos.DrawLine(path[i-1],path[i]);
 				}
 			}

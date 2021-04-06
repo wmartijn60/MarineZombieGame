@@ -16,19 +16,27 @@ public class HealthSystem : MonoBehaviour
         ResetHealth();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
             TakeDamage(1);
         }
     }
 
-    public void TakeDamage(int damage) {
+    public IEnumerator TakeDamage(int damage) 
+    {
         health -= damage;
         if(healthBar != null) healthBar.fillAmount = health / maxHealth;
-        if(health <= 0) died();
+        if (health <= 0) 
+        {
+            yield return new WaitForSeconds(0.01f);
+            died();
+        }
     }
 
-    private void ResetHealth() {
+    private void ResetHealth() 
+    {
         health = maxHealth;
         if (healthBar != null) healthBar.fillAmount = health / maxHealth;
     }

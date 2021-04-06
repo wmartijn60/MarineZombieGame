@@ -14,11 +14,13 @@ public class Pathfinding : MonoBehaviour {
 		instance = this;
 	}
 
-	public static Vector2[] RequestPath(Vector2 from, Vector2 to) {
+	public static Vector2[] RequestPath(Vector2 from, Vector2 to) 
+	{
 		return instance.FindPath (from, to);
 	}
 	
-	Vector2[] FindPath(Vector2 from, Vector2 to) {
+	Vector2[] FindPath(Vector2 from, Vector2 to) 
+	{
 		
 		Stopwatch sw = new Stopwatch();
 		sw.Start();
@@ -46,7 +48,8 @@ public class Pathfinding : MonoBehaviour {
 			HashSet<Node> closedSet = new HashSet<Node>();
 			openSet.Add(startNode);
 			
-			while (openSet.Count > 0) {
+			while (openSet.Count > 0) 
+			{
 				Node currentNode = openSet.RemoveFirst();
 				closedSet.Add(currentNode);
 				
@@ -59,13 +62,15 @@ public class Pathfinding : MonoBehaviour {
 				}
 				
 				foreach (Node neighbour in grid.GetNeighbours(currentNode)) 
+				{
+					if (!neighbour.walkable || closedSet.Contains(neighbour)) 
 					{
-					if (!neighbour.walkable || closedSet.Contains(neighbour)) {
 						continue;
 					}
 					
 					int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour)+TurningCost(currentNode,neighbour);
-					if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
+					if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) 
+					{
 						neighbour.gCost = newMovementCostToNeighbour;
 						neighbour.hCost = GetDistance(neighbour, targetNode);
 						neighbour.parent = currentNode;
@@ -94,7 +99,8 @@ public class Pathfinding : MonoBehaviour {
 		return 0;
 	}
 	
-	Vector2[] RetracePath(Node startNode, Node endNode) {
+	Vector2[] RetracePath(Node startNode, Node endNode) 
+	{
 		List<Node> path = new List<Node>();
 		Node currentNode = endNode;
 		

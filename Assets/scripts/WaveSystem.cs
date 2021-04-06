@@ -13,8 +13,10 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private Transform enemies;
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.J)) {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J)) 
+        {
             StartCoroutine("SendWave");
         }
     }

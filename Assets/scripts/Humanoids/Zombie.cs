@@ -17,6 +17,7 @@ public class Zombie : HumanoidBehavior
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (target == null) return;
         if (target.tag != "Survivor" && collision.tag == "Survivor")
         {
             
@@ -25,7 +26,9 @@ public class Zombie : HumanoidBehavior
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
+    private void OnTriggerExit2D(Collider2D collision) 
+    {
+        if (target == null) return;
         if (target.tag == "Survivor" && collision == target.GetComponent<Collider2D>())
         {
             anim.SetBool("isAttacking", false);
@@ -35,8 +38,9 @@ public class Zombie : HumanoidBehavior
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
+        if (target == null) return;
         if (target.tag == "Survivor" && collision.gameObject.tag == "Survivor")
         {
             Attack();
@@ -47,12 +51,11 @@ public class Zombie : HumanoidBehavior
     public void Attack()
     {
         anim.SetBool("isAttacking", true);
-        target.GetComponent<HealthSystem>().TakeDamage(damage);
+        target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
     }
 
     private void FindNewTarget()
     {
-        Debug.Log("Hey");
         List<Collider2D> possibleTargets = new List<Collider2D>();
         ContactFilter2D filter = new ContactFilter2D();
         visionRange.OverlapCollider(filter, possibleTargets);
