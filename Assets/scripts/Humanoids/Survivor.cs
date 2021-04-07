@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-public  class Survivor : HumanoidBehavior
+﻿public  class Survivor : HumanoidBehavior
 {
-    int coinsAmountToGive;
-    
+    private int coinsAmountToGive = 10;
+    public int CoinsAmountToGive { get { return coinsAmountToGive; } }
+
 }
