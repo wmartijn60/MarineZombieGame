@@ -1,10 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Scripts/AStarPathfinding.meta
-guid: ebf4ecccf0c351a4caa45662d1d37962
+guid: 5cdf0e12a79aa9946a5e5a2ccb2ef78e
 folderAsset: yes
-=======
-guid: abbe7f1f24e146d49a1a8b7bd4c2dfe5
->>>>>>> Featcher-mainscreen:Assets/Scenes/MainMenu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
