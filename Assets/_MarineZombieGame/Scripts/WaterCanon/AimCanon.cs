@@ -7,6 +7,7 @@ public class AimCanon : MonoBehaviour
     [SerializeField]private Transform origin;
     [SerializeField]private ParticleSystem beam;
     [SerializeField]private GameObject impact;
+    [SerializeField]private LayerMask layer;
 
     void Update()
     {
@@ -26,8 +27,8 @@ public class AimCanon : MonoBehaviour
 
         if (beam.gameObject.activeSelf)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 200f);
-            Debug.DrawRay(transform.position, dir, Color.green);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 200f, layer);
+            Debug.DrawRay(transform.position, dir, Color.green, layer);
             if (hit.collider != null)
             {
                 impact.transform.position = hit.point;
