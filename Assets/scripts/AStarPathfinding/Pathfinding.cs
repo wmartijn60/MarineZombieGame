@@ -7,6 +7,7 @@ using System;
 public class Pathfinding : MonoBehaviour {
 
 	Grid grid;
+	[SerializeField] private BarrierSwitch barrierSwitch;
 	static Pathfinding instance;
 	
 	void Awake() {
@@ -14,7 +15,12 @@ public class Pathfinding : MonoBehaviour {
 		instance = this;
 	}
 
-	public static Vector2[] RequestPath(Vector2 from, Vector2 to) {
+    void Start()
+    {
+        barrierSwitch.DisableBarriers();
+    }
+
+    public static Vector2[] RequestPath(Vector2 from, Vector2 to) {
 		return instance.FindPath (from, to);
 	}
 	
