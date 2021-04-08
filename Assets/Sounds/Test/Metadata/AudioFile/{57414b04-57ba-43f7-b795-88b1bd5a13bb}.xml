@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{57414b04-57ba-43f7-b795-88b1bd5a13bb}">
+		<property name="assetPath">
+			<value>beat0.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>22.416</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8a3b3e6-c1b8-4c95-8bfe-2f8211bbc98a}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{8c1239bf-f9b1-43ba-ada8-9cb3a17adb0d}">
+		<property name="assetPath">
+			<value>beat.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.4400000000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8a3b3e6-c1b8-4c95-8bfe-2f8211bbc98a}</destination>
+		</relationship>
+	</object>
+</objects>
