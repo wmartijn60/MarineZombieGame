@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AimCanon : MonoBehaviour
 {
+    [SerializeField]private GameObject rotator;
     [SerializeField]private Transform origin;
     [SerializeField]private ParticleSystem beam;
     [SerializeField]private GameObject impact;
@@ -14,7 +15,7 @@ public class AimCanon : MonoBehaviour
         Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 dir = Input.mousePosition - pos;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle -90, Vector3.forward);
+        rotator.transform.rotation = Quaternion.AngleAxis(angle -90, Vector3.forward);
 
         if (0.28f < Vector2.Distance(origin.position, dir) / 200 / 1.9f)
         {
