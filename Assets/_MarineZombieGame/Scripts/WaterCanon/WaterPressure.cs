@@ -59,7 +59,9 @@ public class WaterPressure : MonoBehaviour
         else if (pressure >= rechargeTreshhold)
         {
             isCharging = false;
-        }              
+        }
+
+              
     }
 
     public void SetRepressureValue(int v)
@@ -72,7 +74,6 @@ public class WaterPressure : MonoBehaviour
     {
         maxCapacity += v;
         pressureBar.value = 100 / maxCapacity * pressure;
-        repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
     }
 
     public void IncreaseRechargeRate(int v)
