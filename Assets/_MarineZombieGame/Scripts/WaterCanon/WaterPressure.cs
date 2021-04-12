@@ -66,7 +66,7 @@ public class WaterPressure : MonoBehaviour
 
     public void SetRepressureValue(int v)
     {
-        rechargeTreshhold = v;
+        rechargeTreshhold -= v;
         repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
     }
 
