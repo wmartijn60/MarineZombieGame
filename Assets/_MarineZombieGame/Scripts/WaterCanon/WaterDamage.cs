@@ -11,7 +11,7 @@ public class WaterDamage : MonoBehaviour
     {
         if (other.tag == "Zombie")
         {
-            other.GetComponent<HealthSystem>().TakeDamage(damage);
+            other.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
         }
     }
 }
