@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 463812876166403357}
   - component: {fileID: 7490959448161431389}
   - component: {fileID: 3816032335961797371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Survivor (1)
   m_TagString: Survivor
   m_Icon: {fileID: 0}
