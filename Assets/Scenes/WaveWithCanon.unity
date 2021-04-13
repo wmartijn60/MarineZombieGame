@@ -1798,6 +1798,7 @@ MonoBehaviour:
   - {fileID: 799433697}
   - {fileID: 1538699340}
   - {fileID: 1712104576}
+  - {fileID: 2012121222}
 --- !u!1 &973528603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,7 +3865,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011120677, y: -8.457934}
