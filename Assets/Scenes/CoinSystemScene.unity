@@ -915,8 +915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d46f86e81012d43b76990b0ba553f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombiespawnDelay: 0.2
-  SurvivorspawnDelay: 0.1
+  zombiespawnDelay: 0.1
+  survivorspawnDelay: 0.1
+  betweenDelay: 1
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
   survivors:
