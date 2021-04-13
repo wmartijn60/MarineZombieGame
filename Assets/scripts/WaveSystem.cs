@@ -23,7 +23,11 @@ public class WaveSystem : MonoBehaviour
         }
     }
 
-    public IEnumerator SendWave()
+    public void StartWave() {
+        StartCoroutine("SendWave");
+    }
+
+    private IEnumerator SendWave()
     {
         waveNumber++;
         for (int i = 0; i < (5 * waveNumber); i++)
