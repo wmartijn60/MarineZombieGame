@@ -8,7 +8,7 @@ public class BarrierSwitch : MonoBehaviour
 
     void Start()
     {
-        
+        DisableBarriers();
     }
 
     void Update()
