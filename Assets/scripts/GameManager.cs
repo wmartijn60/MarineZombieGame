@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
     public static int Coins { get { return coins; } }
     static GameManager instance;
     private static UIManager uiManager;
-    private WaveSystem waveSystem;
-    private CountDown countDown;
+    private static WaveSystem waveSystem;
+    private static CountDown countDown;
 
     void Awake() {
         instance = this;
@@ -25,5 +25,11 @@ public class GameManager : MonoBehaviour
     public static void ChangeCoinAmount(int change) {
         coins += change;
         uiManager.UpdateUI();
+    }
+
+    public static void CheckWaveStatus() {
+        if (waveSystem.Humanoids.childCount-1 <= 0) {
+            countDown.StartCountDown(30);
+        }
     }
 }

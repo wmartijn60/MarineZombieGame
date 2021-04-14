@@ -21,13 +21,14 @@ public class CountDown : MonoBehaviour
 
     private void Start() {
         uiManager = GetComponent<UIManager>();
+        StartCountDown(30);
     }
 
-    private void Update() {
+    /*private void Update() {
         if (Input.GetMouseButtonDown(1)) {
             StartCountDown(30);
         }
-    }
+    }*/
 
     private void FixedUpdate() {
         if (!countingDown) return;

@@ -92,4 +92,8 @@ public class HumanoidBehavior : MonoBehaviour {
 			}
 		}
 	}
+
+    private void OnDestroy() {
+		GameManager.CheckWaveStatus();
+    }
 }
