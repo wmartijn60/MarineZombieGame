@@ -10,9 +10,11 @@ public class UpgradeCanon : MonoBehaviour
     [SerializeField]private TextMeshProUGUI capacityPrize;
     [SerializeField]private TextMeshProUGUI rechargePrize;
     [SerializeField]private TextMeshProUGUI repressurePrize;
+    [SerializeField]private TextMeshProUGUI allPrize;
 
     [SerializeField] private WaterPressure waterPressure;
     [SerializeField] private List<int> upgradeCost;
+    [SerializeField] private List<int> upgradeCostAll;
     [SerializeField] private List<int> upgradeCapacity;
     [SerializeField] private List<int> upgradeRecharge;
     [SerializeField] private List<int> upgradeRepressure;
@@ -20,15 +22,13 @@ public class UpgradeCanon : MonoBehaviour
 
     void Start()
     {
-        capacityPrize.text = upgradeCost[upgradeLevel[0]].ToString();
-        rechargePrize.text = upgradeCost[upgradeLevel[1]].ToString();
-        repressurePrize.text = upgradeCost[upgradeLevel[2]].ToString();
+        allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
     }
 
 
     public void UpgradeCapacity()
     {
-        if (GameManager.Coins >= upgradeCost[0] && maxLevel != upgradeLevel[0])
+        if (maxLevel != upgradeLevel[0] && GameManager.Coins >= upgradeCost[upgradeLevel[0]])
         {
             GameManager.ChangeCoinAmount(-upgradeCost[upgradeLevel[0]]);
             waterPressure.IncreaseCapacity(upgradeCapacity[upgradeLevel[0]]);
@@ -47,7 +47,7 @@ public class UpgradeCanon : MonoBehaviour
 
     public void UpgradeRecharge()
     {
-        if (GameManager.Coins >= upgradeCost[1] && maxLevel != upgradeLevel[1])
+        if (maxLevel != upgradeLevel[1] && GameManager.Coins >= upgradeCost[upgradeLevel[1]])
         {
             GameManager.ChangeCoinAmount(-upgradeCost[upgradeLevel[1]]);
             waterPressure.IncreaseRechargeRate(upgradeRecharge[upgradeLevel[1]]);
@@ -66,7 +66,7 @@ public class UpgradeCanon : MonoBehaviour
 
     public void UpgradeRepressure()
     {
-        if (GameManager.Coins >= upgradeCost[2] && maxLevel != upgradeLevel[2])
+        if (maxLevel != upgradeLevel[2] && GameManager.Coins >= upgradeCost[upgradeLevel[2]])
         {
             GameManager.ChangeCoinAmount(-upgradeCost[upgradeLevel[2]]);
             waterPressure.SetRepressureValue(upgradeRepressure[upgradeLevel[2]]);
@@ -80,6 +80,32 @@ public class UpgradeCanon : MonoBehaviour
                 repressurePrize.text = upgradeCost[upgradeLevel[2]].ToString();
             }
             
+        }
+    }
+
+    public void UpgradeAll()
+    {
+
+        if (maxLevel != upgradeLevel[3] && GameManager.Coins >= upgradeCostAll[upgradeLevel[3]])
+        {
+            GameManager.ChangeCoinAmount(-upgradeCostAll[upgradeLevel[3]]);
+
+            waterPressure.IncreaseCapacity(upgradeCapacity[upgradeLevel[0]]);
+            waterPressure.IncreaseRechargeRate(upgradeRecharge[upgradeLevel[1]]);
+            waterPressure.SetRepressureValue(upgradeRepressure[upgradeLevel[2]]);
+            upgradeLevel[0] += 1;
+            upgradeLevel[1] += 1;
+            upgradeLevel[2] += 1;
+            upgradeLevel[3] += 1;
+            if (upgradeLevel[3] == maxLevel)
+            {
+                allPrize.text = "max";
+            }
+            else
+            {
+                allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
+            }
+
         }
     }
 

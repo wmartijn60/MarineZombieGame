@@ -6,6 +6,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text coinsText;
 
     public void UpdateUI() {
-        coinsText.text = GameManager.Coins + " coins";
+        coinsText.text = GameManager.Coins.ToString();
     }
 }
