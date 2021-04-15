@@ -22,6 +22,7 @@ public class UpgradeCanon : MonoBehaviour
 
     void Start()
     {
+        GameManager.ChangeCoinAmount(500);
         allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
     }
 
