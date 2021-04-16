@@ -13,7 +13,8 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
-    [SerializeField] private Transform enemies;
+    [SerializeField] private Transform humanoids;
+    public Transform Humanoids { get { return humanoids; } }
 
     private void Update()
     {
@@ -23,25 +24,24 @@ public class WaveSystem : MonoBehaviour
         }
     }
 
-    public void SendNextWave()
-    {
+    public void StartWave() {
         StartCoroutine("SendWave");
     }
 
-    public IEnumerator SendWave()
+    private IEnumerator SendWave()
     {
         waveNumber++;
         for (int i = 0; i < (5 * waveNumber); i++)
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            GameObject newSurvivor = GameObject.Instantiate(survivors[Random.Range(0, survivors.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation);
+            GameObject newSurvivor = GameObject.Instantiate(survivors[Random.Range(0, survivors.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
             newSurvivor.GetComponent<Survivor>().target = GameObject.FindGameObjectWithTag("Player").transform;
             yield return new WaitForSeconds(survivorspawnDelay);
         }
         yield return new WaitForSeconds(betweenDelay);
         for (int i = 0; i < (20 * waveNumber); i++) {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-            GameObject newZombie = GameObject.Instantiate(zombies[Random.Range(0, zombies.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation, enemies);
+            GameObject newZombie = GameObject.Instantiate(zombies[Random.Range(0, zombies.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
             newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectWithTag("Player").transform;
             yield return new WaitForSeconds(zombiespawnDelay);
         }
