@@ -3595,8 +3595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1086033447a88994ca653e979617f298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
 --- !u!1 &1396276309
 GameObject:
   m_ObjectHideFlags: 0

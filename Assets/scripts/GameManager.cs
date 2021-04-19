@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     private static UIManager uiManager;
     private static WaveSystem waveSystem;
     private static CountDown countDown;
+    private static ScoreManager scoreManager;
 
     void Awake() {
         instance = this;
         uiManager = FindObjectOfType<UIManager>();
         waveSystem = GetComponent<WaveSystem>();
         countDown = GetComponent<CountDown>();
+        scoreManager = GetComponent<ScoreManager>();
         countDown.startingCountDown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += waveSystem.StartWave;
