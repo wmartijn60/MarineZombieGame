@@ -31,7 +31,6 @@ public class ScoreManager : MonoBehaviour
     {
         playerName = nameInputField.text;
         sendPlayerScore();
-        SceneManager.LoadScene(2);
     }
 
 

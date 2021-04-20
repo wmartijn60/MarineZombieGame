@@ -20,7 +20,7 @@ public class LeaderboardGUI : MonoBehaviour
         for (int i = 0; i < LeaderBoard.EntryCount; ++i)
         {
             var entry = LeaderBoard.GetEntry(i);
-            leaderBoard[i].text = "Name: " + entry.name + ", Score: " + entry.score;
+            leaderBoard[i].text = entry.name + " : " + entry.score;
             
 
         }
