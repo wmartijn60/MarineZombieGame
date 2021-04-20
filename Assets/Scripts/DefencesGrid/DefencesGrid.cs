@@ -16,6 +16,7 @@ public class DefencesGrid : MonoBehaviour
     private int closestGridY;
 
     [SerializeField] private Sprite tileSprite;
+    [SerializeField] private GameObject barricade;
 
     public void CreateGrid(int gridWidth, int gridHeight, float cellWidth, float cellHeight) {
         gridSizeX = gridWidth;
@@ -58,7 +59,7 @@ public class DefencesGrid : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            spawnedObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            spawnedObject = Instantiate(barricade);
             followMouse = true;
         }
         if (Input.GetMouseButtonUp(0) && spawnedObject != null) {
@@ -97,7 +98,7 @@ public class DefencesGrid : MonoBehaviour
                 }
             }
         }
-        spawnedObject.transform.position = chosenTransform.position;
+        spawnedObject.transform.position = new Vector3(chosenTransform.position.x - (gridCellWidth-.05f) / 2, chosenTransform.position.y, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
     }
 
