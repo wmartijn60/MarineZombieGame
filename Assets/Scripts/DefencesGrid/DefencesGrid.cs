@@ -98,7 +98,7 @@ public class DefencesGrid : MonoBehaviour
                 }
             }
         }
-        spawnedObject.transform.position = new Vector3(chosenTransform.position.x - (gridCellWidth-.05f) / 2, chosenTransform.position.y, chosenTransform.position.z);
+        spawnedObject.transform.position = new Vector3(chosenTransform.position.x + gridCellWidth / 2, chosenTransform.position.y + gridCellHeight / 4, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
     }
 
