@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainBuild.unity
     guid: 6cfb0cfbf4242e24fb87e64a608f5c48
+  - enabled: 1
+    path: Assets/Scenes/Score/HighScore.unity
+    guid: f7e438e1dfa57e041b85eb2d67514f44
   m_configObjects: {}
