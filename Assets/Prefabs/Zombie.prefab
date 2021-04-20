@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 934331775}
   - component: {fileID: 4323364910761937091}
   - component: {fileID: 1414686839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zombie
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 4633760090261847719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,8 +99,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.19634955
+  m_UseAutoMass: 0
+  m_Mass: 0.3
   m_LinearDrag: 1.5
   m_AngularDrag: 1.5
   m_GravityScale: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 1
   health: {fileID: 1790944072149001592}
+  anim: {fileID: 0}
   visionRange: {fileID: 934331775}
 --- !u!114 &1790944072149001592
 MonoBehaviour:
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 50
+  maxHealth: 40
 --- !u!58 &934331775
 CircleCollider2D:
   m_ObjectHideFlags: 0
