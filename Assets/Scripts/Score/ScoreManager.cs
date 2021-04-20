@@ -2,13 +2,16 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 
     private int scoreCount;
     private int highScoreCount;
-    private int playerScore;
+
+    private string playerName;
+
+    public TMP_InputField nameInputField;
 
     // Update is called once per frame
     void Update()
@@ -23,7 +26,23 @@ public class ScoreManager : MonoBehaviour
 
 
     }
- 
+
+    public void EnterName()
+    {
+        playerName = nameInputField.text;
+        sendPlayerScore();
+        SceneManager.LoadScene(2);
+    }
+
+
+     void sendPlayerScore()
+    {
+        LeaderBoard.Record(playerName, highScoreCount);
+    }
+
+
+
+
 
     void OnApplicationQuit()
     {
@@ -34,13 +53,10 @@ public class ScoreManager : MonoBehaviour
             highScoreCount = scoreCount;
             PlayerPrefs.SetInt("highScore", highScoreCount);
             PlayerPrefs.Save();
-            Debug.Log(highScoreCount);
         }
-        PlayerPrefs.SetInt("playerScore", scoreCount);
+
         PlayerPrefs.GetInt("highScore");
-        PlayerPrefs.GetInt("playerScore");
         PlayerPrefs.Save();
-        LeaderBoard.Record("tim", highScoreCount);
-        Debug.Log("run");
+
     }
 }
