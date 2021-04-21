@@ -19,6 +19,8 @@ public class DefencesGrid : MonoBehaviour
     [SerializeField] private GameObject barricadeObject;
     private Barricade barricade;
 
+    //private List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
+
     public void CreateGrid(int gridWidth, int gridHeight, float cellWidth, float cellHeight) {
         gridSizeX = gridWidth;
         gridSizeY = gridHeight;
@@ -29,6 +31,7 @@ public class DefencesGrid : MonoBehaviour
         for (int i = 0; i < gridSizeX; i++) {
             for (int j = 0; j < gridSizeY; j++) {
                 GameObject gridplace = new GameObject();
+                gridplace.name = i + " " + j;
                 gridplace.transform.parent = transform;
                 gridplace.transform.localPosition = new Vector3(gridCellWidth * i + gridCellWidth/2, gridCellHeight * j + gridCellHeight/2, 0);
                 gridplace.transform.localScale = new Vector3(gridCellWidth, gridCellHeight, 1);
@@ -69,7 +72,10 @@ public class DefencesGrid : MonoBehaviour
                 Destroy(spawnedObject);
             } else {
                 defencesGrid[closestGridX, closestGridY].Defence = spawnedObject;
-                defencesGrid[closestGridX, closestGridY].SpotTaken = true;
+                List<DefenceGridNode> nodesInvolved = GetArea();
+                for (int i = 0; i < nodesInvolved.Count; i++) {
+                    nodesInvolved[i].SpotTaken = true;
+                }
             }
             followMouse = false;
             spawnedObject = null;
@@ -85,17 +91,27 @@ public class DefencesGrid : MonoBehaviour
     }
 
     private bool CheckArea() {
-        bool allowedToPlace = true;
-        for (int i = closestGridX - barricade.GridSpaceWidth + barricade.OriginPosX; i < barricade.GridSpaceWidth; i++) {
-            for (int j = closestGridY - barricade.GridSpaceHeight + barricade.OriginPosY; j < barricade.GridSpaceHeight; j++) {
-                if (i > 0 && i < gridSizeX && j > 0 && i < gridSizeY) {
-                    if (defencesGrid[i, j].SpotTaken) {
-                        allowedToPlace = false;
-                    }
+        bool ableToPlace = true;
+        List<DefenceGridNode> area = GetArea();
+        for (int i = 0; i < area.Count; i++) {
+            if (area[i].SpotTaken || !area[i].AllowedToPlace) {
+                ableToPlace = false;
+                break;
+            }
+        }
+        return ableToPlace;
+    }
+
+    private List<DefenceGridNode> GetArea() {
+        List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
+        for (int i = closestGridX - barricade.OriginPosX; i < closestGridX + barricade.GridSpaceWidth - barricade.OriginPosX; i++) {
+            for (int j = closestGridY - barricade.OriginPosY; j < closestGridY + barricade.GridSpaceHeight - barricade.OriginPosY; j++) {
+                if (i >= 0 && i < gridSizeX && j >= 0 && j < gridSizeY) {
+                    nodesInvolved.Add(defencesGrid[i,j]);
                 }
             }
         }
-        return allowedToPlace;
+        return nodesInvolved;
     }
 
     private void SnapToGrid() {
