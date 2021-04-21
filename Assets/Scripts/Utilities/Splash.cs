@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Splash : MonoBehaviour
 {
+    [SerializeField]private GameObject impactLocation;
+    [SerializeField]private ImpactDamage impactDamage;
 
     void Start()
     {
@@ -12,7 +14,9 @@ public class Splash : MonoBehaviour
 
     public void MakeASplash()
     {
-        Debug.Log("Nothing Happened");
+        impactDamage.DamageEnemies();
     }
+
+
 
 }
