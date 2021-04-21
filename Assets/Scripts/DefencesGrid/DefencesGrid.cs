@@ -16,7 +16,8 @@ public class DefencesGrid : MonoBehaviour
     private int closestGridY;
 
     [SerializeField] private Sprite tileSprite;
-    [SerializeField] private GameObject barricade;
+    [SerializeField] private GameObject barricadeObject;
+    private Barricade barricade;
 
     public void CreateGrid(int gridWidth, int gridHeight, float cellWidth, float cellHeight) {
         gridSizeX = gridWidth;
@@ -59,11 +60,12 @@ public class DefencesGrid : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            spawnedObject = Instantiate(barricade);
+            spawnedObject = Instantiate(barricadeObject);
+            barricade = spawnedObject.GetComponent<Barricade>();
             followMouse = true;
         }
         if (Input.GetMouseButtonUp(0) && spawnedObject != null) {
-            if (defencesGrid[closestGridX, closestGridY].SpotTaken) {
+            if (/*defencesGrid[closestGridX, closestGridY].SpotTaken*/ !CheckArea()) {
                 Destroy(spawnedObject);
             } else {
                 defencesGrid[closestGridX, closestGridY].Defence = spawnedObject;
@@ -80,6 +82,20 @@ public class DefencesGrid : MonoBehaviour
                 SnapToGrid();
             }
         }
+    }
+
+    private bool CheckArea() {
+        bool allowedToPlace = true;
+        for (int i = closestGridX - barricade.GridSpaceWidth + barricade.OriginPosX; i < barricade.GridSpaceWidth; i++) {
+            for (int j = closestGridY - barricade.GridSpaceHeight + barricade.OriginPosY; j < barricade.GridSpaceHeight; j++) {
+                if (i > 0 && i < gridSizeX && j > 0 && i < gridSizeY) {
+                    if (defencesGrid[i, j].SpotTaken) {
+                        allowedToPlace = false;
+                    }
+                }
+            }
+        }
+        return allowedToPlace;
     }
 
     private void SnapToGrid() {
