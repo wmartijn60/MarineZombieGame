@@ -5,6 +5,7 @@ using UnityEngine;
 public class ImpactDamage : MonoBehaviour
 {
     [SerializeField] private int maxDamage;
+    [SerializeField] private int force;
     [SerializeField] private float range = 1.3f;
     [SerializeField] private Collider2D area;
 
@@ -24,6 +25,7 @@ public class ImpactDamage : MonoBehaviour
             if (inRange[i] != null)
             {
                 inRange[i].GetComponent<HealthSystem>().StartCoroutine("TakeDamage", maxDamage);
+                inRange[i].GetComponent<Rigidbody2D>().AddForce(transform.up * force, ForceMode2D.Impulse); ;
             }
             else
             {
