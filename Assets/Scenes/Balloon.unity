@@ -2242,6 +2242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 3
+  canon: {fileID: 1284808106}
+  canonHinge: {fileID: 537376618}
   capacityPrize: {fileID: 0}
   rechargePrize: {fileID: 0}
   repressurePrize: {fileID: 0}
@@ -2253,6 +2255,14 @@ MonoBehaviour:
   upgradeRecharge: 040000000400000004000000
   upgradeRepressure: 050000000500000005000000
   upgradeLevel: 00000000000000000000000000000000
+  canonUpgrades:
+  - {fileID: 21300000, guid: 03143fa49db8366429469c811355a022, type: 3}
+  - {fileID: 21300000, guid: 12213da36331a3044bdc289565322faf, type: 3}
+  - {fileID: 21300000, guid: 2014dcf1d01cba24fbfd07248b98d1a2, type: 3}
+  canonHingeUpgrades:
+  - {fileID: 21300000, guid: 2774d2ee09660914a8ae458783d018f2, type: 3}
+  - {fileID: 21300000, guid: d631fc45e369de74ea2b9a346f8e9ae4, type: 3}
+  - {fileID: 21300000, guid: c0787391391475c4081a679b6d5bf078, type: 3}
 --- !u!1 &695379425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,6 +4269,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a23e37ce44b7546b58625a53bce7e1, type: 3}
+--- !u!212 &1284808106 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3975406164359004539, guid: 38a23e37ce44b7546b58625a53bce7e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1284808105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1302824093
 GameObject:
   m_ObjectHideFlags: 0
