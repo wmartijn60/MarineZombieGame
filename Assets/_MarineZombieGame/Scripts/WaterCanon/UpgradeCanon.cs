@@ -6,6 +6,8 @@ using TMPro;
 public class UpgradeCanon : MonoBehaviour
 {
     [SerializeField]private int maxLevel = 3;
+    [SerializeField]private SpriteRenderer canon;
+    [SerializeField]private SpriteRenderer canonHinge;
 
     [SerializeField]private TextMeshProUGUI capacityPrize;
     [SerializeField]private TextMeshProUGUI rechargePrize;
@@ -19,6 +21,8 @@ public class UpgradeCanon : MonoBehaviour
     [SerializeField] private List<int> upgradeRecharge;
     [SerializeField] private List<int> upgradeRepressure;
     [SerializeField] private List<int> upgradeLevel;
+    [SerializeField] private List<Sprite> canonUpgrades;
+    [SerializeField] private List<Sprite> canonHingeUpgrades;
 
     void Start()
     {
@@ -101,10 +105,14 @@ public class UpgradeCanon : MonoBehaviour
             if (upgradeLevel[3] == maxLevel)
             {
                 allPrize.text = "max";
+                canon.sprite = canonUpgrades[upgradeLevel[3] - 1];
+                canonHinge.sprite = canonHingeUpgrades[upgradeLevel[3] - 1];
             }
             else
             {
                 allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
+                canon.sprite = canonUpgrades[upgradeLevel[3] -1];
+                canonHinge.sprite = canonHingeUpgrades[upgradeLevel[3]-1];
             }
 
         }
