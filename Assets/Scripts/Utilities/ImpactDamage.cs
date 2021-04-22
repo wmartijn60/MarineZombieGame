@@ -25,7 +25,7 @@ public class ImpactDamage : MonoBehaviour
             if (inRange[i] != null)
             {
                 inRange[i].GetComponent<HealthSystem>().StartCoroutine("TakeDamage", maxDamage);
-                inRange[i].GetComponent<Rigidbody2D>().AddForce(transform.up * force, ForceMode2D.Impulse); ;
+                inRange[i].GetComponent<Rigidbody2D>().AddForce(transform.up * force, ForceMode2D.Impulse);
             }
             else
             {
@@ -39,7 +39,6 @@ public class ImpactDamage : MonoBehaviour
     {
         if (other.tag == "Zombie")
         {
-            Debug.Log(other.gameObject.name);
             inRange.Add(other.gameObject);
         }
     }
