@@ -149,6 +149,7 @@ MonoBehaviour:
   gridSpaceHeight: 2
   originPosX: 0
   originPosY: 0
+  anim: {fileID: 0}
 --- !u!114 &979139602904342562
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,5 +10,9 @@ public class DefenceGridNode : MonoBehaviour
     public bool SpotTaken { get { return spotTaken; } set { spotTaken = value; } }
     private bool allowedToPlace = true;
     public bool AllowedToPlace { get { return allowedToPlace; } set { allowedToPlace = value; } }
+    private int gridX;
+    public int GridX { get { return gridX; } set { gridX = value; } }
+    private int gridY;
+    public int GridY { get { return gridY; } set { gridY = value; } }
 
 }

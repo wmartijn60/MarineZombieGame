@@ -8,8 +8,10 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private float maxHealth = 25;
     private float health;
+    public float Health { get { return health; } }
     public delegate void Died();
     public Died died;
+    private bool notified = false;
 
     void Start()
     {
@@ -28,9 +30,10 @@ public class HealthSystem : MonoBehaviour
     {
         health -= damage;
         if(healthBar != null) healthBar.fillAmount = health / maxHealth;
-        if (health <= 0) 
+        if (health <= 0 && !notified) 
         {
             yield return new WaitForSeconds(0.01f);
+            notified = true;
             died();
         }
     }

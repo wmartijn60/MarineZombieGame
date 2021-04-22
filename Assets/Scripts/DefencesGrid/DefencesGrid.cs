@@ -4,39 +4,39 @@ using UnityEngine;
 
 public class DefencesGrid : MonoBehaviour
 {
-    private int gridSizeX;
-    private int gridSizeY;
-    private DefenceGridNode[,] defencesGrid;
-    private float gridCellWidth;
-    private float gridCellHeight;
+    static DefencesGrid instance;
+
+    private static int gridSizeX = 29;
+    private static int gridSizeY = 9;
+    private float gridCellWidth = 0.55f;
+    private float gridCellHeight = 0.55f;
+    private static DefenceGridNode[,] defencesGrid;
 
     private bool followMouse = false;
     private GameObject spawnedObject = null;
-    private int closestGridX;
-    private int closestGridY;
+    private static int closestGridX;
+    private static int closestGridY;
 
     [SerializeField] private Sprite tileSprite;
     [SerializeField] private GameObject barricadeObject;
-    private Barricade barricade;
+    private static Barricade barricade;
+    [SerializeField] private Transform gridParent;
+    [SerializeField] private Transform defenceParent;
+    private bool spawning = false;
 
-    //private List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
-
-    public void CreateGrid(int gridWidth, int gridHeight, float cellWidth, float cellHeight) {
-        gridSizeX = gridWidth;
-        gridSizeY = gridHeight;
-        gridCellWidth = cellWidth;
-        gridCellHeight = cellHeight;
-
+    public void CreateGrid() {
         defencesGrid = new DefenceGridNode[gridSizeX, gridSizeY];
         for (int i = 0; i < gridSizeX; i++) {
             for (int j = 0; j < gridSizeY; j++) {
                 GameObject gridplace = new GameObject();
                 gridplace.name = i + " " + j;
-                gridplace.transform.parent = transform;
+                gridplace.transform.parent = gridParent;
                 gridplace.transform.localPosition = new Vector3(gridCellWidth * i + gridCellWidth/2, gridCellHeight * j + gridCellHeight/2, 0);
                 gridplace.transform.localScale = new Vector3(gridCellWidth, gridCellHeight, 1);
                 gridplace.AddComponent<BoxCollider2D>().isTrigger = true;
                 DefenceGridNode defenceGridNode = gridplace.AddComponent<DefenceGridNode>();
+                defenceGridNode.GridX = i;
+                defenceGridNode.GridY = j;
 
                 SpriteRenderer spriteRenderer = gridplace.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = tileSprite;
@@ -53,32 +53,22 @@ public class DefencesGrid : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        CreateGrid(29,9,0.55f,0.55f);
+    void Start() {
+        instance = this;
+        CreateGrid();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        /*if (Input.GetMouseButtonDown(0)) {
             spawnedObject = Instantiate(barricadeObject);
             barricade = spawnedObject.GetComponent<Barricade>();
             followMouse = true;
-        }
-        if (Input.GetMouseButtonUp(0) && spawnedObject != null) {
-            if (/*defencesGrid[closestGridX, closestGridY].SpotTaken*/ !CheckArea()) {
-                Destroy(spawnedObject);
-            } else {
-                defencesGrid[closestGridX, closestGridY].Defence = spawnedObject;
-                List<DefenceGridNode> nodesInvolved = GetArea();
-                for (int i = 0; i < nodesInvolved.Count; i++) {
-                    nodesInvolved[i].SpotTaken = true;
-                }
-            }
-            followMouse = false;
-            spawnedObject = null;
+        }*/
+        if (Input.GetMouseButtonUp(0) && spawning && spawnedObject != null) {
+            SetDefence();
+        } else if (Input.GetMouseButtonUp(0) && !spawning && spawnedObject != null) {
+            spawning = true;
         }
         if (followMouse) {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -88,6 +78,28 @@ public class DefencesGrid : MonoBehaviour
                 SnapToGrid();
             }
         }
+    }
+
+    public void SpawnDefence() {
+        if (spawnedObject != null) return;
+        spawnedObject = Instantiate(barricadeObject, defenceParent);
+        barricade = spawnedObject.GetComponent<Barricade>();
+        followMouse = true;
+    }
+
+    private void SetDefence() {
+        if (!CheckArea()) {
+            Destroy(spawnedObject);
+        } else {
+            defencesGrid[closestGridX, closestGridY].Defence = spawnedObject;
+            List<DefenceGridNode> nodesInvolved = GetArea();
+            for (int i = 0; i < nodesInvolved.Count; i++) {
+                nodesInvolved[i].SpotTaken = true;
+            }
+        }
+        followMouse = false;
+        spawnedObject = null;
+        spawning = false;
     }
 
     private bool CheckArea() {
@@ -102,7 +114,18 @@ public class DefencesGrid : MonoBehaviour
         return ableToPlace;
     }
 
-    private List<DefenceGridNode> GetArea() {
+    public static void RemoveDefence(DefenceGridNode node) {
+        for (int i = node.GridX - barricade.OriginPosX; i < node.GridX + barricade.GridSpaceWidth - barricade.OriginPosX; i++) {
+            for (int j = node.GridY - barricade.OriginPosY; j < node.GridY + barricade.GridSpaceHeight - barricade.OriginPosY; j++) {
+                if (i >= 0 && i < gridSizeX && j >= 0 && j < gridSizeY) {
+                    defencesGrid[i, j].Defence = null;
+                    defencesGrid[i, j].SpotTaken = false;
+                }
+            }
+        }
+    }
+
+    public static List<DefenceGridNode> GetArea() {
         List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
         for (int i = closestGridX - barricade.OriginPosX; i < closestGridX + barricade.GridSpaceWidth - barricade.OriginPosX; i++) {
             for (int j = closestGridY - barricade.OriginPosY; j < closestGridY + barricade.GridSpaceHeight - barricade.OriginPosY; j++) {
@@ -112,6 +135,19 @@ public class DefencesGrid : MonoBehaviour
             }
         }
         return nodesInvolved;
+    }
+
+    public static DefenceGridNode GetGridPos(GameObject defence) {
+        DefenceGridNode gridPosition = null;
+        for (int i = 0; i < gridSizeX; i++) {
+            for (int j = 0; j < gridSizeY; j++) {
+                if(defencesGrid[i,j].Defence == defence) {
+                    gridPosition = defencesGrid[i, j];
+                    return gridPosition;
+                }
+            }
+        }
+        return gridPosition;
     }
 
     private void SnapToGrid() {
@@ -133,22 +169,4 @@ public class DefencesGrid : MonoBehaviour
         spawnedObject.transform.position = new Vector3(chosenTransform.position.x + gridCellWidth / 2, chosenTransform.position.y + gridCellHeight / 4, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
     }
-
-    /*private void OnDrawGizmos() {
-        if (followMouse) {
-            Transform chosenTransform = null;
-            float chosenTransformDistance = float.MaxValue;
-            for (int i = 0; i < gridSizeX; i++) {
-                for (int j = 0; j < gridSizeY; j++) {
-                    float distance = Vector3.Distance(spawnedObject.transform.position, defencesGrid[i, j].transform.position);
-                    if (distance < chosenTransformDistance) {
-                        chosenTransform = defencesGrid[i, j].transform;
-                        chosenTransformDistance = distance;
-                    }
-                }
-            }
-            spawnedObject.transform.position = chosenTransform.position;
-            spawnedObject.transform.rotation = chosenTransform.rotation;
-        }
-    }*/
 }

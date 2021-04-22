@@ -13,9 +13,19 @@ public class Barricade : MonoBehaviour
     public int OriginPosX { get { return originPosX; } }
     [SerializeField] private int originPosY;
     public int OriginPosY { get { return originPosY; } }
+    public Animator anim;
 
     void Start()
     {
         health = GetComponent<HealthSystem>();
+        health.died += Destroyed;
+    }
+
+    private void Destroyed() {
+        // play destruction animation
+        //anim.SetBool("isAlive", false);
+        DefenceGridNode gridPos = DefencesGrid.GetGridPos(gameObject);
+        DefencesGrid.RemoveDefence(gridPos);
+        Destroy(gameObject, 1f); // change time depending on animation duration
     }
 }

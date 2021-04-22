@@ -49,13 +49,17 @@ public class Zombie : HumanoidBehavior
         {
             Attack();
         }
-        
     }
 
     public void Attack()
     {
-        anim.SetBool("isAttacking", true);
-        target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
+        if (target == null || target.tag == "Player") return;
+        if (target.GetComponent<HealthSystem>().Health > 0) {
+            anim.SetBool("isAttacking", true);
+            target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
+            AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
+            Invoke("Attack", info[0].clip.length);
+        }
     }
 
     private void FindNewTarget()
