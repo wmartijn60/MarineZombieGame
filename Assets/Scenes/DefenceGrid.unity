@@ -3494,6 +3494,9 @@ MonoBehaviour:
     type: 3}
   gridParent: {fileID: 96772960}
   defenceParent: {fileID: 46987987}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &1244229532
 Transform:
   m_ObjectHideFlags: 0

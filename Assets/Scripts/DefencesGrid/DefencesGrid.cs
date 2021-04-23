@@ -6,20 +6,21 @@ public class DefencesGrid : MonoBehaviour
 {
     static DefencesGrid instance;
 
-    private static int gridSizeX = 29;
-    private static int gridSizeY = 9;
+    private int gridSizeX = 29;
+    private int gridSizeY = 9;
     private float gridCellWidth = 0.55f;
     private float gridCellHeight = 0.55f;
-    private static DefenceGridNode[,] defencesGrid;
+    private DefenceGridNode[,] defencesGrid;
 
     private bool followMouse = false;
     private GameObject spawnedObject = null;
-    private static int closestGridX;
-    private static int closestGridY;
+    private int closestGridX;
+    private int closestGridY;
+    private float distanceToClosestNode;
 
     [SerializeField] private Sprite tileSprite;
     [SerializeField] private GameObject barricadeObject;
-    private static Barricade barricade;
+    private Barricade barricade;
     [SerializeField] private Transform gridParent;
     [SerializeField] private Transform defenceParent;
     private bool spawning = false;
@@ -88,7 +89,7 @@ public class DefencesGrid : MonoBehaviour
     }
 
     private void SetDefence() {
-        if (!CheckArea()) {
+        if (!CheckArea() || distanceToClosestNode >= 0.35f) {
             Destroy(spawnedObject);
         } else {
             defencesGrid[closestGridX, closestGridY].Defence = spawnedObject;
@@ -114,12 +115,25 @@ public class DefencesGrid : MonoBehaviour
         return ableToPlace;
     }
 
+    public static void StopPlacingDefence() {
+        instance.gridParent.gameObject.SetActive(false);
+        if (instance.spawnedObject == null) return;
+        Destroy(instance.spawnedObject);
+        instance.followMouse = false;
+        instance.spawning = false;
+        instance.spawnedObject = null;
+    }
+
+    public static void StartPlacingDefence() {
+        instance.gridParent.gameObject.SetActive(true);
+    }
+
     public static void RemoveDefence(DefenceGridNode node) {
-        for (int i = node.GridX - barricade.OriginPosX; i < node.GridX + barricade.GridSpaceWidth - barricade.OriginPosX; i++) {
-            for (int j = node.GridY - barricade.OriginPosY; j < node.GridY + barricade.GridSpaceHeight - barricade.OriginPosY; j++) {
-                if (i >= 0 && i < gridSizeX && j >= 0 && j < gridSizeY) {
-                    defencesGrid[i, j].Defence = null;
-                    defencesGrid[i, j].SpotTaken = false;
+        for (int i = node.GridX - instance.barricade.OriginPosX; i < node.GridX + instance.barricade.GridSpaceWidth - instance.barricade.OriginPosX; i++) {
+            for (int j = node.GridY - instance.barricade.OriginPosY; j < node.GridY + instance.barricade.GridSpaceHeight - instance.barricade.OriginPosY; j++) {
+                if (i >= 0 && i < instance.gridSizeX && j >= 0 && j < instance.gridSizeY) {
+                    instance.defencesGrid[i, j].Defence = null;
+                    instance.defencesGrid[i, j].SpotTaken = false;
                 }
             }
         }
@@ -127,10 +141,10 @@ public class DefencesGrid : MonoBehaviour
 
     public static List<DefenceGridNode> GetArea() {
         List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
-        for (int i = closestGridX - barricade.OriginPosX; i < closestGridX + barricade.GridSpaceWidth - barricade.OriginPosX; i++) {
-            for (int j = closestGridY - barricade.OriginPosY; j < closestGridY + barricade.GridSpaceHeight - barricade.OriginPosY; j++) {
-                if (i >= 0 && i < gridSizeX && j >= 0 && j < gridSizeY) {
-                    nodesInvolved.Add(defencesGrid[i,j]);
+        for (int i = instance.closestGridX - instance.barricade.OriginPosX; i < instance.closestGridX + instance.barricade.GridSpaceWidth - instance.barricade.OriginPosX; i++) {
+            for (int j = instance.closestGridY - instance.barricade.OriginPosY; j < instance.closestGridY + instance.barricade.GridSpaceHeight - instance.barricade.OriginPosY; j++) {
+                if (i >= 0 && i < instance.gridSizeX && j >= 0 && j < instance.gridSizeY) {
+                    nodesInvolved.Add(instance.defencesGrid[i,j]);
                 }
             }
         }
@@ -139,10 +153,10 @@ public class DefencesGrid : MonoBehaviour
 
     public static DefenceGridNode GetGridPos(GameObject defence) {
         DefenceGridNode gridPosition = null;
-        for (int i = 0; i < gridSizeX; i++) {
-            for (int j = 0; j < gridSizeY; j++) {
-                if(defencesGrid[i,j].Defence == defence) {
-                    gridPosition = defencesGrid[i, j];
+        for (int i = 0; i < instance.gridSizeX; i++) {
+            for (int j = 0; j < instance.gridSizeY; j++) {
+                if(instance.defencesGrid[i,j].Defence == defence) {
+                    gridPosition = instance.defencesGrid[i, j];
                     return gridPosition;
                 }
             }
@@ -166,6 +180,7 @@ public class DefencesGrid : MonoBehaviour
                 }
             }
         }
+        distanceToClosestNode = chosenTransformDistance;
         spawnedObject.transform.position = new Vector3(chosenTransform.position.x + gridCellWidth / 2, chosenTransform.position.y + gridCellHeight / 4, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
     }

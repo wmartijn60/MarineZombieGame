@@ -2,13 +2,13 @@
 
 public class GameManager : MonoBehaviour
 {
-    private static int coins;
-    public static int Coins { get { return coins; } }
+    private int coins;
+    public static int Coins { get { return instance.coins; } }
     static GameManager instance;
-    private static UIManager uiManager;
-    private static WaveSystem waveSystem;
-    private static CountDown countDown;
-    private static ScoreManager scoreManager;
+    private UIManager uiManager;
+    private WaveSystem waveSystem;
+    private CountDown countDown;
+    private ScoreManager scoreManager;
 
     void Awake() {
         instance = this;
@@ -25,13 +25,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     /// <param name="change">positive is adding, negative is subtracting</param>
     public static void ChangeCoinAmount(int change) {
-        coins += change;
-        uiManager.UpdateUI();
+        
+        instance.coins += change;
+        instance.uiManager.UpdateUI();
     }
 
     public static void CheckWaveStatus() {
-        if (waveSystem.Humanoids.childCount-1 <= 0) {
-            countDown.StartCountDown(30);
+        if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
+            instance.countDown.StartCountDown(30);
         }
     }
 }
