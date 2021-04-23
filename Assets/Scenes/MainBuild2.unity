@@ -2957,6 +2957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930762775}
   - component: {fileID: 930762776}
+  - component: {fileID: 930762777}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -3012,6 +3013,21 @@ MonoBehaviour:
   - {fileID: 1538699340}
   - {fileID: 1712104576}
   - {fileID: 2012121222}
+--- !u!114 &930762777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930762774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592b5093ebf7d074bb746141becbdbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 74d4112db98cff144a85d9f750a610c2, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &973528603
 GameObject:
   m_ObjectHideFlags: 0
