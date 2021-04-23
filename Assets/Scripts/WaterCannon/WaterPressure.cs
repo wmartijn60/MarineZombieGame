@@ -13,12 +13,17 @@ public class WaterPressure : MonoBehaviour
     [SerializeField] private GameObject beam;
     [SerializeField] private Slider pressureBar;
     [SerializeField] private Slider repressureBar;
+    [SerializeField] private CountDown countDown;
 
     private float pressure;
     private bool isCharging = false;
 
+    public bool isActive;
+
     void Start()
     {
+        countDown.startingCountDown += TurnOff;
+        countDown.stoppingCountdown += TurnOn;
         pressure = maxCapacity;
         beam.SetActive(false);
         repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
@@ -31,7 +36,7 @@ public class WaterPressure : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && pressure > 0 && !isCharging)
+        if (Input.GetKey(KeyCode.Mouse0) && pressure > 0 && !isCharging && isActive)
         {
             beam.SetActive(true);
             pressure = pressure - energyCost * Time.deltaTime;
@@ -79,5 +84,14 @@ public class WaterPressure : MonoBehaviour
     public void IncreaseRechargeRate(int v)
     {
         rechargeRate += v;
+    }
+
+    public void TurnOff()
+    {
+        isActive = false;
+    }
+    public void TurnOn()
+    {
+        isActive = true;
     }
 }
