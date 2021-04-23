@@ -9,17 +9,19 @@ public class ItemManager : MonoBehaviour
     [SerializeField]private int mineCost;
     [SerializeField]private int wallCost;
 
+    [SerializeField] private TextMeshProUGUI balloonsTotal;
     [SerializeField] private TextMeshProUGUI balloonPrizetag;
     [SerializeField] private TextMeshProUGUI minePrizetag;
     [SerializeField] private TextMeshProUGUI wallPrizetag;
 
-    public int BalloonAmount;
+    public int balloonAmount;
 
     void Start()
     {
         balloonPrizetag.text = balloonCost.ToString();
         minePrizetag.text = mineCost.ToString();
         wallPrizetag.text = wallCost.ToString();
+        UpdateBalloonCount();
     }
 
     public void BuyBalloon()
@@ -27,7 +29,8 @@ public class ItemManager : MonoBehaviour
         if (GameManager.Coins >= balloonCost)
         {
             GameManager.ChangeCoinAmount(-balloonCost);
-            BalloonAmount++;
+            balloonAmount++;
+            UpdateBalloonCount();
         }
         
     }
@@ -48,9 +51,21 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void UseBalloon()
+    public bool UseBalloon()
     {
+        if (balloonAmount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
+    public void UpdateBalloonCount()
+    {
+        balloonsTotal.text = balloonAmount.ToString();
     }
 
 }

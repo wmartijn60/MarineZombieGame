@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private ScoreManager scoreManager;
 
     void Awake() {
+        coins = 0;
         instance = this;
         uiManager = FindObjectOfType<UIManager>();
         waveSystem = GetComponent<WaveSystem>();
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         instance.coins += change;
         instance.uiManager.UpdateUI();
     }
+
 
     public static void CheckWaveStatus() {
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
