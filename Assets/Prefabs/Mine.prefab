@@ -63,7 +63,7 @@ MonoBehaviour:
   explodeDelay: 1
   animator: {fileID: 4771501038976769129}
   slimePuddles:
-  - {fileID: 8966024762137350544, guid: b5e7ef47ade545248b6d07d6b703c6b8, type: 3}
+  - {fileID: 2407963201730437338, guid: c2b53fef5f5e129419dc661c11fab8df, type: 3}
 --- !u!1 &4771501038976769134
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341ea34be4c58e54b96fc5e36f25ecfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 50
+  maxDamage: 10
   force: 0
-  area: {fileID: 4771501038976769130}
+  area: {fileID: 4771501038753110745}
   inRange: []
