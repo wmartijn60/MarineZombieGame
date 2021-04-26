@@ -19,10 +19,9 @@ public class DefencesGrid : MonoBehaviour
     private float distanceToClosestNode;
 
     [SerializeField] private Sprite tileSprite;
-    [SerializeField] private GameObject barricadeObject;
-    private Barricade barricade;
     [SerializeField] private Transform gridParent;
     [SerializeField] private Transform defenceParent;
+    private Defence defence;
     private bool spawning = false;
 
     public void CreateGrid() {
@@ -61,11 +60,6 @@ public class DefencesGrid : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0)) {
-            spawnedObject = Instantiate(barricadeObject);
-            barricade = spawnedObject.GetComponent<Barricade>();
-            followMouse = true;
-        }*/
         if (Input.GetMouseButtonUp(0) && spawning && spawnedObject != null) {
             SetDefence();
         } else if (Input.GetMouseButtonUp(0) && !spawning && spawnedObject != null) {
@@ -81,10 +75,10 @@ public class DefencesGrid : MonoBehaviour
         }
     }
 
-    public void SpawnDefence() {
+    public void SpawnDefence(GameObject defenceKind) {
         if (spawnedObject != null) return;
-        spawnedObject = Instantiate(barricadeObject, defenceParent);
-        barricade = spawnedObject.GetComponent<Barricade>();
+        spawnedObject = Instantiate(defenceKind, defenceParent);
+        defence = spawnedObject.GetComponent<Defence>();
         followMouse = true;
     }
 
@@ -129,8 +123,8 @@ public class DefencesGrid : MonoBehaviour
     }
 
     public static void RemoveDefence(DefenceGridNode node) {
-        for (int i = node.GridX - instance.barricade.OriginPosX; i < node.GridX + instance.barricade.GridSpaceWidth - instance.barricade.OriginPosX; i++) {
-            for (int j = node.GridY - instance.barricade.OriginPosY; j < node.GridY + instance.barricade.GridSpaceHeight - instance.barricade.OriginPosY; j++) {
+        for (int i = node.GridX - instance.defence.OriginPosX; i < node.GridX + instance.defence.GridSpaceWidth - instance.defence.OriginPosX; i++) {
+            for (int j = node.GridY - instance.defence.OriginPosY; j < node.GridY + instance.defence.GridSpaceHeight - instance.defence.OriginPosY; j++) {
                 if (i >= 0 && i < instance.gridSizeX && j >= 0 && j < instance.gridSizeY) {
                     instance.defencesGrid[i, j].Defence = null;
                     instance.defencesGrid[i, j].SpotTaken = false;
@@ -141,8 +135,8 @@ public class DefencesGrid : MonoBehaviour
 
     public static List<DefenceGridNode> GetArea() {
         List<DefenceGridNode> nodesInvolved = new List<DefenceGridNode>();
-        for (int i = instance.closestGridX - instance.barricade.OriginPosX; i < instance.closestGridX + instance.barricade.GridSpaceWidth - instance.barricade.OriginPosX; i++) {
-            for (int j = instance.closestGridY - instance.barricade.OriginPosY; j < instance.closestGridY + instance.barricade.GridSpaceHeight - instance.barricade.OriginPosY; j++) {
+        for (int i = instance.closestGridX - instance.defence.OriginPosX; i < instance.closestGridX + instance.defence.GridSpaceWidth - instance.defence.OriginPosX; i++) {
+            for (int j = instance.closestGridY - instance.defence.OriginPosY; j < instance.closestGridY + instance.defence.GridSpaceHeight - instance.defence.OriginPosY; j++) {
                 if (i >= 0 && i < instance.gridSizeX && j >= 0 && j < instance.gridSizeY) {
                     nodesInvolved.Add(instance.defencesGrid[i,j]);
                 }

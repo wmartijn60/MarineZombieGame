@@ -24,12 +24,6 @@ public class CountDown : MonoBehaviour
         StartCountDown(30);
     }
 
-    /*private void Update() {
-        if (Input.GetMouseButtonDown(1)) {
-            StartCountDown(30);
-        }
-    }*/
-
     private void FixedUpdate() {
         if (!countingDown) return;
         if (timeLeft > 0) {

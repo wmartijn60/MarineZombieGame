@@ -1251,10 +1251,11 @@ MonoBehaviour:
   balloonCost: 25
   mineCost: 25
   wallCost: 25
+  balloonsTotal: {fileID: 0}
   balloonPrizetag: {fileID: 163245535}
   minePrizetag: {fileID: 723104880}
   wallPrizetag: {fileID: 1532632082}
-  BalloonAmount: 0
+  balloonAmount: 0
 --- !u!1 &318902299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 3
+  canon: {fileID: 0}
+  canonHinge: {fileID: 0}
   capacityPrize: {fileID: 0}
   rechargePrize: {fileID: 0}
   repressurePrize: {fileID: 0}
@@ -2051,6 +2054,8 @@ MonoBehaviour:
   upgradeRecharge: 040000000400000004000000
   upgradeRepressure: 050000000500000005000000
   upgradeLevel: 00000000000000000000000000000000
+  canonUpgrades: []
+  canonHingeUpgrades: []
 --- !u!1 &695379425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
@@ -2740,8 +2745,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 6675142391879666489, guid: 85cfef29d4f420148bcadc4752f8f0fb,
+        type: 3}
+    - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
@@ -3490,13 +3501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSprite: {fileID: 21300000, guid: 540ef941490ef864b9e9225e254fc512, type: 3}
-  barricadeObject: {fileID: 6675142391879666489, guid: 85cfef29d4f420148bcadc4752f8f0fb,
-    type: 3}
   gridParent: {fileID: 96772960}
   defenceParent: {fileID: 46987987}
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!4 &1244229532
 Transform:
   m_ObjectHideFlags: 0
