@@ -6,7 +6,6 @@ public class ImpactDamage : MonoBehaviour
 {
     [SerializeField] private int maxDamage;
     [SerializeField] private int force;
-    [SerializeField] private float range = 1.3f;
     [SerializeField] private Collider2D area;
 
     private bool canSplash = true;
@@ -49,6 +48,11 @@ public class ImpactDamage : MonoBehaviour
         {
             inRange.Remove(other.gameObject);
         }
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 
 
