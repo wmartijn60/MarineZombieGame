@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     private int coins;
     public static int Coins { get { return instance.coins; } }
+    private bool placingState;
+    public static bool PlacingState { get { return instance.placingState; } set { instance.placingState = value; } }
     static GameManager instance;
     private UIManager uiManager;
     private WaveSystem waveSystem;
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Awake() {
         coins = 0;
         instance = this;
+        placingState = true;
         uiManager = FindObjectOfType<UIManager>();
         waveSystem = GetComponent<WaveSystem>();
         countDown = GetComponent<CountDown>();

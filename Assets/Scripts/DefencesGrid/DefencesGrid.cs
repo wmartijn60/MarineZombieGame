@@ -79,6 +79,7 @@ public class DefencesGrid : MonoBehaviour
         if (spawnedObject != null) return;
         spawnedObject = Instantiate(defenceKind, defenceParent);
         defence = spawnedObject.GetComponent<Defence>();
+        if (defence == null) defence = spawnedObject.GetComponentInChildren<Defence>();
         followMouse = true;
     }
 
@@ -175,7 +176,7 @@ public class DefencesGrid : MonoBehaviour
             }
         }
         distanceToClosestNode = chosenTransformDistance;
-        spawnedObject.transform.position = new Vector3(chosenTransform.position.x + gridCellWidth / 2, chosenTransform.position.y + gridCellHeight / 4, chosenTransform.position.z);
+        spawnedObject.transform.position = new Vector3(chosenTransform.position.x /*+ gridCellWidth / 2*/, chosenTransform.position.y /*+ gridCellHeight / 4*/, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
     }
 }

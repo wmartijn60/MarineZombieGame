@@ -40,6 +40,7 @@ public class CountDown : MonoBehaviour
         countingDown = true;
         uiManager.UpdateCountDownText((int)timeLeft);
         DefencesGrid.StartPlacingDefence();
+        GameManager.PlacingState = true;
         if(startingCountDown != null) startingCountDown();
     }
 
@@ -56,6 +57,7 @@ public class CountDown : MonoBehaviour
         uiManager.UpdateCountDownText((int)timeLeft);
         countingDown = false;
         DefencesGrid.StopPlacingDefence();
+        GameManager.PlacingState = false;
         if (stoppingCountdown != null) stoppingCountdown();
     }
 }

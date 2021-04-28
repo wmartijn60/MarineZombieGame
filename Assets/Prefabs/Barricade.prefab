@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5753824411603974626}
   - component: {fileID: 6490932922002255247}
   - component: {fileID: 979139602904342562}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barricade
   m_TagString: Barricade
   m_Icon: {fileID: 0}
@@ -99,10 +99,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.27499998, y: 0.27499998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.225, y: 0.125}
     oldSize: {x: 1, y: 0.73333335}
     newSize: {x: 4.8, y: 2.7}
     adaptiveTilingThreshold: 0.5
@@ -149,7 +149,6 @@ MonoBehaviour:
   gridSpaceHeight: 2
   originPosX: 0
   originPosY: 0
-  anim: {fileID: 0}
 --- !u!114 &979139602904342562
 MonoBehaviour:
   m_ObjectHideFlags: 0
