@@ -9,7 +9,7 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private float betweenDelay = 0.1f;
 
 
-    private int waveNumber = 0;
+    public static int waveNumber = 0;
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
