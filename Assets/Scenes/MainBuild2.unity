@@ -779,13 +779,13 @@ PrefabInstance:
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 304329531}
+      objectReference: {fileID: 1602434106}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -794,12 +794,18 @@ PrefabInstance:
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyMine
+      value: SpawnDefence
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4771501038976769134, guid: d0cd3430a377e3943a18739f0467068a,
+        type: 3}
+    - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652469608790, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
@@ -995,7 +1001,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDamage: 20
   force: 2
-  range: 1.3
   area: {fileID: 139713446}
   inRange: []
 --- !u!58 &139713446
@@ -2435,7 +2440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDamage: 20
   force: 2
-  range: 1.3
   area: {fileID: 730449811}
   inRange: []
 --- !u!58 &730449811
@@ -3221,7 +3225,7 @@ PrefabInstance:
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
@@ -3240,8 +3244,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 6675142391879666489, guid: 85cfef29d4f420148bcadc4752f8f0fb,
+        type: 3}
+    - target: {fileID: 7226444652192319448, guid: f88419f7aea57b54db2fefcd03411386,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7226444652469608790, guid: f88419f7aea57b54db2fefcd03411386,
         type: 3}
@@ -4076,7 +4086,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDamage: 20
   force: 2
-  range: 1.3
   area: {fileID: 1222757642}
   inRange: []
 --- !u!58 &1222757642
@@ -4341,7 +4350,8 @@ MonoBehaviour:
   m_text: 69 seconds until Paul is going to slap you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89f734a1adb6df040b6635467d7aab36, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7029986299434424296, guid: 89f734a1adb6df040b6635467d7aab36,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4579,6 +4589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterCanon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604596072988007361, guid: 38a23e37ce44b7546b58625a53bce7e1,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 2867
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a23e37ce44b7546b58625a53bce7e1, type: 3}
@@ -5013,8 +5028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSprite: {fileID: 21300000, guid: 540ef941490ef864b9e9225e254fc512, type: 3}
-  barricadeObject: {fileID: 6675142391879666489, guid: 85cfef29d4f420148bcadc4752f8f0fb,
-    type: 3}
   gridParent: {fileID: 897113396}
   defenceParent: {fileID: 1603979511}
 --- !u!4 &1602434107
