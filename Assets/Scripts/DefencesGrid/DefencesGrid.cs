@@ -53,7 +53,7 @@ public class DefencesGrid : MonoBehaviour
         }
     }
 
-    void Start() {
+    void Awake() {
         instance = this;
         CreateGrid();
     }
@@ -92,10 +92,12 @@ public class DefencesGrid : MonoBehaviour
             for (int i = 0; i < nodesInvolved.Count; i++) {
                 nodesInvolved[i].SpotTaken = true;
             }
+            GameManager.ChangeCoinAmount(-25);//moet anders gedaan worden
         }
         followMouse = false;
         spawnedObject = null;
         spawning = false;
+
     }
 
     private bool CheckArea() {
@@ -120,6 +122,7 @@ public class DefencesGrid : MonoBehaviour
     }
 
     public static void StartPlacingDefence() {
+        Debug.Log(instance);
         instance.gridParent.gameObject.SetActive(true);
     }
 
