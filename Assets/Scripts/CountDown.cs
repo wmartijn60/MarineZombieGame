@@ -24,12 +24,6 @@ public class CountDown : MonoBehaviour
         StartCountDown(30);
     }
 
-    /*private void Update() {
-        if (Input.GetMouseButtonDown(1)) {
-            StartCountDown(30);
-        }
-    }*/
-
     private void FixedUpdate() {
         if (!countingDown) return;
         if (timeLeft > 0) {
@@ -45,6 +39,8 @@ public class CountDown : MonoBehaviour
         timeLeft = time;
         countingDown = true;
         uiManager.UpdateCountDownText((int)timeLeft);
+        DefencesGrid.StartPlacingDefence();
+        GameManager.PlacingState = true;
         if(startingCountDown != null) startingCountDown();
     }
 
@@ -60,6 +56,8 @@ public class CountDown : MonoBehaviour
         timeLeft = 0;
         uiManager.UpdateCountDownText((int)timeLeft);
         countingDown = false;
+        DefencesGrid.StopPlacingDefence();
+        GameManager.PlacingState = false;
         if (stoppingCountdown != null) stoppingCountdown();
     }
 }

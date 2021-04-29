@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Zombie
   - Survivor
+  - Barricade
+  - Mine
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Unwalkable
   - Effects
   - Survivor
-  - 
+  - Zombie
   - 
   - 
   - 

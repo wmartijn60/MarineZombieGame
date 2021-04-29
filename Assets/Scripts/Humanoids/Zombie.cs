@@ -40,18 +40,26 @@ public class Zombie : HumanoidBehavior
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+        if (collision.gameObject.tag == "Barricade") {
+            target = collision.transform;
+            collision.gameObject.GetComponent<HealthSystem>().died += FindNewTarget;
+        }
         if (target == null) return;
-        if (target.tag == "Survivor" && collision.gameObject.tag == "Survivor")
+        if ((target.tag == "Survivor" && collision.gameObject.tag == "Survivor") || (target.tag == "Barricade" && collision.gameObject.tag == "Barricade"))
         {
             Attack();
         }
-        
     }
 
     public void Attack()
     {
-        anim.SetBool("isAttacking", true);
-        target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
+        if (target == null || target.tag == "Player") return;
+        if (target.GetComponent<HealthSystem>().Health > 0) {
+            anim.SetBool("isAttacking", true);
+            target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
+            AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
+            Invoke("Attack", info[0].clip.length);
+        }
     }
 
     private void FindNewTarget()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4771501038753110751}
   - component: {fileID: 4771501038753110745}
   - component: {fileID: 4771501038753110750}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c808ac48d39194c9aed9c38aeefcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridSpaceWidth: 3
+  gridSpaceHeight: 3
+  originPosX: 1
+  originPosY: 1
   explodeDelay: 1
   animator: {fileID: 4771501038976769129}
   slimePuddles:
@@ -77,7 +81,7 @@ GameObject:
   - component: {fileID: 4771501038976769129}
   - component: {fileID: 4771501038976769130}
   - component: {fileID: 4771501038976769125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
