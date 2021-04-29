@@ -6,14 +6,16 @@ public class Shaker : MonoBehaviour
 {
     Transform target;
     Vector3 startPos;
-    [SerializeField]private float intesity = 1f;
-    [SerializeField]private float totalShakeDuration = 1f;
+    [SerializeField] private float standardIntesity;
+    private static float intesity = 1f;
+    private static float totalShakeDuration;
     private bool isShaking = false;
 
     void Start()
     {
         target = GetComponent<Transform>();
         startPos = target.localPosition;
+        intesity = standardIntesity;
     }
 
     void Update()
@@ -24,12 +26,27 @@ public class Shaker : MonoBehaviour
         }
     }
 
-    public void Shake(float duration)
+    public static void Shake(float duration)
     {
         if (duration > 0)
         {
             totalShakeDuration += duration;
         }
+    }
+
+    public static void NewShake(float duration)
+    {
+        totalShakeDuration = duration;
+    }
+
+    public static void SetIntesity(float inten)
+    {
+        intesity = inten;
+    }
+
+    public static void ResetIntesity(float inten)
+    {
+        intesity = inten;
     }
 
     IEnumerator DoShake()
