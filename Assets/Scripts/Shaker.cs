@@ -8,7 +8,7 @@ public class Shaker : MonoBehaviour
     Vector3 startPos;
     [SerializeField] private float standardIntesity;
     private static float intesity = 1f;
-    private static float totalShakeDuration;
+    private static float totalShakeDuration = 0.6f;
     private bool isShaking = false;
 
     void Start()
