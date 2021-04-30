@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI() {
         coinsText.text = GameManager.Coins.ToString();
+    }
+
+    public void waveStart()
+    {
         WaveNumerText.text = WaveSystem.waveNumber.ToString();
     }
 

@@ -7,14 +7,21 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private float zombiespawnDelay = 0.1f;
     [SerializeField] private float survivorspawnDelay = 0.1f;
     [SerializeField] private float betweenDelay = 0.1f;
-
-
-    public static int waveNumber = 0;
+  
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private Transform humanoids;
+
+    private UIManager uiManager;
+
+    public static int waveNumber = 0;
     public Transform Humanoids { get { return humanoids; } }
+
+    private void Awake()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+    }
 
     private void Update()
     {
@@ -31,6 +38,8 @@ public class WaveSystem : MonoBehaviour
     private IEnumerator SendWave()
     {
         waveNumber++;
+        uiManager.waveStart();
+
         for (int i = 0; i < (5 * waveNumber); i++)
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
