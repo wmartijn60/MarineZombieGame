@@ -8,8 +8,8 @@ public class DefencesGrid : MonoBehaviour
 
     private int gridSizeX = 29;
     private int gridSizeY = 9;
-    private float gridCellWidth = 0.55f;
-    private float gridCellHeight = 0.55f;
+    private float gridCellWidth = 0.555f;
+    private float gridCellHeight = 0.555f;
     private DefenceGridNode[,] defencesGrid;
 
     private bool followMouse = false;
@@ -122,7 +122,7 @@ public class DefencesGrid : MonoBehaviour
     }
 
     public static void StartPlacingDefence() {
-        Debug.Log(instance);
+        //Debug.Log(instance);
         instance.gridParent.gameObject.SetActive(true);
     }
 
