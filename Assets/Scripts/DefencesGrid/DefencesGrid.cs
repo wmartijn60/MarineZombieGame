@@ -76,7 +76,7 @@ public class DefencesGrid : MonoBehaviour
     }
 
     public void SpawnDefence(GameObject defenceKind) {
-        if (spawnedObject != null) return;
+        if (spawnedObject != null || !ItemManager.Instance.CanAfford(25)) return;
         spawnedObject = Instantiate(defenceKind, defenceParent);
         defence = spawnedObject.GetComponent<Defence>();
         if (defence == null) defence = spawnedObject.GetComponentInChildren<Defence>();
@@ -92,7 +92,7 @@ public class DefencesGrid : MonoBehaviour
             for (int i = 0; i < nodesInvolved.Count; i++) {
                 nodesInvolved[i].SpotTaken = true;
             }
-            GameManager.ChangeCoinAmount(-25);//moet anders gedaan worden
+            ItemManager.Instance.BuyItem(-25);
         }
         followMouse = false;
         spawnedObject = null;
