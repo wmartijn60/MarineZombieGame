@@ -5,21 +5,33 @@ using TMPro;
 
 public class ItemManager : MonoBehaviour
 {   
+    public static ItemManager Instance;
+
     [SerializeField]private int balloonCost;
     [SerializeField]private int mineCost;
     [SerializeField]private int wallCost;
 
+    [SerializeField] private TextMeshProUGUI balloonsTotal;
     [SerializeField] private TextMeshProUGUI balloonPrizetag;
     [SerializeField] private TextMeshProUGUI minePrizetag;
     [SerializeField] private TextMeshProUGUI wallPrizetag;
 
-    public int BalloonAmount;
+    public int balloonAmount;
+
+    void Awake()
+    {
+        if (ItemManager.Instance == null)
+            ItemManager.Instance = this;
+        else
+            Destroy(this.gameObject);
+    }
 
     void Start()
     {
         balloonPrizetag.text = balloonCost.ToString();
         minePrizetag.text = mineCost.ToString();
         wallPrizetag.text = wallCost.ToString();
+        UpdateBalloonCount();
     }
 
     public void BuyBalloon()
@@ -27,12 +39,13 @@ public class ItemManager : MonoBehaviour
         if (GameManager.Coins >= balloonCost)
         {
             GameManager.ChangeCoinAmount(-balloonCost);
-            BalloonAmount++;
+            balloonAmount++;
+            UpdateBalloonCount();
         }
         
     }
 
-    public void BuyMine()
+    public void BuyMine()//may be outdated
     {
         if (GameManager.Coins >= mineCost)
         {
@@ -40,7 +53,7 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void BuyWall()
+    public void BuyWall()//may be outdated
     {
         if (GameManager.Coins >= balloonCost)
         {
@@ -48,9 +61,41 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void UseBalloon()
+    public void BuyItem(int cost)
     {
+        if (GameManager.Coins >= cost)
+        {
+            GameManager.ChangeCoinAmount(cost);
+        }
+    }
 
+    public bool CanAfford(int cost)
+    {
+        if (GameManager.Coins >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool UseBalloon()
+    {
+        if (balloonAmount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void UpdateBalloonCount()
+    {
+        balloonsTotal.text = balloonAmount.ToString();
     }
 
 }
