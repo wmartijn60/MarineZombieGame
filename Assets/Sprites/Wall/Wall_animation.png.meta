@@ -4,46 +4,46 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2360701639806729649
-    second: WallBreak_0
+    second: Wall_Break_0
   - first:
       213: 1880385884476824625
-    second: WallBreak_1
+    second: Wall_Break_1
   - first:
       213: -1266161877644275356
-    second: WallBreak_2
+    second: Wall_Break_2
   - first:
       213: 7178109969710215020
-    second: WallFall_0
+    second: Wall_animation_3
   - first:
       213: -4539582038024888703
-    second: WallFall_1
+    second: Wall_animation_4
   - first:
       213: -6554009791906786688
-    second: WallFall_2
+    second: Wall_animation_5
   - first:
       213: 5003245313957042730
-    second: WallFall_3
+    second: Wall_animation_6
   - first:
       213: -6471870475368909244
-    second: WallBreak_3
+    second: Wall_Break_7
   - first:
       213: 5113318572475162299
-    second: WallBreak_4
+    second: Wall_Break_8
   - first:
       213: -4591801073663744837
-    second: WallBreak_5
+    second: Wall_Break_9
   - first:
       213: -6062035143541259307
-    second: WallFall_4
+    second: Wall_animation_10
   - first:
       213: 254925719571526605
-    second: WallFall_5
+    second: Wall_animation_11
   - first:
       213: -8872887011278356435
-    second: WallFall_6
+    second: Wall_animation_12
   - first:
       213: -6389283043837798010
-    second: WallFall_7
+    second: Wall_animation_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,15 +141,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WallBreak_0
+      name: Wall_Break_0
       rect:
         serializedVersion: 2
         x: 0
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,15 +162,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallBreak_1
+      name: Wall_Break_1
       rect:
         serializedVersion: 2
         x: 64
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,15 +183,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallBreak_2
+      name: Wall_Break_2
       rect:
         serializedVersion: 2
         x: 128
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,15 +204,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_0
+      name: Wall_animation_3
       rect:
         serializedVersion: 2
         x: 192
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,15 +225,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_1
+      name: Wall_animation_4
       rect:
         serializedVersion: 2
         x: 256
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,15 +246,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_2
+      name: Wall_animation_5
       rect:
         serializedVersion: 2
         x: 320
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,15 +267,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_3
+      name: Wall_animation_6
       rect:
         serializedVersion: 2
         x: 384
         y: 65
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,15 +288,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallBreak_3
+      name: Wall_Break_7
       rect:
         serializedVersion: 2
         x: 0
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -309,15 +309,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallBreak_4
+      name: Wall_Break_8
       rect:
         serializedVersion: 2
         x: 64
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -330,15 +330,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallBreak_5
+      name: Wall_Break_9
       rect:
         serializedVersion: 2
         x: 128
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -351,15 +351,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_4
+      name: Wall_animation_10
       rect:
         serializedVersion: 2
         x: 192
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -372,15 +372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_5
+      name: Wall_animation_11
       rect:
         serializedVersion: 2
         x: 256
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -393,15 +393,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_6
+      name: Wall_animation_12
       rect:
         serializedVersion: 2
         x: 320
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -414,15 +414,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallFall_7
+      name: Wall_animation_13
       rect:
         serializedVersion: 2
         x: 384
         y: 1
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.38, y: 0.13}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
