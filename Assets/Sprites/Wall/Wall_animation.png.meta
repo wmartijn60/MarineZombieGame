@@ -1,31 +1,49 @@
 fileFormatVersion: 2
-guid: d5e34fcc05c320640af2758915b41d92
+guid: 8335a4acfd082a4439bf7f861d1a75e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6168001109260469402
-    second: Placing_Animation_Wall_0
+      213: 2360701639806729649
+    second: WallBreak_0
   - first:
-      213: -5795037792728658845
-    second: Placing_Animation_Wall_1
+      213: 1880385884476824625
+    second: WallBreak_1
   - first:
-      213: -8282643218635671389
-    second: Placing_Animation_Wall_2
+      213: -1266161877644275356
+    second: WallBreak_2
   - first:
-      213: -4944726401352744091
-    second: Placing_Animation_Wall_3
+      213: 7178109969710215020
+    second: WallFall_0
   - first:
-      213: -7506788942535254848
-    second: Placing_Animation_Wall_4
+      213: -4539582038024888703
+    second: WallFall_1
   - first:
-      213: 7853158680926233376
-    second: Placing_Animation_Wall_5
+      213: -6554009791906786688
+    second: WallFall_2
   - first:
-      213: 538422599672164521
-    second: Placing_Animation_Wall_6
+      213: 5003245313957042730
+    second: WallFall_3
   - first:
-      213: 572247253364775714
-    second: Placing_Animation_Wall_7
+      213: -6471870475368909244
+    second: WallBreak_3
+  - first:
+      213: 5113318572475162299
+    second: WallBreak_4
+  - first:
+      213: -4591801073663744837
+    second: WallBreak_5
+  - first:
+      213: -6062035143541259307
+    second: WallFall_4
+  - first:
+      213: 254925719571526605
+    second: WallFall_5
+  - first:
+      213: -8872887011278356435
+    second: WallFall_6
+  - first:
+      213: -6389283043837798010
+    second: WallFall_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,30 +126,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -147,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Placing_Animation_Wall_0
+      name: WallBreak_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 67
-        width: 60
-        height: 67
+        y: 65
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66b705cababd66aa0800000000000000
-      internalID: -6168001109260469402
+      spriteID: 1bdbc5542a5e2c020800000000000000
+      internalID: 2360701639806729649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_1
+      name: WallBreak_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 67
-        width: 60
-        height: 67
+        x: 64
+        y: 65
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36cc178b4d3e39fa0800000000000000
-      internalID: -5795037792728658845
+      spriteID: 13c56eccff8781a10800000000000000
+      internalID: 1880385884476824625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_2
+      name: WallBreak_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 67
-        width: 60
-        height: 67
+        x: 128
+        y: 65
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a83cef30e32e0d80800000000000000
-      internalID: -8282643218635671389
+      spriteID: 4611fde0b70bd6ee0800000000000000
+      internalID: -1266161877644275356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_3
+      name: WallFall_0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 67
-        width: 60
-        height: 67
+        x: 192
+        y: 65
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +218,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 563cfd7498dc06bb0800000000000000
-      internalID: -4944726401352744091
+      spriteID: c6f64477cf4cd9360800000000000000
+      internalID: 7178109969710215020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_4
+      name: WallFall_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 65
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e58ca203a2001c0800000000000000
+      internalID: -4539582038024888703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallFall_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 65
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082d6f2a1da7b05a0800000000000000
+      internalID: -6554009791906786688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallFall_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 65
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a1c8eca191f6540800000000000000
+      internalID: 5003245313957042730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallBreak_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 60
-        height: 67
+        y: 1
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cc1b5cba3782d790800000000000000
-      internalID: -7506788942535254848
+      spriteID: 4463c43971c4f26a0800000000000000
+      internalID: -6471870475368909244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_5
+      name: WallBreak_4
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 60
-        height: 67
+        x: 64
+        y: 1
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 023226566360cfc60800000000000000
-      internalID: 7853158680926233376
+      spriteID: bbe1acf662826f640800000000000000
+      internalID: 5113318572475162299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_6
+      name: WallBreak_5
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 60
-        height: 67
+        x: 128
+        y: 1
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a07080708cd87700800000000000000
-      internalID: 538422599672164521
+      spriteID: bb4e30d7045a640c0800000000000000
+      internalID: -4591801073663744837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placing_Animation_Wall_7
+      name: WallFall_4
       rect:
         serializedVersion: 2
-        x: 180
-        y: 0
-        width: 60
-        height: 67
+        x: 192
+        y: 1
+        width: 64
+        height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +365,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22b108458d701f700800000000000000
-      internalID: 572247253364775714
+      spriteID: 5d30a4da7235fdba0800000000000000
+      internalID: -6062035143541259307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallFall_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3fb2f579da98300800000000000000
+      internalID: 254925719571526605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallFall_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d208398164c2dd480800000000000000
+      internalID: -8872887011278356435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallFall_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6891f9a6ce4b457a0800000000000000
+      internalID: -6389283043837798010
       vertices: []
       indices: 
       edges: []
