@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     // Name may need to get changed to a better one
     public void CanvasSwitch()
     {
+        waveStart();
         restPanel.SetActive(!restPanel.activeSelf);
     }
 

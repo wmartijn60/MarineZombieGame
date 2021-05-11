@@ -15,7 +15,7 @@ public class WaveSystem : MonoBehaviour
 
     private UIManager uiManager;
 
-    public static int waveNumber = 0;
+    public static int waveNumber = 1;
     public Transform Humanoids { get { return humanoids; } }
 
     private void Awake()
@@ -36,9 +36,7 @@ public class WaveSystem : MonoBehaviour
     }
 
     private IEnumerator SendWave()
-    {
-        waveNumber++;
-        uiManager.waveStart();
+    {       
 
         for (int i = 0; i < (5 * waveNumber); i++)
         {
@@ -54,5 +52,7 @@ public class WaveSystem : MonoBehaviour
             newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectWithTag("Player").transform;
             yield return new WaitForSeconds(zombiespawnDelay);
         }
+        waveNumber++;
+        uiManager.waveStart();
     }
 }
