@@ -9,8 +9,14 @@ public  class Survivor : HumanoidBehavior
     {
         if (collision.gameObject.tag == "Barricade")
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - leapDistance);
+            anim.SetBool("isJumping", true);
+            AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
+            Invoke("JumpOver", info[0].clip.length);
         }
-
+    }
+    private void JumpOver()
+    {
+        transform.position = new Vector2(transform.position.x, transform.position.y - leapDistance);
+        anim.SetBool("isJumping", false);
     }
 }
