@@ -167,6 +167,8 @@ MonoBehaviour:
   originPosY: 1
   placementMark: {fileID: 2420569316437454219}
   defenceSprite: {fileID: 4771501038976769128}
+  firstFrame: {fileID: 21300000, guid: 3129addaf0a493348b2c6c9e6db2852e, type: 3}
+  spawnAnimator: {fileID: 4771501038976769129}
   explodeDelay: 1
   animator: {fileID: 4771501038976769129}
   slimePuddles:

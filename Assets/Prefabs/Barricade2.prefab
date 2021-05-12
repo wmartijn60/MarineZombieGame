@@ -154,6 +154,9 @@ MonoBehaviour:
   originPosY: 0
   placementMark: {fileID: 6062681474987935123}
   defenceSprite: {fileID: 3550603950455269606}
+  firstFrame: {fileID: 7178109969710215020, guid: 8335a4acfd082a4439bf7f861d1a75e7,
+    type: 3}
+  spawnAnimator: {fileID: 4585260001268470937}
 --- !u!114 &8725329128303300353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +188,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4585260001268470936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6790680e995876b4094751152587ddca, type: 2}
   m_CullingMode: 0

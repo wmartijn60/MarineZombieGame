@@ -23,6 +23,7 @@ public class DefencesGrid : MonoBehaviour
     [SerializeField] private Transform defenceParent;
     private Defence defence;
     private bool spawning = false;
+   
 
     public void CreateGrid() {
         defencesGrid = new DefenceGridNode[gridSizeX, gridSizeY];
@@ -82,6 +83,7 @@ public class DefencesGrid : MonoBehaviour
         defence = spawnedObject.GetComponent<Defence>();
         if (defence == null) defence = spawnedObject.GetComponentInChildren<Defence>();
         followMouse = true;
+
     }
 
     private void SetDefence() {
