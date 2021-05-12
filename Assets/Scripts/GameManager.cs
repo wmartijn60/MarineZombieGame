@@ -6,10 +6,14 @@ public class GameManager : MonoBehaviour
     public static int Coins { get { return instance.coins; } }
     private bool placingState;
     public static bool PlacingState { get { return instance.placingState; } set { instance.placingState = value; } }
-    static GameManager instance;
+    private static GameManager instance;
     private UIManager uiManager;
     private WaveSystem waveSystem;
     private CountDown countDown;
+    [SerializeField] private HealthSystem playerHealth;
+    public static HealthSystem PlayerHealth { get { return instance.playerHealth; } }
+    [SerializeField] private int maxPlayerHealthIncrease = 10;
+    [SerializeField] private int playerHealAmount = 5;
     private ScoreManager scoreManager;
 
     void Awake() {
@@ -35,9 +39,25 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public static void DamagePlayer() {
+        PlayerHealth.StartCoroutine("TakeDamage", 1);
+        instance.uiManager.UpdateUI();
+    }
+
     public static void CheckWaveStatus() {
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
             instance.countDown.StartCountDown(30);
+            instance.IncreasePlayerHealth();
         }
+    }
+
+    private void IncreasePlayerHealth() {
+        PlayerHealth.MaxHealth += maxPlayerHealthIncrease;
+        if (PlayerHealth.Health + playerHealAmount + maxPlayerHealthIncrease > PlayerHealth.MaxHealth) {
+            PlayerHealth.Health = PlayerHealth.MaxHealth;
+        } else {
+            PlayerHealth.Health += playerHealAmount + maxPlayerHealthIncrease;
+        }
+        instance.uiManager.UpdateUI();
     }
 }
