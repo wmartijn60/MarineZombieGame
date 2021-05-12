@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Materials.meta
+guid: 6f3cde46b6061c64fac398455623d8a7
+=======
 guid: 428daeb4ea90fc54c85fa6a91b5ff651
+>>>>>>> origin/feature/ScreenShake:Assets/Art.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -5,6 +5,8 @@ using TMPro;
 
 public class ItemManager : MonoBehaviour
 {   
+    public static ItemManager Instance;
+
     [SerializeField]private int balloonCost;
     [SerializeField]private int mineCost;
     [SerializeField]private int wallCost;
@@ -15,6 +17,14 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI wallPrizetag;
 
     public int balloonAmount;
+
+    void Awake()
+    {
+        if (ItemManager.Instance == null)
+            ItemManager.Instance = this;
+        else
+            Destroy(this.gameObject);
+    }
 
     void Start()
     {
@@ -35,7 +45,7 @@ public class ItemManager : MonoBehaviour
         
     }
 
-    public void BuyMine()
+    public void BuyMine()//may be outdated
     {
         if (GameManager.Coins >= mineCost)
         {
@@ -43,11 +53,31 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void BuyWall()
+    public void BuyWall()//may be outdated
     {
         if (GameManager.Coins >= balloonCost)
         {
             GameManager.ChangeCoinAmount(-wallCost);
+        }
+    }
+
+    public void BuyItem(int cost)
+    {
+        if (GameManager.Coins >= cost)
+        {
+            GameManager.ChangeCoinAmount(cost);
+        }
+    }
+
+    public bool CanAfford(int cost)
+    {
+        if (GameManager.Coins >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

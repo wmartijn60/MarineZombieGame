@@ -32,6 +32,7 @@ public class ImpactDamage : MonoBehaviour
             }
             
         }
+        Shaker.Shake(0.3f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
