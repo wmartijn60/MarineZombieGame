@@ -12,6 +12,15 @@ public class Defence : MonoBehaviour
     public int OriginPosX { get { return originPosX; } }
     [SerializeField] private int originPosY;
     public int OriginPosY { get { return originPosY; } }
+    [SerializeField] private SpriteRenderer placementMark;
+    [SerializeField] private SpriteRenderer defenceSprite;
+    //[SerializeField] private Animator placingAnimation; // if there is an placing animation
+
+    public void PlaceDefence() {
+        placementMark.enabled = false;
+        defenceSprite.color = new Color(1f, 1f, 1f, 1);
+        // do something with the placement animation here
+    }
 
     public virtual void Destroyed() {
         // play destruction animation

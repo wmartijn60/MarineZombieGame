@@ -40,6 +40,7 @@ public class DefencesGrid : MonoBehaviour
 
                 SpriteRenderer spriteRenderer = gridplace.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = tileSprite;
+                spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
                 spriteRenderer.sortingOrder = 5;
 
                 Collider2D[] collidedCollection = new Collider2D[5];
@@ -93,6 +94,7 @@ public class DefencesGrid : MonoBehaviour
                 nodesInvolved[i].SpotTaken = true;
             }
             GameManager.ChangeCoinAmount(-25);//moet anders gedaan worden
+            defence.PlaceDefence();
         }
         followMouse = false;
         spawnedObject = null;
