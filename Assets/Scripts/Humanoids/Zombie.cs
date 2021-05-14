@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zombie : HumanoidBehavior
 {
-    private int damage = 1;
+    [SerializeField] private int damage = 1;
     private float range = 1f;
     [SerializeField] CircleCollider2D visionRange;
 
@@ -59,6 +59,7 @@ public class Zombie : HumanoidBehavior
             target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
             AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
             Invoke("Attack", info[0].clip.length);
+            
         }
     }
 
@@ -89,4 +90,5 @@ public class Zombie : HumanoidBehavior
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
+
 }

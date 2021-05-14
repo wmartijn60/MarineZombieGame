@@ -1,61 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
+
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance;
+    private int playerScore;
+    [SerializeField]private TextMeshProUGUI scoreUI;
 
-    private int scoreCount;
-    private int highScoreCount;
-
-    private string playerName;
-
-    public TMP_InputField nameInputField;
-
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        scoreCount = GameManager.Coins;
-
-        if (scoreCount > highScoreCount)
-        {
-            highScoreCount = scoreCount;
-            PlayerPrefs.SetInt("highScore", highScoreCount);
-        }
-
-
+        if (ScoreManager.Instance == null)
+            ScoreManager.Instance = this;
+        else
+            Destroy(this.gameObject);
     }
 
-    public void EnterName()
+    void Start()
     {
-        playerName = nameInputField.text;
-        sendPlayerScore();
+        PlayerPrefs.SetInt("Score", 0);
     }
 
-
-     void sendPlayerScore()
+    public void AddScore(int newScore)
     {
-        LeaderBoard.Record(playerName, highScoreCount);
-    }
-
-
-
-
-
-    void OnApplicationQuit()
-    {
-       
-        
-        if (scoreCount > highScoreCount)
-        {
-            highScoreCount = scoreCount;
-            PlayerPrefs.SetInt("highScore", highScoreCount);
-            PlayerPrefs.Save();
-        }
-
-        PlayerPrefs.GetInt("highScore");
-        PlayerPrefs.Save();
-
+        playerScore += newScore;
+        PlayerPrefs.SetInt("Score", playerScore);
+        scoreUI.text = "Score: " + playerScore;
     }
 }
