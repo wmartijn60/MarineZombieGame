@@ -60,6 +60,7 @@ public class Zombie : HumanoidBehavior
             target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
             AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
             Invoke("Attack", info[0].clip.length);
+            
         }
     }
 

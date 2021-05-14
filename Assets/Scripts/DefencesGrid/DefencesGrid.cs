@@ -8,8 +8,8 @@ public class DefencesGrid : MonoBehaviour
 
     private int gridSizeX = 29;
     private int gridSizeY = 9;
-    private float gridCellWidth = 0.55f;
-    private float gridCellHeight = 0.55f;
+    private float gridCellWidth = 0.555f;
+    private float gridCellHeight = 0.555f;
     private DefenceGridNode[,] defencesGrid;
 
     private bool followMouse = false;
@@ -23,6 +23,7 @@ public class DefencesGrid : MonoBehaviour
     [SerializeField] private Transform defenceParent;
     private Defence defence;
     private bool spawning = false;
+   
 
     public void CreateGrid() {
         defencesGrid = new DefenceGridNode[gridSizeX, gridSizeY];
@@ -40,6 +41,7 @@ public class DefencesGrid : MonoBehaviour
 
                 SpriteRenderer spriteRenderer = gridplace.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = tileSprite;
+                spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
                 spriteRenderer.sortingOrder = 5;
 
                 Collider2D[] collidedCollection = new Collider2D[5];
@@ -81,6 +83,7 @@ public class DefencesGrid : MonoBehaviour
         defence = spawnedObject.GetComponent<Defence>();
         if (defence == null) defence = spawnedObject.GetComponentInChildren<Defence>();
         followMouse = true;
+
     }
 
     private void SetDefence() {
@@ -92,7 +95,11 @@ public class DefencesGrid : MonoBehaviour
             for (int i = 0; i < nodesInvolved.Count; i++) {
                 nodesInvolved[i].SpotTaken = true;
             }
+
             ItemManager.Instance.BuyItem(-25);
+            defence.PlaceDefence();
+
+
         }
         followMouse = false;
         spawnedObject = null;
@@ -122,7 +129,7 @@ public class DefencesGrid : MonoBehaviour
     }
 
     public static void StartPlacingDefence() {
-        Debug.Log(instance);
+        //Debug.Log(instance);
         instance.gridParent.gameObject.SetActive(true);
     }
 
