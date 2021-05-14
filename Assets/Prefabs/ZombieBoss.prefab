@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9200461738950028532}
   - component: {fileID: 4602950900962613166}
   - component: {fileID: 4602950900962613074}
-  - component: {fileID: 2826643535980689236}
+  - component: {fileID: -3374661594125150932}
   - component: {fileID: 4602950900962613075}
   - component: {fileID: 297055117169564399}
   - component: {fileID: 4602950899337427547}
@@ -139,12 +139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 0.5
-  health: {fileID: 2826643535980689236}
+  health: {fileID: -3374661594125150932}
   anim: {fileID: 0}
   damage: 3
-  score: 15
   visionRange: {fileID: 4602950900962613075}
---- !u!114 &2826643535980689236
+--- !u!114 &-3374661594125150932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,10 +152,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9200461738950028427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119de38c9a4866c4683fb9abba43ccd8, type: 3}
+  m_Script: {fileID: 11500000, guid: a2a7c607f98b8404fa9930a022bd1c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
+  score: 15
 --- !u!58 &4602950900962613075
 CircleCollider2D:
   m_ObjectHideFlags: 0
