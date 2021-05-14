@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebeb98f0bb6d6a849a8f383bf5734eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 75
   wallSprite: {fileID: 3550603950455269606}
   damageStates:
   - {fileID: 1880385884476824625, guid: 8335a4acfd082a4439bf7f861d1a75e7, type: 3}

@@ -141,6 +141,8 @@ MonoBehaviour:
   speed: 0.5
   health: {fileID: 2826643535980689236}
   anim: {fileID: 0}
+  damage: 3
+  score: 15
   visionRange: {fileID: 4602950900962613075}
 --- !u!114 &2826643535980689236
 MonoBehaviour:
@@ -154,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119de38c9a4866c4683fb9abba43ccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   maxHealth: 100
 --- !u!58 &4602950900962613075
 CircleCollider2D:
