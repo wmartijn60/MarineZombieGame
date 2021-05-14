@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public static HealthSystem PlayerHealth { get { return instance.playerHealth; } }
     [SerializeField] private int maxPlayerHealthIncrease = 10;
     [SerializeField] private int playerHealAmount = 5;
+    [SerializeField] private SceneSwitch sceneSwitcher;
     private ScoreManager scoreManager;
 
     void Awake() {
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         countDown.startingCountDown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += waveSystem.StartWave;
+        playerHealth.died += PlayerDied;
     }
     /// <summary>
     /// Change the total amount of coins
@@ -42,6 +44,10 @@ public class GameManager : MonoBehaviour
     public static void DamagePlayer() {
         PlayerHealth.StartCoroutine("TakeDamage", 1);
         instance.uiManager.UpdateUI();
+    }
+
+    private void PlayerDied() {
+        sceneSwitcher.SwitchScene(2);
     }
 
     public static void CheckWaveStatus() {
