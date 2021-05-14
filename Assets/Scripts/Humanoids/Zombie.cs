@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Zombie : HumanoidBehavior
 {
-    private int damage = 1;
+    [SerializeField] private int damage = 1;
+    [SerializeField] private int score = 10;
     private float range = 1f;
     [SerializeField] CircleCollider2D visionRange;
 
@@ -88,5 +89,11 @@ public class Zombie : HumanoidBehavior
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
+    }
+
+    protected override void OnDestroy()
+    {
+        ScoreManager.Instance.AddScore(score);
+        GameManager.CheckWaveStatus();
     }
 }
