@@ -2463,7 +2463,7 @@ MonoBehaviour:
   upgradeCost: 0a000000140000001e000000
   upgradeCostAll: 1e0000003c0000005a000000
   upgradeCapacity: 140000001400000014000000
-  upgradeRecharge: 040000000400000004000000
+  upgradeRecharge: 060000000700000008000000
   upgradeRepressure: 050000000500000005000000
   upgradeLevel: 00000000000000000000000000000000
   canonUpgrades:
@@ -5668,6 +5668,7 @@ MonoBehaviour:
   zombiespawnDelay: 0.1
   survivorspawnDelay: 0.1
   betweenDelay: 1
+  bossStartWave: 4
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
   - {fileID: 9200461738950028427, guid: 2fd1331c9573ab8449c3f30b3ad26a9e, type: 3}
