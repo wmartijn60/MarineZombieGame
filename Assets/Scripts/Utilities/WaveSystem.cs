@@ -9,6 +9,7 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private float betweenDelay = 0.1f;
 
     [SerializeField] private int bossStartWave = 4;
+    [SerializeField] private int maxWave = 5;
   
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
@@ -18,6 +19,8 @@ public class WaveSystem : MonoBehaviour
     private UIManager uiManager;
 
     public static int waveNumber = 1;
+    public int WaveNumber { get { return waveNumber; } }
+    public int MaxWave { get { return maxWave; } }
     public Transform Humanoids { get { return humanoids; } }
 
     private void Awake()

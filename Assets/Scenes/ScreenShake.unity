@@ -6030,6 +6030,7 @@ MonoBehaviour:
   survivorspawnDelay: 0.1
   betweenDelay: 1
   bossStartWave: 4
+  maxWave: 1
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
   - {fileID: 9200461738950028427, guid: 2fd1331c9573ab8449c3f30b3ad26a9e, type: 3}

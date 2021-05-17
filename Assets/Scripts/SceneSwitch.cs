@@ -15,4 +15,11 @@ public class SceneSwitch : MonoBehaviour
         SceneManager.LoadScene(sceneBuildIndex: MyScene);
         
     }
+
+    public void SelectScene(int scene)
+    {
+
+        SceneManager.LoadScene(sceneBuildIndex: scene);
+
+    }
 }

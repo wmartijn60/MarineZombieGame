@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private WaveSystem waveSystem;
     private CountDown countDown;
     private ScoreManager scoreManager;
+    private SceneSwitch sceneSwitch;
 
     void Awake() {
         coins = 0;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         waveSystem = GetComponent<WaveSystem>();
         countDown = GetComponent<CountDown>();
         scoreManager = GetComponent<ScoreManager>();
+        sceneSwitch = FindObjectOfType<SceneSwitch>();
         countDown.startingCountDown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += waveSystem.StartWave;
@@ -37,6 +39,10 @@ public class GameManager : MonoBehaviour
 
     public static void CheckWaveStatus() {
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
+            if (instance.waveSystem.MaxWave <= instance.waveSystem.WaveNumber + 1)
+            {
+                instance.sceneSwitch.SelectScene(2);
+            }
             instance.countDown.StartCountDown(30);
         }
     }
