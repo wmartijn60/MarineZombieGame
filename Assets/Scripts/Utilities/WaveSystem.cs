@@ -18,7 +18,7 @@ public class WaveSystem : MonoBehaviour
     private UIManager uiManager;
     private static WaveSystem instance;
 
-    private int waveNumber = 0;
+    private int waveNumber = 1;
     public static int WaveNumber { get { return instance.waveNumber; } }
     public Transform Humanoids { get { return humanoids; } }
 
@@ -41,7 +41,6 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SendWave()
     {
-        waveNumber++;
         for (int i = 0; i < (5 * waveNumber); i++)
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
@@ -65,6 +64,7 @@ public class WaveSystem : MonoBehaviour
             }            
             yield return new WaitForSeconds(zombiespawnDelay);
         }
+        waveNumber++;
         uiManager.waveStart();
     }
 }
