@@ -14,4 +14,11 @@ public class SceneSwitch : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SelectScene(int scene)
+    {
+
+        SceneManager.LoadScene(sceneBuildIndex: scene);
+
+    }
 }
