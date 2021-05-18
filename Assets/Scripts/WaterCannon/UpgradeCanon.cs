@@ -8,6 +8,7 @@ public class UpgradeCanon : MonoBehaviour
     [SerializeField]private int maxLevel = 3;
     [SerializeField]private SpriteRenderer canon;
     [SerializeField]private SpriteRenderer canonHinge;
+    [SerializeField]private Animator upgradeVFX;
 
     [SerializeField]private TextMeshProUGUI capacityPrize;
     [SerializeField]private TextMeshProUGUI rechargePrize;
@@ -94,7 +95,7 @@ public class UpgradeCanon : MonoBehaviour
         if (maxLevel != upgradeLevel[3] && GameManager.Coins >= upgradeCostAll[upgradeLevel[3]])
         {
             GameManager.ChangeCoinAmount(-upgradeCostAll[upgradeLevel[3]]);
-
+            upgradeVFX.SetTrigger("UpgradeCanon");
             waterPressure.IncreaseCapacity(upgradeCapacity[upgradeLevel[0]]);
             waterPressure.IncreaseRechargeRate(upgradeRecharge[upgradeLevel[1]]);
             waterPressure.SetRepressureValue(upgradeRepressure[upgradeLevel[2]]);
@@ -114,7 +115,6 @@ public class UpgradeCanon : MonoBehaviour
                 canon.sprite = canonUpgrades[upgradeLevel[3] -1];
                 canonHinge.sprite = canonHingeUpgrades[upgradeLevel[3]-1];
             }
-
         }
     }
 
