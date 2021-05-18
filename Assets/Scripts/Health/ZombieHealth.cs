@@ -14,7 +14,6 @@ public class ZombieHealth : HealthSystem
             yield return new WaitForSeconds(0.01f);
             notified = true;
             ScoreManager.Instance.AddScore(score);
-            GameManager.CheckWaveStatus();
             died();
         }
     }
