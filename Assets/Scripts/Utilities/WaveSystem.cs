@@ -16,6 +16,8 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private Transform humanoids;
 
+    private FmodPlayer fmodPlayer;
+
     private UIManager uiManager;
     public static WaveSystem instance;
 
@@ -27,6 +29,7 @@ public class WaveSystem : MonoBehaviour
     private void Awake() {
         instance = this;
         uiManager = FindObjectOfType<UIManager>();
+        fmodPlayer = GetComponent<FmodPlayer>();
     }
 
     private void Update()
@@ -43,6 +46,7 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SendWave()
     {
+        fmodPlayer.PlaySound("event:/WaveStart");
         for (int i = 0; i < (5 * waveNumber); i++)
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];

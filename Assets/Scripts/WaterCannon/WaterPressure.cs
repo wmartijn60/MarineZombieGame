@@ -27,6 +27,7 @@ public class WaterPressure : MonoBehaviour
         pressure = maxCapacity;
         beam.SetActive(false);
         repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
+        
     }
 
     void Update()
@@ -66,7 +67,7 @@ public class WaterPressure : MonoBehaviour
             isCharging = false;
         }
 
-              
+       
     }
 
     public void SetRepressureValue(int v)
@@ -89,9 +90,11 @@ public class WaterPressure : MonoBehaviour
     public void TurnOff()
     {
         isActive = false;
+        
     }
     public void TurnOn()
     {
         isActive = true;
+        
     }
 }

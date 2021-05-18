@@ -16,6 +16,8 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI minePrizetag;
     [SerializeField] private TextMeshProUGUI wallPrizetag;
 
+    private FmodPlayer fmodPlayer;
+
     public int balloonAmount;
 
     void Awake()
@@ -24,6 +26,8 @@ public class ItemManager : MonoBehaviour
             ItemManager.Instance = this;
         else
             Destroy(this.gameObject);
+
+        fmodPlayer = GetComponent<FmodPlayer>();
     }
 
     void Start()
@@ -38,11 +42,14 @@ public class ItemManager : MonoBehaviour
     {
         if (GameManager.Coins >= balloonCost)
         {
+            
             GameManager.ChangeCoinAmount(-balloonCost);
+            fmodPlayer.PlaySound("event:/Purchase");
             balloonAmount++;
             UpdateBalloonCount();
         }
-        
+        else
+            fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
     public void BuyMine()//may be outdated
@@ -50,7 +57,10 @@ public class ItemManager : MonoBehaviour
         if (GameManager.Coins >= mineCost)
         {
             GameManager.ChangeCoinAmount(-mineCost);
+            fmodPlayer.PlaySound("event:/Purchase");
         }
+        else
+            fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
     public void BuyWall()//may be outdated
@@ -58,7 +68,10 @@ public class ItemManager : MonoBehaviour
         if (GameManager.Coins >= balloonCost)
         {
             GameManager.ChangeCoinAmount(-wallCost);
+            fmodPlayer.PlaySound("event:/Purchase");
         }
+        else
+            fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
     public void BuyItem(int cost)
@@ -66,7 +79,10 @@ public class ItemManager : MonoBehaviour
         if (GameManager.Coins >= cost)
         {
             GameManager.ChangeCoinAmount(cost);
+            fmodPlayer.PlaySound("event:/Purchase");
         }
+        else
+            fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
     public bool CanAfford(int cost)
