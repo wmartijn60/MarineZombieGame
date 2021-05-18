@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
 
     public void waveStart()
     {
-        WaveNumerText.text = WaveSystem.WaveNumber.ToString();
+        WaveNumerText.text = WaveSystem.instance.WaveNumber.ToString();
     }
 
     // Name may need to get changed to a better one

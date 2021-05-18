@@ -17,7 +17,7 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private Transform humanoids;
 
     private UIManager uiManager;
-    private static WaveSystem instance;
+    public static WaveSystem instance;
 
     public static int waveNumber = 1;
     public int WaveNumber { get { return waveNumber; } }

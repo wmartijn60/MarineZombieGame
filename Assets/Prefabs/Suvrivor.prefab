@@ -139,6 +139,7 @@ MonoBehaviour:
   speed: 0.8
   health: {fileID: -7414941121214898940}
   anim: {fileID: 0}
+  leapDistance: 0.7
 --- !u!114 &-7414941121214898940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119de38c9a4866c4683fb9abba43ccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   maxHealth: 1
 --- !u!95 &5339202673426038946
 Animator:
