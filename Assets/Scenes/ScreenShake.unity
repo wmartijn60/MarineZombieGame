@@ -3521,14 +3521,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.7143888, y: 0.6125015}
-      - {x: -2.054842, y: 0.62606144}
-      - {x: -2.2145283, y: 0.50174415}
+    - - {x: 1.7233969, y: 1.2743571}
+      - {x: -2.0522385, y: 1.2700986}
+      - {x: -2.3564696, y: 0.5139562}
       - {x: -2.2118196, y: -0.5785885}
       - {x: -1.9733872, y: -0.77379}
       - {x: 1.6093732, y: -0.78553176}
       - {x: 1.8323679, y: -0.572098}
-      - {x: 1.8434775, y: 0.37947148}
+      - {x: 2.0082417, y: 0.4095015}
 --- !u!1 &787241616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6118,7 +6118,7 @@ MonoBehaviour:
   survivorspawnDelay: 0.1
   betweenDelay: 1
   bossStartWave: 4
-  maxWave: 1
+  maxWave: 6
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
   - {fileID: 9200461738950028427, guid: 2fd1331c9573ab8449c3f30b3ad26a9e, type: 3}

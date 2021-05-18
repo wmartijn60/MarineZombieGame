@@ -11,10 +11,11 @@ public  class Survivor : HumanoidBehavior
         {
             anim.SetBool("isJumping", true);
             AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
+            Debug.Log(info[0].clip.length);
             Invoke("JumpOver", info[0].clip.length);
         }
     }
-    private void JumpOver()
+    public void JumpOver()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y - leapDistance);
         anim.SetBool("isJumping", false);
