@@ -10,6 +10,7 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] private int bossStartWave = 4;
     [SerializeField] private int maxWave = 5;
+    [SerializeField] private int bonusCoins = 50;
 
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
@@ -24,6 +25,7 @@ public class WaveSystem : MonoBehaviour
     public static int waveNumber = 1;
     public int WaveNumber { get { return waveNumber; } }
     public int MaxWave { get { return maxWave; } }
+    public int BonusCoins { get { return bonusCoins; } }
     public Transform Humanoids { get { return humanoids; } }
 
     private void Awake() {

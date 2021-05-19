@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
             }
             instance.countDown.StartCountDown(30);
             instance.IncreasePlayerHealth();
+            ChangeCoinAmount(instance.waveSystem.BonusCoins);
         }
     }
 

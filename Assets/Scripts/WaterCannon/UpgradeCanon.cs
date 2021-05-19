@@ -26,8 +26,7 @@ public class UpgradeCanon : MonoBehaviour
     [SerializeField] private List<Sprite> canonHingeUpgrades;
 
     void Start()
-    {
-        GameManager.ChangeCoinAmount(500);
+    {              
         allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
     }
 
