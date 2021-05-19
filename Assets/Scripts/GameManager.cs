@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator coinAnim;
     private ScoreManager scoreManager;
     private SceneSwitch sceneSwitch;
-    
+
+
+
 
     void Awake() {
         coins = 0;
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
         countDown.stoppingCountdown += uiManager.CanvasSwitch;
         countDown.stoppingCountdown += waveSystem.StartWave;
         playerHealth.died += PlayerDied;
+
     }
     /// <summary>
     /// Change the total amount of coins
@@ -65,6 +68,8 @@ public class GameManager : MonoBehaviour
             instance.countDown.StartCountDown(30);
             instance.IncreasePlayerHealth();
             ChangeCoinAmount(instance.waveSystem.BonusCoins);
+            instance.coinAnim.SetTrigger("GetCoin");
+
         }
     }
 
