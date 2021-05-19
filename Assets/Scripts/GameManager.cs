@@ -70,14 +70,17 @@ public class GameManager : MonoBehaviour
 
     public static void CheckWaveStatus() {
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
-            if (instance.waveSystem.MaxWave <= instance.waveSystem.WaveNumber + 1)
+            if (instance.waveSystem.MaxWave < instance.waveSystem.WaveNumber)
             {
                 instance.sceneSwitcher.SelectScene(2);
             }
-            instance.countDown.StartCountDown(30);
-            instance.IncreasePlayerHealth();
-            ChangeCoinAmount(instance.waveSystem.BonusCoins);
-            instance.coinAnim.SetTrigger("GetCoin");
+            else
+            {
+                instance.countDown.StartCountDown(30);
+                instance.IncreasePlayerHealth();
+                ChangeCoinAmount(instance.waveSystem.BonusCoins);
+                            instance.coinAnim.SetTrigger("GetCoin");
+            }
 
         }
     }
