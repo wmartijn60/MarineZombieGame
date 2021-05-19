@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public  class Survivor : HumanoidBehavior
 {
-    private int coinsAmountToGive = 10;
+    [SerializeField]private int coinsAmountToGive = 20;
     public int CoinsAmountToGive { get { return coinsAmountToGive; } }
     [SerializeField]private float leapDistance = 1;
 
