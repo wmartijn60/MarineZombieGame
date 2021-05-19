@@ -34,7 +34,7 @@ public class Defence : MonoBehaviour
         // play destruction animation
         //anim.SetBool("isAlive", false);
         DefenceGridNode gridPos = DefencesGrid.GetGridPos(gameObject);
-        DefencesGrid.RemoveDefence(gridPos);
+        DefencesGrid.RemoveDefence(gridPos, this);
         //Destroy(gameObject, 1f); // change time depending on animation duration
     }
 }

@@ -133,9 +133,9 @@ public class DefencesGrid : MonoBehaviour
         instance.gridParent.gameObject.SetActive(true);
     }
 
-    public static void RemoveDefence(DefenceGridNode node) {
-        for (int i = node.GridX - instance.defence.OriginPosX; i < node.GridX + instance.defence.GridSpaceWidth - instance.defence.OriginPosX; i++) {
-            for (int j = node.GridY - instance.defence.OriginPosY; j < node.GridY + instance.defence.GridSpaceHeight - instance.defence.OriginPosY; j++) {
+    public static void RemoveDefence(DefenceGridNode node, Defence defenceKind) {
+        for (int i = node.GridX - defenceKind.OriginPosX; i < node.GridX + defenceKind.GridSpaceWidth - defenceKind.OriginPosX; i++) {
+            for (int j = node.GridY - defenceKind.OriginPosY; j < node.GridY + defenceKind.GridSpaceHeight - defenceKind.OriginPosY; j++) {
                 if (i >= 0 && i < instance.gridSizeX && j >= 0 && j < instance.gridSizeY) {
                     instance.defencesGrid[i, j].Defence = null;
                     instance.defencesGrid[i, j].SpotTaken = false;

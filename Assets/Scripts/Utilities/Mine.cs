@@ -36,6 +36,6 @@ public class Mine : Defence
 
     public override void Destroyed() {
         DefenceGridNode gridPos = DefencesGrid.GetGridPos(gameObject.transform.parent.gameObject);
-        DefencesGrid.RemoveDefence(gridPos);
+        DefencesGrid.RemoveDefence(gridPos, this);
     }
 }
