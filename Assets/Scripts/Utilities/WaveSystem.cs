@@ -28,6 +28,11 @@ public class WaveSystem : MonoBehaviour
     public int BonusCoins { get { return bonusCoins; } }
     public Transform Humanoids { get { return humanoids; } }
 
+    private int survivorAmount;
+    public int SurvivorAmount { get { return survivorAmount; } set { survivorAmount = value; } }
+    private int maxSurvivorAmount;
+    public int MaxSurvivorAmount { get { return maxSurvivorAmount; } }
+
     private void Awake() {
         instance = this;
         uiManager = FindObjectOfType<UIManager>();
@@ -48,7 +53,12 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SendWave()
     {
+
         fmodPlayer.PlaySound("event:/WaveStart");
+
+        survivorAmount = 0;
+        maxSurvivorAmount = 5 * waveNumber;
+
         for (int i = 0; i < (5 * waveNumber); i++)
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
@@ -73,6 +83,6 @@ public class WaveSystem : MonoBehaviour
             yield return new WaitForSeconds(zombiespawnDelay);
         }
         waveNumber++;
-        uiManager.waveStart();
+        uiManager.WaveStart();
     }
 }
