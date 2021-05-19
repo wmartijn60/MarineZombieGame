@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxPlayerHealthIncrease = 10;
     [SerializeField] private int playerHealAmount = 5;
     [SerializeField] private SceneSwitch sceneSwitcher;
+    [SerializeField] private Animator coinAnim;
     private ScoreManager scoreManager;
     private SceneSwitch sceneSwitch;
+    
 
     void Awake() {
         coins = 0;
@@ -40,6 +42,8 @@ public class GameManager : MonoBehaviour
         
         instance.coins += change;
         instance.uiManager.UpdateUI();
+        
+
     }
 
 
