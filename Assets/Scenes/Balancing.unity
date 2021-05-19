@@ -6157,7 +6157,7 @@ MonoBehaviour:
   survivorspawnDelay: 0.1
   betweenDelay: 1
   bossStartWave: 4
-  maxWave: 6
+  maxWave: 5
   bonusCoins: 50
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
