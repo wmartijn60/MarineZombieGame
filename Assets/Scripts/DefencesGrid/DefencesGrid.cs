@@ -83,7 +83,9 @@ public class DefencesGrid : MonoBehaviour
         defence = spawnedObject.GetComponent<Defence>();
         if (defence == null) defence = spawnedObject.GetComponentInChildren<Defence>();
         followMouse = true;
-
+        int layermask = 0;
+        layermask = ~layermask;
+        Camera.main.cullingMask = layermask;
     }
 
     private void SetDefence() {
@@ -101,6 +103,9 @@ public class DefencesGrid : MonoBehaviour
 
 
         }
+        int layermask = 1<<12;
+        layermask = ~layermask;
+        Camera.main.cullingMask = layermask;
         followMouse = false;
         spawnedObject = null;
         spawning = false;
@@ -188,5 +193,15 @@ public class DefencesGrid : MonoBehaviour
         distanceToClosestNode = chosenTransformDistance;
         spawnedObject.transform.position = new Vector3(chosenTransform.position.x /*+ gridCellWidth / 2*/, chosenTransform.position.y /*+ gridCellHeight / 4*/, chosenTransform.position.z);
         spawnedObject.transform.rotation = chosenTransform.rotation;
+
+        List<DefenceGridNode> area = GetArea();
+        bool possibleToPlace = true;
+        for (int i = 0; i < area.Count; i++) {
+            if (area[i].SpotTaken || !area[i].AllowedToPlace) {
+                possibleToPlace = false;
+                break;
+            }
+        }
+        defence.SpaceTakingMark.color = (possibleToPlace) ? Color.green : Color.red;
     }
 }
