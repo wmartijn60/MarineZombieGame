@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxPlayerHealthIncrease = 10;
     [SerializeField] private int playerHealAmount = 5;
 
-    [SerializeField] private SceneSwitch sceneSwitcher;
     [SerializeField] private Animator coinAnim;
 
     private ScoreManager scoreManager;

@@ -37,6 +37,7 @@ public class WaveSystem : MonoBehaviour
         instance = this;
         uiManager = FindObjectOfType<UIManager>();
         fmodPlayer = GetComponent<FmodPlayer>();
+        waveNumber = 1;
     }
 
     private void Update()
@@ -58,6 +59,7 @@ public class WaveSystem : MonoBehaviour
 
         survivorAmount = 0;
         maxSurvivorAmount = 5 * waveNumber;
+        uiManager.UpdateUI();
 
         for (int i = 0; i < (5 * waveNumber); i++)
         {
