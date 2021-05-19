@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private UIManager uiManager;
     private WaveSystem waveSystem;
+    public static WaveSystem WaveSystem { get { return instance.waveSystem; } }
     private CountDown countDown;
     [SerializeField] private HealthSystem playerHealth;
     public static HealthSystem PlayerHealth { get { return instance.playerHealth; } }
     [SerializeField] private int maxPlayerHealthIncrease = 10;
     [SerializeField] private int playerHealAmount = 5;
-    [SerializeField] private SceneSwitch sceneSwitcher;
     private ScoreManager scoreManager;
-    private SceneSwitch sceneSwitch;
+    private SceneSwitch sceneSwitcher;
 
     void Awake() {
         coins = 0;
@@ -26,9 +26,12 @@ public class GameManager : MonoBehaviour
         waveSystem = GetComponent<WaveSystem>();
         countDown = GetComponent<CountDown>();
         scoreManager = GetComponent<ScoreManager>();
-        sceneSwitch = FindObjectOfType<SceneSwitch>();
-        countDown.startingCountDown += uiManager.CanvasSwitch;
-        countDown.stoppingCountdown += uiManager.CanvasSwitch;
+        sceneSwitcher = FindObjectOfType<SceneSwitch>();
+        countDown.startingCountDown += uiManager.ShowShopPanel;
+        countDown.startingCountDown += uiManager.WaveStart;
+        countDown.stoppingCountdown += uiManager.ShowGameUIPanel;
+        countDown.stoppingCountdown += uiManager.WaveStart;
+        countDown.stoppingCountdown += uiManager.UpdateUI;
         countDown.stoppingCountdown += waveSystem.StartWave;
         playerHealth.died += PlayerDied;
     }
@@ -42,6 +45,10 @@ public class GameManager : MonoBehaviour
         instance.uiManager.UpdateUI();
     }
 
+    public static void SurvivorSurvived() {
+        instance.waveSystem.SurvivorAmount += 1;
+        instance.uiManager.UpdateUI();
+    }
 
     public static void DamagePlayer() {
         PlayerHealth.StartCoroutine("TakeDamage", 1);
@@ -56,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
             if (instance.waveSystem.MaxWave <= instance.waveSystem.WaveNumber + 1)
             {
-                instance.sceneSwitch.SelectScene(2);
+                instance.sceneSwitcher.SelectScene(2);
             }
             instance.countDown.StartCountDown(30);
             instance.IncreasePlayerHealth();
