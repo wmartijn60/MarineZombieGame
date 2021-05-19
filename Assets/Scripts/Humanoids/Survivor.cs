@@ -15,7 +15,16 @@ public  class Survivor : HumanoidBehavior
             Invoke("JumpOver", info[0].clip.length);
         }
     }
-    public void JumpOver()
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EndZone")
+        {
+            anim.SetBool("isCheering", true);
+        }
+    }
+      
+        public void JumpOver()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y - leapDistance);
         anim.SetBool("isJumping", false);
