@@ -7,6 +7,7 @@ public class ItemManager : MonoBehaviour
 {   
     public static ItemManager Instance;
 
+    [SerializeField]private int startCoins = 100;
     [SerializeField]private int balloonCost;
     [SerializeField]private int mineCost;
     [SerializeField]private int wallCost;
@@ -15,6 +16,8 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI balloonPrizetag;
     [SerializeField] private TextMeshProUGUI minePrizetag;
     [SerializeField] private TextMeshProUGUI wallPrizetag;
+
+    [SerializeField] private bool debugCoins;
 
     private FmodPlayer fmodPlayer;
 
@@ -36,6 +39,15 @@ public class ItemManager : MonoBehaviour
         minePrizetag.text = mineCost.ToString();
         wallPrizetag.text = wallCost.ToString();
         UpdateBalloonCount();
+        if (debugCoins)
+        {
+            GameManager.ChangeCoinAmount(9999);
+        }
+        else
+        {
+            GameManager.ChangeCoinAmount(startCoins);
+        }
+        
     }
 
     public void BuyBalloon()
