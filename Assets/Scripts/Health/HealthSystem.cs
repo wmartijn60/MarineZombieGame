@@ -7,8 +7,9 @@ public class HealthSystem : MonoBehaviour
 {
     //[SerializeField] private Image healthBar;
     [SerializeField] private protected float maxHealth = 25;
+    public float MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
     private protected float health;
-    public float Health { get { return health; } }
+    public float Health { get { return health; } set { health = value; } }
     public delegate void Died();
     public Died died;
     private protected bool notified = false;

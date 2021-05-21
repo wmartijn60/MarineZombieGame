@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 463812876166403357}
   - component: {fileID: 7490959448161431389}
   - component: {fileID: 3816032335961797371}
+  - component: {fileID: -6563307662367659956}
   m_Layer: 10
   m_Name: Survivor (1)
   m_TagString: Survivor
@@ -139,6 +140,7 @@ MonoBehaviour:
   speed: 0.8
   health: {fileID: 7490959448161431389}
   anim: {fileID: 0}
+  leapDistance: 1
 --- !u!114 &7490959448161431389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119de38c9a4866c4683fb9abba43ccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   maxHealth: 1
 --- !u!95 &3816032335961797371
 Animator:
@@ -172,3 +173,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6563307662367659956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463812876166403366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85ac291e0e169247bfebe83f34d01eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

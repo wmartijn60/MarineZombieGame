@@ -5,14 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public int MyScene = 1;
-   
-
-
-    public void SwitchScene()
+    public void SwitchScene(int MyScene)
     {
-        
-        SceneManager.LoadScene(sceneBuildIndex: MyScene);
-        
+        SceneManager.LoadScene(MyScene);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void SelectScene(int scene)
+    {
+
+        SceneManager.LoadScene(sceneBuildIndex: scene);
+
     }
 }
