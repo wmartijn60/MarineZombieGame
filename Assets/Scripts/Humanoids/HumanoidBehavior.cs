@@ -4,7 +4,8 @@ using System.Collections;
 public class HumanoidBehavior : MonoBehaviour {
 	
 	public Transform target;
-	public float speed = 20;
+    protected Transform defaultTarget;
+    public float speed = 20;
 
 	private Vector2[] path;
 	private int targetIndex;
@@ -14,10 +15,11 @@ public class HumanoidBehavior : MonoBehaviour {
 
 	protected virtual void Start() 
 	{
-		health.died += Die;
+        defaultTarget = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 5)].transform;
+        health.died += Die;
         anim = GetComponent<Animator>();
-        StartCoroutine (RefreshPath ());
-	}
+        StartCoroutine (RefreshPath ());       
+    }
 
 	IEnumerator RefreshPath() 
 	{
@@ -25,7 +27,7 @@ public class HumanoidBehavior : MonoBehaviour {
 			
 		while (true) 
 		{
-			if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
+			if (target == null) target = defaultTarget;
 			if (targetPositionOld != (Vector2)target.position) 
 			{
 				targetPositionOld = (Vector2)target.position;

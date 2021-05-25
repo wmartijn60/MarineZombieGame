@@ -7,12 +7,14 @@ public class Zombie : HumanoidBehavior
     [SerializeField] private int damage = 1;
     private float range = 1f;
     [SerializeField] CircleCollider2D visionRange;
+    
 
 
     protected override void Start()
-    {
+    {        
         base.Start();
         visionRange.radius = range;
+        FindNewTarget();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +35,7 @@ public class Zombie : HumanoidBehavior
         {
             anim.SetBool("isAttacking", false);
             target.GetComponent<HealthSystem>().died -= FindNewTarget;
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = defaultTarget;
             
         }
     }
@@ -87,7 +89,7 @@ public class Zombie : HumanoidBehavior
             newTarget.GetComponent<HealthSystem>().died += FindNewTarget;
         } else
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = defaultTarget;
         }
     }
 

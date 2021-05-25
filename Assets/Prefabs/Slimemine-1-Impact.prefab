@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTime: 5
-  slowSpeed: 0.2
+  slowSpeed: 0.3
   area: {fileID: 8493477693156617974}
   inRange: []
