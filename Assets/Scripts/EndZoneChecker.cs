@@ -5,6 +5,7 @@ public class EndZoneChecker : MonoBehaviour
     [SerializeField]private int survivorScore = 20;
 
     [SerializeField]private Animator coinAnim;
+    [SerializeField]private Animator zombieCounterAnim;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +19,8 @@ public class EndZoneChecker : MonoBehaviour
             // activate coin animation survivor
         } else if (collision.tag == "Zombie") {
             GameManager.DamagePlayer();
+            zombieCounterAnim.SetTrigger("TakeDamage");
+
         }
         if (collision.tag == "Survivor" || collision.tag == "Zombie")
         {
