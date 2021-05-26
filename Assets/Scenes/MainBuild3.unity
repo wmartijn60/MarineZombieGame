@@ -3434,8 +3434,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.7143888, y: 0.6125015}
-      - {x: -2.054842, y: 0.62606144}
+    - - {x: 1.619409, y: 1.6002816}
+      - {x: -1.9788587, y: 1.556854}
       - {x: -2.2145283, y: 0.50174415}
       - {x: -2.2118196, y: -0.5785885}
       - {x: -1.9733872, y: -0.77379}
@@ -5876,7 +5876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223505968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.73, z: 0}
+  m_LocalPosition: {x: -0.06, y: -6.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9187,7 +9187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Music
+  Event: event:/MusicV2
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1

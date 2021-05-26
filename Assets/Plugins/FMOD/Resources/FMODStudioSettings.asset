@@ -270,7 +270,7 @@ MonoBehaviour:
   active: 1
   Properties:
     LiveUpdate:
-      Value: 0
+      Value: 1
       HasValue: 1
     LiveUpdatePort:
       Value: 9264
@@ -330,7 +330,7 @@ MonoBehaviour:
   identifier: 2c5177b11d81d824dbb064f9ac8527da
   parentIdentifier: default
   displaySortOrder: 0
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
     CallbackHandler:
       Value: {fileID: 0}
       HasValue: 0
-  outputType: 
+  outputType: AUTODETECT
   threadAffinities:
     Value: []
     HasValue: 0
@@ -519,8 +519,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/Martijn/Desktop/FMOD/8V1/8V1.fspro
-  sourceBankPath: C:\Users\Martijn\Desktop\FMOD\8V1\Build
+  sourceProjectPath: C:/Users/Martijn/Desktop/FMODTEST/tester/tester.fspro
+  sourceBankPath: C:\Users\Martijn\Desktop\FMODTEST\tester\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0

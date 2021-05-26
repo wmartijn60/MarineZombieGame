@@ -15,7 +15,7 @@ public class HumanoidBehavior : MonoBehaviour {
 
 	protected virtual void Start() 
 	{
-        defaultTarget = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 5)].transform;
+        defaultTarget = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 1)].transform;
         health.died += Die;
         anim = GetComponent<Animator>();
         StartCoroutine (RefreshPath ());       
