@@ -8,16 +8,6 @@ public class Mine : Defence
     [SerializeField]private Animator animator;
     public List<GameObject> slimePuddles;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Zombie")
@@ -36,6 +26,6 @@ public class Mine : Defence
 
     public override void Destroyed() {
         DefenceGridNode gridPos = DefencesGrid.GetGridPos(gameObject.transform.parent.gameObject);
-        DefencesGrid.RemoveDefence(gridPos);
+        DefencesGrid.RemoveDefence(gridPos, this);
     }
 }
