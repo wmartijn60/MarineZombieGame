@@ -17,15 +17,14 @@ public class Defence : MonoBehaviour
     [SerializeField] private SpriteRenderer defenceSprite;
     [SerializeField] private Sprite firstFrame;
     [SerializeField] private protected Animator spawnAnimator;
-    [SerializeField] private SpriteRenderer spaceTakingMark;
-    public SpriteRenderer SpaceTakingMark { get { return spaceTakingMark; } }
+
 
     public virtual void PlaceDefence() {
         defenceSprite.sprite = firstFrame;
         spawnAnimator.SetTrigger("PlaceDefence");
         placementMark.enabled = false;
         defenceSprite.color = new Color(1f, 1f, 1f, 1);
-        spaceTakingMark.color = Color.red;
+       
         // do something with the placement animation here
 
 
@@ -35,7 +34,7 @@ public class Defence : MonoBehaviour
         // play destruction animation
         //anim.SetBool("isAlive", false);
         DefenceGridNode gridPos = DefencesGrid.GetGridPos(gameObject);
-        DefencesGrid.RemoveDefence(gridPos, this);
+        DefencesGrid.RemoveDefence(gridPos);
         //Destroy(gameObject, 1f); // change time depending on animation duration
     }
 }

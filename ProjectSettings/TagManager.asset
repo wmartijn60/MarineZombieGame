@@ -8,7 +8,6 @@ TagManager:
   - Survivor
   - Barricade
   - Mine
-  - EndZone
   layers:
   - Default
   - TransparentFX
@@ -22,7 +21,7 @@ TagManager:
   - Effects
   - Survivor
   - Zombie
-  - PlacingArea
+  - 
   - 
   - 
   - 
