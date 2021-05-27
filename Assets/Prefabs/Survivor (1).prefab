@@ -140,7 +140,8 @@ MonoBehaviour:
   speed: 0.8
   health: {fileID: 7490959448161431389}
   anim: {fileID: 0}
-  leapDistance: 1
+  coinsAmountToGive: 20
+  leapDistance: 0.7
 --- !u!114 &7490959448161431389
 MonoBehaviour:
   m_ObjectHideFlags: 0

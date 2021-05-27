@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/UI/Tutorial.meta
 guid: cb91727ca641b0f4bab9526e2bf0ba56
+=======
+guid: 0f531b7dc8799a3499a7472b185e390c
+>>>>>>> Develop:Assets/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
