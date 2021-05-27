@@ -29,10 +29,12 @@ public class InfoPopup : MonoBehaviour
         if (popup.activeSelf)
         {
             popup.SetActive(false);
+            Time.timeScale = 1;
         }
         else
         {
             popup.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
