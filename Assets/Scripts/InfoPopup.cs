@@ -6,8 +6,11 @@ using TMPro;
 public class InfoPopup : MonoBehaviour
 {
     [SerializeField]private GameObject popup;
+    [SerializeField]private GameObject upgrades;
     [SerializeField]private TextMeshProUGUI itemName;
     [SerializeField]private TextMeshProUGUI itemDescription;
+    [SerializeField]private Animator infoAnim;
+    [SerializeField]private CountDown countDown;
 
     void Start()
     {
@@ -24,17 +27,43 @@ public class InfoPopup : MonoBehaviour
         itemDescription.text = newDescription;
     }
 
+    public void PlayAnim(string animName)
+    {
+        if (!infoAnim.gameObject.activeSelf)
+        {
+            infoAnim.gameObject.SetActive(true);
+        }
+        if (upgrades.activeSelf)
+        {
+            upgrades.SetActive(false);
+        }
+        infoAnim.SetTrigger(animName);
+    }
+
+    public void ShowUpgrades()
+    {
+        if (infoAnim.gameObject.activeSelf)
+        {
+            infoAnim.gameObject.SetActive(false);
+        }
+        if (!upgrades.activeSelf)
+        {
+            upgrades.SetActive(true);
+        }
+
+    }
+
     public void SwitchPanel()
     {
         if (popup.activeSelf)
         {
             popup.SetActive(false);
-            Time.timeScale = 1;
+            countDown.PauseCountDown();
         }
         else
         {
             popup.SetActive(true);
-            Time.timeScale = 0;
+            countDown.ContinueCountDown();
         }
     }
 }
