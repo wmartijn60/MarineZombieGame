@@ -202,6 +202,12 @@ public class DefencesGrid : MonoBehaviour
                 break;
             }
         }
-        defence.SpaceTakingMark.color = (possibleToPlace) ? Color.green : Color.red;
+        if (possibleToPlace) {
+            defence.SpaceTakingMarks[0].marker.SetActive(true);
+            defence.SpaceTakingMarks[1].marker.SetActive(false);
+        } else {
+            defence.SpaceTakingMarks[0].marker.SetActive(false);
+            defence.SpaceTakingMarks[1].marker.SetActive(true);
+        }
     }
 }

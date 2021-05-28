@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Defence : MonoBehaviour
 {
-    
+    [System.Serializable] public struct PlacementMark {
+        public GameObject marker;
+        public Sprite sprite;
+    }
     [SerializeField] private int gridSpaceWidth;
     public int GridSpaceWidth { get { return gridSpaceWidth; } }
     [SerializeField] private int gridSpaceHeight;
@@ -17,15 +20,18 @@ public class Defence : MonoBehaviour
     [SerializeField] private SpriteRenderer defenceSprite;
     [SerializeField] private Sprite firstFrame;
     [SerializeField] private protected Animator spawnAnimator;
-    [SerializeField] private SpriteRenderer spaceTakingMark;
-    public SpriteRenderer SpaceTakingMark { get { return spaceTakingMark; } }
+    [SerializeField] private List<PlacementMark> spaceTakingMarks;
+    public List<PlacementMark> SpaceTakingMarks { get { return spaceTakingMarks; } }
 
     public virtual void PlaceDefence() {
         defenceSprite.sprite = firstFrame;
         spawnAnimator.SetTrigger("PlaceDefence");
         placementMark.enabled = false;
         defenceSprite.color = new Color(1f, 1f, 1f, 1);
-        spaceTakingMark.color = Color.red;
+        spaceTakingMarks[0].marker.SetActive(false);
+        spaceTakingMarks[1].marker.SetActive(true);
+        spaceTakingMarks[1].marker.GetComponent<Animator>().enabled = false;
+        spaceTakingMarks[1].marker.GetComponent<SpriteRenderer>().sprite = spaceTakingMarks[1].sprite;
         // do something with the placement animation here
 
 
