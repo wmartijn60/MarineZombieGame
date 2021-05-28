@@ -125,7 +125,7 @@ AnimationClip:
   m_Events:
   - time: 0.06666667
     functionName: PlaySound
-    data: event:/Explosion
+    data: event:/SFX One-Shots/Water Balloon Throw, Impact
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

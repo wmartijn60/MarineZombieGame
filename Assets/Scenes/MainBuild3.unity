@@ -3475,6 +3475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694505280}
   - component: {fileID: 694505281}
+  - component: {fileID: 694505282}
   m_Layer: 5
   m_Name: WaterCanon
   m_TagString: Untagged
@@ -3536,6 +3537,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2774d2ee09660914a8ae458783d018f2, type: 3}
   - {fileID: 21300000, guid: d631fc45e369de74ea2b9a346f8e9ae4, type: 3}
   - {fileID: 21300000, guid: c0787391391475c4081a679b6d5bf078, type: 3}
+--- !u!114 &694505282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694505279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85ac291e0e169247bfebe83f34d01eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695379425
 GameObject:
   m_ObjectHideFlags: 0
@@ -9396,7 +9409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1712772067
 Animator:
   serializedVersion: 3

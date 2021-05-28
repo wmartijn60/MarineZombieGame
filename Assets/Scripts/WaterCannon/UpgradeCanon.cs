@@ -95,6 +95,7 @@ public class UpgradeCanon : MonoBehaviour
         {
             GameManager.ChangeCoinAmount(-upgradeCostAll[upgradeLevel[3]]);
             upgradeVFX.SetTrigger("UpgradeCanon");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Upgrade", GetComponent<Transform>().position);
             waterPressure.IncreaseCapacity(upgradeCapacity[upgradeLevel[0]]);
             waterPressure.IncreaseRechargeRate(upgradeRecharge[upgradeLevel[1]]);
             waterPressure.SetRepressureValue(upgradeRepressure[upgradeLevel[2]]);

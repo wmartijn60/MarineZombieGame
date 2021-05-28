@@ -29,6 +29,7 @@ public class WallHealth : HealthSystem
         {
             wallSprite.sprite = damageStates[4];
             gameObject.GetComponent<Collider2D>().enabled = false;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Wall Break", GetComponent<Transform>().position);
         }
         else if (health <= stateValues[3])
         {

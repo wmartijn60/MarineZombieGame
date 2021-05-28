@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4602950900962613075}
   - component: {fileID: 297055117169564399}
   - component: {fileID: 4602950899337427547}
+  - component: {fileID: 1756104396373040643}
   m_Layer: 11
   m_Name: ZombieBoss
   m_TagString: Zombie
@@ -203,3 +204,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1756104396373040643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200461738950028427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85ac291e0e169247bfebe83f34d01eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void PlayerDied() {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Loser", instance.GetComponent<Transform>().position);
         sceneSwitcher.SwitchScene(2);
     }
 
@@ -72,6 +73,8 @@ public class GameManager : MonoBehaviour
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
             if (instance.waveSystem.MaxWave < instance.waveSystem.WaveNumber)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Victory", instance.GetComponent<Transform>().position);
+              
                 instance.sceneSwitcher.SelectScene(2);
             }
             else
