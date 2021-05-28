@@ -893,8 +893,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popup: {fileID: 1011499728}
+  upgrades: {fileID: 1356459874}
   itemName: {fileID: 426717595}
   itemDescription: {fileID: 259687977}
+  infoAnim: {fileID: 333434497}
+  countDown: {fileID: 1350262170}
 --- !u!1001 &71459024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1501,7 +1504,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259687975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00013103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1183295364}
@@ -1509,8 +1512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.2, y: 110.7}
-  m_SizeDelta: {x: 935.25146, y: 96.96631}
+  m_AnchoredPosition: {x: -158.7, y: -7.8176}
+  m_SizeDelta: {x: 629.02673, y: 334.0015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259687977
 MonoBehaviour:
@@ -1541,7 +1544,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282133800
+    rgba: 4280558114
   m_fontColor: {r: 0.13149695, g: 0.13400006, b: 0.14150941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1766,7 +1769,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Use the [Q],[W],[E] to blow away zombies!
+          m_StringArgument: Waterballonnen zijn ideaal om grote groepen zombies tegen
+            te houden! Gooi deze ballonnen door op de [Q],[W],[E] toetsen te drukken!
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 45914729}
@@ -1777,7 +1781,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: WaterBalloon
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 45914729}
+        m_MethodName: PlayAnim
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WaterBalloon
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &280226060
@@ -2078,6 +2093,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &333434493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333434494}
+  - component: {fileID: 333434496}
+  - component: {fileID: 333434495}
+  - component: {fileID: 333434497}
+  m_Layer: 0
+  m_Name: InfoAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &333434494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333434493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1183295364}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 326.9, y: -1.9}
+  m_SizeDelta: {x: 320.37006, y: 320.37006}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &333434495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333434493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 73dc33667bd408340b3d16034bc7b105, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &333434496
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333434493}
+  m_CullTransparentMesh: 0
+--- !u!95 &333434497
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333434493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c7333cfe3905574db5d1ae911c15163, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &369988333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,8 +2375,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: A barricade to slow down zombies temporarely, survivors
-            can jump over them
+          m_StringArgument: Plaats de barricades om de zombies te blokkeren! De zombies
+            zullen proberen deze barricade te breken, dus let goed op!
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 45914729}
@@ -2278,7 +2387,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Barricade
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 45914729}
+        m_MethodName: PlayAnim
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Barricade
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &390258462
@@ -2629,7 +2749,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282133800
+    rgba: 4280558114
   m_fontColor: {r: 0.13149695, g: 0.13400006, b: 0.14150941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5153,11 +5273,23 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Increases the stats of your water canon
+          m_StringArgument: Gebruik het waterkanon om zombies te vernietigen! Houd
+            de linkermuisknop ingedrukt om het kanon te vuren.
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 45914729}
         m_MethodName: SwitchPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 45914729}
+        m_MethodName: ShowUpgrades
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6651,6 +6783,8 @@ RectTransform:
   - {fileID: 426717594}
   - {fileID: 259687976}
   - {fileID: 1419160344}
+  - {fileID: 333434494}
+  - {fileID: 1356459875}
   m_Father: {fileID: 1011499729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7868,6 +8002,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85ac291e0e169247bfebe83f34d01eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1356459874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356459875}
+  - component: {fileID: 1356459877}
+  - component: {fileID: 1356459876}
+  m_Layer: 0
+  m_Name: upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1356459875
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356459874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1183295364}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 326.90002, y: 10}
+  m_SizeDelta: {x: 414.14948, y: 177.5859}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1356459876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356459874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7e4e30c13645ed2448187a5778a761a1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1356459877
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356459874}
+  m_CullTransparentMesh: 0
 --- !u!1 &1385306999
 GameObject:
   m_ObjectHideFlags: 0
@@ -10204,7 +10412,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Explodes and leaves a slime puddle that slows everyone
+          m_StringArgument: Zodra deze mijn explodeert zal het een plakkerige laag
+            op de grond achter laten waardoor zombies vertragen.
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 45914729}
@@ -10215,7 +10424,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SlimeMine
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 45914729}
+        m_MethodName: PlayAnim
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SlimeMine
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1947807073
