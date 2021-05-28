@@ -58,12 +58,12 @@ public class InfoPopup : MonoBehaviour
         if (popup.activeSelf)
         {
             popup.SetActive(false);
-            countDown.PauseCountDown();
+            countDown.ContinueCountDown();
         }
         else
         {
-            popup.SetActive(true);
-            countDown.ContinueCountDown();
+            popup.SetActive(true);            
+            countDown.PauseCountDown();
         }
     }
 }
