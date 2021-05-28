@@ -65,7 +65,7 @@ public class WaveSystem : MonoBehaviour
         {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             GameObject newSurvivor = GameObject.Instantiate(survivors[Random.Range(0, survivors.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
-            newSurvivor.GetComponent<Survivor>().target = GameObject.FindGameObjectWithTag("Player").transform;
+            newSurvivor.GetComponent<Survivor>().target = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 2)].transform;
             yield return new WaitForSeconds(survivorspawnDelay);
         }
         yield return new WaitForSeconds(betweenDelay);
@@ -75,12 +75,12 @@ public class WaveSystem : MonoBehaviour
             if (waveNumber >= bossStartWave && rdm > 4)
             {
                 GameObject newZombie = GameObject.Instantiate(zombies[1], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
-                newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectWithTag("Player").transform;
+                newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 2)].transform;
             }
             else
             {
                 GameObject newZombie = GameObject.Instantiate(zombies[0], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
-                newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectWithTag("Player").transform;
+                newZombie.GetComponent<Zombie>().target = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 2)].transform;
             }
             yield return new WaitForSeconds(zombiespawnDelay);
         }

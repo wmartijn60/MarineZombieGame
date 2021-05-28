@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 0.8
+  speed: 1
   health: {fileID: 7490959448161431389}
   anim: {fileID: 0}
   coinsAmountToGive: 20

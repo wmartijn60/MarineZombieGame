@@ -137,9 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 0.8
+  speed: 1
   health: {fileID: -7414941121214898940}
   anim: {fileID: 0}
+  coinsAmountToGive: 20
   leapDistance: 0.7
 --- !u!114 &-7414941121214898940
 MonoBehaviour:
