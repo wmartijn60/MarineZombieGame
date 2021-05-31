@@ -1750,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &304329530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1769,6 +1769,7 @@ RectTransform:
   - {fileID: 22426423}
   - {fileID: 490702462}
   - {fileID: 1253918331}
+  - {fileID: 1606372526}
   - {fileID: 630642068}
   m_Father: {fileID: 1112597098}
   m_RootOrder: 3
@@ -1790,6 +1791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3332beb0d08e79841ad45b902695e5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startCoins: 100
   balloonCost: 25
   mineCost: 25
   wallCost: 25
@@ -1797,6 +1799,7 @@ MonoBehaviour:
   balloonPrizetag: {fileID: 163245535}
   minePrizetag: {fileID: 723104880}
   wallPrizetag: {fileID: 1532632082}
+  debugCoins: 0
   balloonAmount: 0
 --- !u!1 &318902299
 GameObject:
@@ -2943,13 +2946,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630642067}
   m_LocalRotation: {x: 0.0017453891, y: -0, z: -0, w: 0.9999985}
-  m_LocalPosition: {x: -773.67, y: 547.59, z: -9980.49}
+  m_LocalPosition: {x: -773.67, y: 482.59, z: -9980.49}
   m_LocalScale: {x: 108.05616, y: 108.05615, z: 108.05615}
   m_Children:
   - {fileID: 483580643}
   - {fileID: 844174881}
   m_Father: {fileID: 304329530}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635697384
 GameObject:
@@ -4173,6 +4176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivorScore: 20
+  coinAnim: {fileID: 0}
+  zombieCounterAnim: {fileID: 0}
 --- !u!1 &980280235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,6 +4978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivorScore: 20
+  coinAnim: {fileID: 0}
+  zombieCounterAnim: {fileID: 0}
 --- !u!1 &1154878594
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,7 +5596,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253918330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 304329530}
@@ -5597,7 +5604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.6, y: 403}
+  m_AnchoredPosition: {x: -11.6, y: 338}
   m_SizeDelta: {x: 596.72296, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1253918332
@@ -6089,7 +6096,13 @@ MonoBehaviour:
   WaveNumerText: {fileID: 844174882}
   coinsText: {fileID: 1234646683}
   countDownText: {fileID: 1253918333}
-  restPanel: {fileID: 304329529}
+  playerHealthText: {fileID: 0}
+  playerMaxHealthText: {fileID: 0}
+  survivorSurvivedText: {fileID: 0}
+  maxSurvivorSurvivedText: {fileID: 0}
+  shopUIPanel: {fileID: 0}
+  gameUIPanel: {fileID: 0}
+  warningSignAnim: {fileID: 0}
 --- !u!114 &1350262167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,6 +6115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2572a5493861b44955225a6f2ecb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  maxPlayerHealthIncrease: 10
+  playerHealAmount: 5
+  coinAnim: {fileID: 0}
 --- !u!114 &1350262168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,6 +6136,7 @@ MonoBehaviour:
   betweenDelay: 1
   bossStartWave: 4
   maxWave: 6
+  bonusCoins: 50
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
   - {fileID: 9200461738950028427, guid: 2fd1331c9573ab8449c3f30b3ad26a9e, type: 3}
@@ -6711,6 +6729,100 @@ Transform:
   m_Father: {fileID: 1602434107}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1606372525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606372526}
+  - component: {fileID: 1606372528}
+  - component: {fileID: 1606372527}
+  - component: {fileID: 1606372529}
+  m_Layer: 5
+  m_Name: Arrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1606372526
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606372525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00013279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 304329530}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 14}
+  m_SizeDelta: {x: 1930.8693, y: 1086.1139}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1606372527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606372525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: df4c49e563cff3848b46c79a998ef521, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1606372528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606372525}
+  m_CullTransparentMesh: 0
+--- !u!95 &1606372529
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606372525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c47eab5e45ca48440a9f9c3909ac745e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1635101538
 GameObject:
   m_ObjectHideFlags: 0
@@ -7690,7 +7802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6458f49e937aaf74c8c2033f5bb0fb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyScene: 2
 --- !u!114 &2073845819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7775,6 +7886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   survivorScore: 20
+  coinAnim: {fileID: 0}
+  zombieCounterAnim: {fileID: 0}
 --- !u!1 &2138528977
 GameObject:
   m_ObjectHideFlags: 0
