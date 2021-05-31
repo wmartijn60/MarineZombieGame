@@ -1555,7 +1555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &304329530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3136,6 +3136,7 @@ GameObject:
   - component: {fileID: 596741606}
   - component: {fileID: 596741605}
   - component: {fileID: 596741604}
+  - component: {fileID: 596741607}
   m_Layer: 5
   m_Name: InfoButton (1)
   m_TagString: Untagged
@@ -3205,15 +3206,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1078133024}
-        m_MethodName: PlaceItemName
+      - m_Target: {fileID: 596741607}
+        m_MethodName: Play
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Slime Mine
+          m_StringArgument: isClicked
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1078133024}
@@ -3237,6 +3238,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SlimeMine
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1078133024}
+        m_MethodName: PlaceItemDescription
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Zodra deze mijn explodeert zal het een plakkerige laag
+            op de grond achter laten waardoor zombies vertragen.
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1078133024}
@@ -3269,7 +3282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c63e956febcfad346b4d72768bf9dc62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3abda9dc54e25c541b09533bbcb0dfc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3287,6 +3300,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596741602}
   m_CullTransparentMesh: 0
+--- !u!95 &596741607
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596741602}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96b4695a7a69ac9438bbfbdf18b6bb80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &597830858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,6 +4048,7 @@ GameObject:
   - component: {fileID: 761963312}
   - component: {fileID: 761963311}
   - component: {fileID: 761963310}
+  - component: {fileID: 761963313}
   m_Layer: 5
   m_Name: InfoButton
   m_TagString: Untagged
@@ -4032,7 +4065,7 @@ RectTransform:
   m_GameObject: {fileID: 761963308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1078133023}
   m_RootOrder: 0
@@ -4040,7 +4073,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -370, y: -250}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 59.999996, y: 63.333332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761963310
 MonoBehaviour:
@@ -4085,6 +4118,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 761963313}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: info
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1078133024}
         m_MethodName: PlaceItemName
         m_Mode: 5
@@ -4097,6 +4141,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1078133024}
+        m_MethodName: SwitchPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WaterBalloon
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1078133024}
         m_MethodName: PlaceItemDescription
         m_Mode: 5
         m_Arguments:
@@ -4106,17 +4161,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Waterballonnen zijn ideaal om grote groepen zombies tegen
             te houden! Gooi deze ballonnen door op de [Q],[W],[E] toetsen te drukken!
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1078133024}
-        m_MethodName: SwitchPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: WaterBalloon
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1078133024}
@@ -4149,7 +4193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c63e956febcfad346b4d72768bf9dc62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3abda9dc54e25c541b09533bbcb0dfc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4167,6 +4211,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761963308}
   m_CullTransparentMesh: 0
+--- !u!95 &761963313
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761963308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96b4695a7a69ac9438bbfbdf18b6bb80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &787241616
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,6 +6582,7 @@ GameObject:
   - component: {fileID: 1183946222}
   - component: {fileID: 1183946221}
   - component: {fileID: 1183946220}
+  - component: {fileID: 1183946223}
   m_Layer: 5
   m_Name: InfoButton (3)
   m_TagString: Untagged
@@ -6633,6 +6697,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1183946223}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isClicked
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1183946221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6652,7 +6727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c63e956febcfad346b4d72768bf9dc62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3abda9dc54e25c541b09533bbcb0dfc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6670,6 +6745,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183946218}
   m_CullTransparentMesh: 0
+--- !u!95 &1183946223
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183946218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96b4695a7a69ac9438bbfbdf18b6bb80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1186989801
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,6 +7528,7 @@ GameObject:
   - component: {fileID: 1312035713}
   - component: {fileID: 1312035712}
   - component: {fileID: 1312035711}
+  - component: {fileID: 1312035714}
   m_Layer: 5
   m_Name: InfoButton (2)
   m_TagString: Untagged
@@ -7548,6 +7643,17 @@ MonoBehaviour:
           m_StringArgument: Barricade
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1312035712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7567,7 +7673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c63e956febcfad346b4d72768bf9dc62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3abda9dc54e25c541b09533bbcb0dfc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7585,6 +7691,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312035709}
   m_CullTransparentMesh: 0
+--- !u!95 &1312035714
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312035709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96b4695a7a69ac9438bbfbdf18b6bb80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1318092527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,6 +8048,7 @@ MonoBehaviour:
   shopUIPanel: {fileID: 304329529}
   gameUIPanel: {fileID: 1536130661}
   warningSignAnim: {fileID: 876252191}
+  winScreenUI: {fileID: 1679335903}
 --- !u!114 &1350262167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7955,7 +8081,7 @@ MonoBehaviour:
   survivorspawnDelay: 0.1
   betweenDelay: 1
   bossStartWave: 4
-  maxWave: 5
+  maxWave: 1
   bonusCoins: 50
   zombies:
   - {fileID: 4633760090261847719, guid: 40a1146128ded514cb15d8a676b2f4e0, type: 3}
@@ -8037,7 +8163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119de38c9a4866c4683fb9abba43ccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 20
 --- !u!114 &1350262174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9229,6 +9355,87 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1679335903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679335905}
+  - component: {fileID: 1679335904}
+  m_Layer: 0
+  m_Name: Victory_Gradient 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &1679335904
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679335903}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: 38f9dc0e2b4da4b4eafcae17102ca82d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1679335905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679335903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.052, y: 0.376, z: 0}
+  m_LocalScale: {x: 0.9293953, y: 0.93722576, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1685545127 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3975406164359004539, guid: 38a23e37ce44b7546b58625a53bce7e1,
@@ -9366,7 +9573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1712772067
 Animator:
   serializedVersion: 3
