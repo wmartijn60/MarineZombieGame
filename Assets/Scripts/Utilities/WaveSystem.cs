@@ -12,6 +12,7 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] private int maxWave = 5;
     [SerializeField] private int bonusCoins = 50;
 
+    [SerializeField] private GameObject waveChange;
     [SerializeField] private List<GameObject> zombies;
     [SerializeField] private List<GameObject> survivors;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
@@ -56,10 +57,14 @@ public class WaveSystem : MonoBehaviour
     {
 
         fmodPlayer.PlaySound("event:/WaveStart");
+        waveChange.SetActive(true);
 
         survivorAmount = 0;
         maxSurvivorAmount = 5 * waveNumber;
         uiManager.UpdateUI();
+
+        yield return new WaitForSeconds(2f);
+        waveChange.SetActive(false);
 
         for (int i = 0; i < (5 * waveNumber); i++)
         {
@@ -67,8 +72,9 @@ public class WaveSystem : MonoBehaviour
             GameObject newSurvivor = GameObject.Instantiate(survivors[Random.Range(0, survivors.Count)], chosenSpawnPoint.position, chosenSpawnPoint.rotation, humanoids);
             newSurvivor.GetComponent<Survivor>().target = GameObject.FindGameObjectWithTag("Player").transform;
             yield return new WaitForSeconds(survivorspawnDelay);
-        }
+        }        
         yield return new WaitForSeconds(betweenDelay);
+        
         for (int i = 0; i < (20 * waveNumber); i++) {
             Transform chosenSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             int rdm = Random.Range(0, 6);
