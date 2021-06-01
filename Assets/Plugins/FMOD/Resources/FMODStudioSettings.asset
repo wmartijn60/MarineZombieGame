@@ -519,8 +519,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/Martijn/Desktop/FMODTEST/tester/tester.fspro
-  sourceBankPath: C:\Users\Martijn\Desktop\FMODTEST\tester\Build
+  sourceProjectPath: C:/Users/Martijn/Desktop/FmodNew/8.2/8.2.fspro
+  sourceBankPath: C:\Users\Martijn\Desktop\FmodNew\8.2\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -539,8 +539,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - UnityBank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

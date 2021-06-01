@@ -65,14 +65,19 @@ public class GameManager : MonoBehaviour
     }
 
     private void PlayerDied() {
-        sceneSwitcher.SwitchScene(2);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Loser", instance.GetComponent<Transform>().position);
+        sceneSwitcher.LoadSceneWithDelay(2,5f);
+        
     }
 
     public static void CheckWaveStatus() {
         if (instance.waveSystem.Humanoids.childCount-1 <= 0) {
             if (instance.waveSystem.MaxWave < instance.waveSystem.WaveNumber)
             {
-                instance.sceneSwitcher.SelectScene(2);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Victory", instance.GetComponent<Transform>().position);
+                instance.uiManager.WinGame();
+                instance.countDown.PauseCountDown();
+                instance.sceneSwitcher.LoadSceneWithDelay(2, 2f);
             }
             else
             {

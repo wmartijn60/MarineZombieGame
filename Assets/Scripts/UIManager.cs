@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject shopUIPanel;
     [SerializeField] private GameObject gameUIPanel;
     [SerializeField] private Animator warningSignAnim;
+    [SerializeField] private GameObject winScreenUI;
 
     private void Start()
     {
@@ -68,5 +69,9 @@ public class UIManager : MonoBehaviour
             warningSignAnim.SetBool("IsInDanger", false);
             warningSignAnim.gameObject.SetActive(false);
         }
+    }
+    public void WinGame()
+    {
+        winScreenUI.SetActive(true);
     }
 }

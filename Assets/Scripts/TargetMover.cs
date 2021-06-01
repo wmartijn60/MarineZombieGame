@@ -10,7 +10,7 @@ public class TargetMover : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = this.gameObject;
         targetStartPosition = target.transform.position;
         moveDirection = Vector3.right * stepSize;
     }

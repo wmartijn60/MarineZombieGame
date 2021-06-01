@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art/PNG-Placement-Green.meta
+guid: 2393709485719f14394b3fb312d2ff8f
+=======
 guid: bc6f504a58520cb4491649d9527e451a
+>>>>>>> feature/ScreenShake:Assets/Sprites/UI/Tutorial/Anims.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
