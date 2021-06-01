@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameUIPanel;
     [SerializeField] private Animator warningSignAnim;
     [SerializeField] private GameObject winScreenUI;
+    [SerializeField] private GameObject loseScreenUI;
 
     private void Start()
     {
@@ -71,5 +72,9 @@ public class UIManager : MonoBehaviour
     public void WinGame()
     {
         winScreenUI.SetActive(true);
+    }
+    public void LoseGame()
+    {
+       loseScreenUI.SetActive(true);
     }
 }

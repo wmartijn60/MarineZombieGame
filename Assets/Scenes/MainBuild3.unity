@@ -335,6 +335,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressureUI
       objectReference: {fileID: 0}
+    - target: {fileID: 326700433096916296, guid: 70ea27c52585a3f43b61e3a23348e4db,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326700433096916296, guid: 70ea27c52585a3f43b61e3a23348e4db,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326700433096916296, guid: 70ea27c52585a3f43b61e3a23348e4db,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 326700433362051564, guid: 70ea27c52585a3f43b61e3a23348e4db,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -359,6 +374,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 326700433364278081, guid: 70ea27c52585a3f43b61e3a23348e4db,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326700433364278081, guid: 70ea27c52585a3f43b61e3a23348e4db,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326700433370781175, guid: 70ea27c52585a3f43b61e3a23348e4db,
         type: 3}
@@ -1555,7 +1580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &304329530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9573,7 +9598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1712772067
 Animator:
   serializedVersion: 3

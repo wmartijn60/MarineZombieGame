@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 116800790}
   - component: {fileID: 116800789}
   - component: {fileID: 116800788}
+  - component: {fileID: 116800791}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -230,7 +231,7 @@ RectTransform:
   m_GameObject: {fileID: 116800786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1109821173}
   m_RootOrder: 1
@@ -238,7 +239,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 333, y: -62.99999}
-  m_SizeDelta: {x: 110, y: 38}
+  m_SizeDelta: {x: 266.66666, y: 99.99999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116800788
 MonoBehaviour:
@@ -260,7 +261,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.6862745, g: 0.90588236, b: 0.87058824, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -282,7 +283,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 116800789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 116800791}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &116800789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0d050299a739a54894be222f3317300, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 044b57b824d3095418c66381bbea77c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -320,6 +332,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116800786}
   m_CullTransparentMesh: 0
+--- !u!95 &116800791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116800786}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e35cf27fc9c32e744b22ad13da8c8f45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &495106557
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -333, y: -62.99999}
-  m_SizeDelta: {x: 426.66666, y: 426.66666}
+  m_SizeDelta: {x: 266.66666, y: 99.99999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495106559
 MonoBehaviour:

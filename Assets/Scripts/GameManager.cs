@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void PlayerDied() {
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Loser", instance.GetComponent<Transform>().position);
+        instance.uiManager.LoseGame();
         sceneSwitcher.LoadSceneWithDelay(2,5f);
         
     }

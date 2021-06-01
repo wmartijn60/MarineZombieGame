@@ -24,7 +24,7 @@ public class SceneSwitch : MonoBehaviour
     public void ButtonSelectSceneWithDelay(int scene)
     {
 
-        StartCoroutine(LoadSceneAfterDelay(scene, 0.3f));
+        StartCoroutine(LoadSceneAfterDelay(scene, 0.2f));
 
     }
     public void LoadSceneWithDelay(int sceneName, float delay)
