@@ -38,7 +38,7 @@ MonoBehaviour:
   - {fileID: 5290147163976941533}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -89,6 +89,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-8594768185304967106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-8133058829010286302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-7932225024493653467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +221,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1289
+--- !u!114 &-7157636657868494160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-7135530901098445790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +307,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-6902886387206281253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-6879131858484548775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +370,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-6629500277589810627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-6462750035342510657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +589,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-5460749025091052276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-5209322432635357169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +652,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-4970999191968542566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4950348658134113852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +695,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-4900118361723184947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-4887910806764854101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +735,49 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-4710545146372111653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-4443907082815406890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/filterWaterCanon
+  m_EditorClassIdentifier: 
+  Path: snapshot:/filterWaterCanon
+  guid: a00257365a143141b4dca6379fa15a4d
+  Banks:
+  - {fileID: 701913750673886482}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4364792648528206396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +821,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4286773855073144606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MenuMusic
+  guid: fc00bf15d2df8d469df954b80b646449
+  Banks:
+  - {fileID: 5290147163976941533}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 121846
 --- !u!114 &-4242977317107185997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +866,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1289
+  Length: 1951
 --- !u!114 &-4173898531165842309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +911,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1320
   Exists: 1
+--- !u!114 &-3896926173747343714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-3802974551260004811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,6 +953,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 8500
+--- !u!114 &-3260519382834515364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-3061741769404037987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +1106,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 905
+--- !u!114 &-2215454998559685820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-2043410554302232532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,6 +1234,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-1218585245350190886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-778761060608502825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +1275,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1012
   Exists: 1
+--- !u!114 &-681680484141921900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-671533123790316206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,6 +1318,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-620339898621913714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-588905590553950420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,6 +1382,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-524624906528649273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-504580433648654130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,12 +1538,15 @@ MonoBehaviour:
   - {fileID: 899537432338803352}
   - {fileID: 6140811937950175565}
   - {fileID: -5620103462172466304}
+  - {fileID: -4286773855073144606}
+  - {fileID: 6505258200187033811}
+  - {fileID: -4443907082815406890}
   EditorParameters: []
   MasterBanks:
   - {fileID: 701913750673886482}
   StringsBanks:
   - {fileID: 6337593254456193628}
-  stringsBankWriteTime: 637578080967336300
+  stringsBankWriteTime: 637581649212843137
   cacheVersion: 6
 --- !u!114 &384723300656101294
 MonoBehaviour:
@@ -1217,11 +1586,11 @@ MonoBehaviour:
   Path: C:/Users/Martijn/Desktop/FmodNew/8.2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637578080967296410
+  lastModified: 637581649212813218
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2345952
+    Value: 2347488
   Exists: 1
 --- !u!114 &800768203783993953
 MonoBehaviour:
@@ -1292,6 +1661,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1005299789995549591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1039944444771685262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,6 +1701,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1076259666408349135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &1251301795213558095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1813,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2500
+--- !u!114 &2005219399228855840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &2589739832395538710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,6 +1922,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &3236739058774346284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3307395638425482479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,8 +2048,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6879131858484548775}
-  - {fileID: -5209322432635357169}
+  - {fileID: 7949385185620676781}
+  - {fileID: -4710545146372111653}
   MinDistance: 0
   MaxDistance: 0
   Length: 13000
@@ -1757,11 +2206,11 @@ MonoBehaviour:
   Path: C:/Users/Martijn/Desktop/FmodNew/8.2/Build/Desktop/UnityBank.bank
   Name: UnityBank
   StudioPath: bank:/UnityBank
-  lastModified: 637578080967789242
+  lastModified: 637581649213311887
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2015808
+    Value: 3579296
   Exists: 1
 --- !u!114 &5306883348109738815
 MonoBehaviour:
@@ -1786,6 +2235,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &5724016383206358772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5811901890660874574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +2276,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1679968
   Exists: 1
+--- !u!114 &5924254594454174808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5931418061324631848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,11 +2380,11 @@ MonoBehaviour:
   Path: C:/Users/Martijn/Desktop/FmodNew/8.2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637578080967336300
+  lastModified: 637581649212843137
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3168
+    Value: 3406
   Exists: 1
 --- !u!114 &6375381078315982034
 MonoBehaviour:
@@ -1917,6 +2406,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &6505258200187033811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SteelGateOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SteelGateOpen
+  guid: c6b4fa748624944ca06692a022fe9071
+  Banks:
+  - {fileID: 5290147163976941533}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
 --- !u!114 &6768160907379519085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,7 +2472,27 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1289
+  Length: 2182
+--- !u!114 &6894540566498348238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &6903308969995870735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +2516,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1776
+--- !u!114 &6917977086652778136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7163692006098149069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,6 +2574,26 @@ MonoBehaviour:
   Name: stop (1-)
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7300762813588423790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
   Default: 0
   ID:
     data1: 0
@@ -2117,6 +2689,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 667
+--- !u!114 &7949385185620676781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/overheat (1-). empty (2-)
+  m_EditorClassIdentifier: 
+  Name: overheat (1-). empty (2-)
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7950856705361867725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,6 +2755,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &8065476421934176272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8177766903946286084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2209,6 +2821,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &8257259978736789428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Water Cannon/stop (1-)
+  m_EditorClassIdentifier: 
+  Name: stop (1-)
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &8609745621162947246
 MonoBehaviour:
   m_ObjectHideFlags: 0

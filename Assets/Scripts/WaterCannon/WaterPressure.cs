@@ -15,6 +15,10 @@ public class WaterPressure : MonoBehaviour
     [SerializeField] private Slider repressureBar;
     [SerializeField] private CountDown countDown;
 
+
+    FMOD.Studio.Bus waterCanon;
+
+    private bool isSoundPlayed = false;
     private float pressure;
     private bool isCharging = false;
 
@@ -22,12 +26,14 @@ public class WaterPressure : MonoBehaviour
 
     void Start()
     {
+        
         countDown.startingCountDown += TurnOff;
         countDown.stoppingCountdown += TurnOn;
         pressure = maxCapacity;
         beam.SetActive(false);
         repressureBar.value = 100 / maxCapacity * rechargeTreshhold;
-        
+        waterCanon = FMODUnity.RuntimeManager.GetBus("bus:/waterCanon");
+
     }
 
     void Update()
@@ -46,6 +52,8 @@ public class WaterPressure : MonoBehaviour
         else
         {
             beam.SetActive(false);
+
+
         }
 
         if (pressure >= maxCapacity)
@@ -61,12 +69,22 @@ public class WaterPressure : MonoBehaviour
         if (pressure <= 0 && beam.activeSelf)
         {
             isCharging = true;
+            isSoundPlayed = true;
         }
         else if (pressure >= rechargeTreshhold)
         {
             isCharging = false;
         }
-
+        if (isSoundPlayed == false && Input.GetKey(KeyCode.Mouse0) && isActive == true) 
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX Loops/Water Cannon");
+            isSoundPlayed = true;
+        }
+        else if (isSoundPlayed == true && Input.GetKey(KeyCode.Mouse0) == false)
+        {
+            waterCanon.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            isSoundPlayed = false;
+        }
        
     }
 
@@ -90,11 +108,13 @@ public class WaterPressure : MonoBehaviour
     public void TurnOff()
     {
         isActive = false;
-        
+
+
+
     }
     public void TurnOn()
     {
         isActive = true;
-        
+
     }
 }
