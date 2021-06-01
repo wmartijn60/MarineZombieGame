@@ -67,8 +67,7 @@ public class GameManager : MonoBehaviour
     private void PlayerDied() {
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Loser", instance.GetComponent<Transform>().position);
         instance.uiManager.LoseGame();
-        sceneSwitcher.LoadSceneWithDelay(2,5f);
-        
+        sceneSwitcher.LoadSceneWithDelay(2,3f);
     }
 
     public static void CheckWaveStatus() {
@@ -78,7 +77,7 @@ public class GameManager : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX One-Shots/Victory", instance.GetComponent<Transform>().position);
                 instance.uiManager.WinGame();
                 instance.countDown.PauseCountDown();
-                instance.sceneSwitcher.LoadSceneWithDelay(2, 2f);
+                instance.sceneSwitcher.LoadSceneWithDelay(2, 4f);
             }
             else
             {

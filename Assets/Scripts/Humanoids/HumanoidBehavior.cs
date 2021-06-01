@@ -13,6 +13,7 @@ public class HumanoidBehavior : MonoBehaviour {
 	[SerializeField] private HealthSystem health;
     public Animator anim;
 
+
 	protected virtual void Start() 
 	{
         defaultTarget = GameObject.FindGameObjectsWithTag("Player")[Random.Range(0, 2)].transform;
@@ -28,15 +29,16 @@ public class HumanoidBehavior : MonoBehaviour {
 		while (true) 
 		{
 			if (target == null) target = defaultTarget;
-			if (targetPositionOld != (Vector2)target.position) 
-			{
-				targetPositionOld = (Vector2)target.position;
+            if (targetPositionOld != (Vector2)target.position)
+            {
+                targetPositionOld = (Vector2)target.position;
 
-				path = Pathfinding.RequestPath (transform.position, target.position);
-				StopCoroutine ("FollowPath");
-				StartCoroutine ("FollowPath");
+                path = Pathfinding.RequestPath(transform.position, target.position);
+                StopCoroutine("FollowPath");
+                StartCoroutine("FollowPath");
                 anim.SetBool("isRunning", true);
             }
+
 
 			yield return new WaitForSeconds (refreshTime);
 		}
