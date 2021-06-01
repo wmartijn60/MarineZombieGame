@@ -11,6 +11,7 @@ public class WaterPressure : MonoBehaviour
     [SerializeField] private float rechargeTreshhold = 5;
     
     [SerializeField] private GameObject beam;
+    [SerializeField] private GameObject steam;
     [SerializeField] private Slider pressureBar;
     [SerializeField] private Slider repressureBar;
     [SerializeField] private CountDown countDown;
@@ -70,10 +71,13 @@ public class WaterPressure : MonoBehaviour
         {
             isCharging = true;
             isSoundPlayed = true;
+            steam.SetActive(true);
+
         }
         else if (pressure >= rechargeTreshhold)
         {
             isCharging = false;
+            steam.SetActive(false);
         }
         if (isSoundPlayed == false && Input.GetKey(KeyCode.Mouse0) && isActive == true) 
         {
@@ -108,13 +112,10 @@ public class WaterPressure : MonoBehaviour
     public void TurnOff()
     {
         isActive = false;
-
-
-
     }
     public void TurnOn()
     {
         isActive = true;
-
+       
     }
 }
