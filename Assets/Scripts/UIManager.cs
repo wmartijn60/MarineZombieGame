@@ -4,7 +4,8 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI WaveNumerText;
+    [SerializeField] private TextMeshProUGUI WaveNumberText;
+    [SerializeField] private TextMeshProUGUI WaveChangeNumberText;
     [SerializeField] private TextMeshProUGUI coinsText;
     [SerializeField] private TextMeshProUGUI countDownText;
     [SerializeField] private TextMeshProUGUI playerHealthText;
@@ -37,7 +38,8 @@ public class UIManager : MonoBehaviour
 
     public void WaveStart()
     {
-        WaveNumerText.text = WaveSystem.instance.WaveNumber.ToString();
+        WaveNumberText.text = WaveSystem.instance.WaveNumber.ToString();
+        WaveChangeNumberText.text = WaveSystem.instance.WaveNumber.ToString();
     }
 
     // Name may need to get changed to a better one
