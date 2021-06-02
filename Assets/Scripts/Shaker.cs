@@ -1,13 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shaker : MonoBehaviour
 {
-    Transform target;
-    Vector3 startPos;
-    [SerializeField] private float standardIntesity;
-    private static float intesity = 1f;
+    private Transform target;
+    private Vector3 startPos;
+    [SerializeField] private float standardIntensity;
+    private static float intensity = 1f;
     private static float totalShakeDuration = 0.6f;
     private bool isShaking = false;
 
@@ -15,7 +14,7 @@ public class Shaker : MonoBehaviour
     {
         target = GetComponent<Transform>();
         startPos = target.localPosition;
-        intesity = standardIntesity;
+        intensity = standardIntensity;
     }
 
     void Update()
@@ -39,14 +38,14 @@ public class Shaker : MonoBehaviour
         totalShakeDuration = duration;
     }
 
-    public static void SetIntesity(float inten)
+    public static void SetIntensity(float inten)
     {
-        intesity = inten;
+        intensity = inten;
     }
 
-    public static void ResetIntesity(float inten)
+    public static void ResetIntensity(float inten)
     {
-        intesity = inten;
+        intensity = inten;
     }
 
     IEnumerator DoShake()
@@ -56,7 +55,7 @@ public class Shaker : MonoBehaviour
         float startTime = Time.realtimeSinceStartup;
         while (Time.realtimeSinceStartup < startTime + totalShakeDuration)
         {
-            Vector3 randomPoint = new Vector3(Random.Range(-1f, 1f) * intesity, Random.Range(-1f, 1f) * intesity, startPos.z);
+            Vector3 randomPoint = new Vector3(Random.Range(-1f, 1f) * intensity, Random.Range(-1f, 1f) * intensity, startPos.z);
             target.localPosition = randomPoint;
             yield return null;
         }

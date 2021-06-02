@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Zombie : HumanoidBehavior
 {
     [SerializeField] private int damage = 1;
+    [SerializeField] private CircleCollider2D visionRange;
     private float range = 1f;
-    [SerializeField] CircleCollider2D visionRange;
-    
-
 
     protected override void Start()
     {        
@@ -22,7 +19,6 @@ public class Zombie : HumanoidBehavior
         if (target == null) return;
         if (target.tag != "Survivor" && collision.tag == "Survivor")
         {
-            
             target = collision.transform;
             collision.GetComponent<HealthSystem>().died += FindNewTarget;
         }
@@ -36,13 +32,13 @@ public class Zombie : HumanoidBehavior
             anim.SetBool("isAttacking", false);
             target.GetComponent<HealthSystem>().died -= FindNewTarget;
             target = defaultTarget;
-            
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.tag == "Barricade") {
+        if (collision.gameObject.tag == "Barricade")
+        {
             target = collision.transform;
             collision.gameObject.GetComponent<HealthSystem>().died += FindNewTarget;
         }
@@ -56,12 +52,12 @@ public class Zombie : HumanoidBehavior
     public void Attack()
     {
         if (target == null || target.tag == "Player") return;
-        if (target.GetComponent<HealthSystem>().Health > 0) {
+        if (target.GetComponent<HealthSystem>().Health > 0) 
+        {
             anim.SetBool("isAttacking", true);
             target.GetComponent<HealthSystem>().StartCoroutine("TakeDamage", damage);
             AnimatorClipInfo[] info = anim.GetCurrentAnimatorClipInfo(0);
             Invoke("Attack", info[0].clip.length);
-            
         }
     }
 
@@ -92,5 +88,4 @@ public class Zombie : HumanoidBehavior
             target = defaultTarget;
         }
     }
-
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ImpactDamage : MonoBehaviour
@@ -8,14 +7,7 @@ public class ImpactDamage : MonoBehaviour
     [SerializeField] private int force;
     [SerializeField] private Collider2D area;
 
-    private bool canSplash = true;
-
     public List<GameObject> inRange;
-
-    void Start()
-    {
-
-    }
 
     public void DamageEnemies()
     {
@@ -30,7 +22,6 @@ public class ImpactDamage : MonoBehaviour
             {
                 inRange.RemoveAt(i);
             }
-            
         }
         Shaker.Shake(0.3f);
     }
@@ -55,6 +46,4 @@ public class ImpactDamage : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-
 }

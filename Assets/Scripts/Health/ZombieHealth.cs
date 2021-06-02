@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombieHealth : HealthSystem
@@ -13,10 +12,8 @@ public class ZombieHealth : HealthSystem
         {
             yield return new WaitForSeconds(0.01f);
             notified = true;
-            ScoreManager.Instance.AddScore(score);
+            ScoreManager.instance.AddScore(score);
             died();
         }
     }
-
-    
 }

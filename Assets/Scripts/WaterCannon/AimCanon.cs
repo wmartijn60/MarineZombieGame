@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AimCanon : MonoBehaviour
 {
-    [SerializeField]private GameObject rotator;
-    [SerializeField]private Transform origin;
-    [SerializeField]private ParticleSystem beam;
-    [SerializeField]private GameObject impact;
-    [SerializeField]private LayerMask layer;
+    [SerializeField] private GameObject rotator;
+    [SerializeField] private Transform origin;
+    [SerializeField] private ParticleSystem beam;
+    [SerializeField] private GameObject impact;
+    [SerializeField] private LayerMask layer;
 
     void Update()
     {
@@ -38,8 +36,6 @@ public class AimCanon : MonoBehaviour
             {
                 impact.SetActive(false);
             }
-
-
         }
         else if (impact.activeSelf)
         {

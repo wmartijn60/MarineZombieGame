@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System;
 
-public class Pathfinding : MonoBehaviour {
-
-	Grid grid;
-	static Pathfinding instance;
+public class Pathfinding : MonoBehaviour 
+{
+	private static Pathfinding instance;
+	private Grid grid;
 	
-	void Awake() {
+	void Awake() 
+	{
 		grid = GetComponent<Grid>();
 		instance = this;
 	}
@@ -19,9 +19,8 @@ public class Pathfinding : MonoBehaviour {
 		return instance.FindPath (from, to);
 	}
 	
-	Vector2[] FindPath(Vector2 from, Vector2 to) 
+	private Vector2[] FindPath(Vector2 from, Vector2 to) 
 	{
-		
 		Stopwatch sw = new Stopwatch();
 		sw.Start();
 		
@@ -90,16 +89,15 @@ public class Pathfinding : MonoBehaviour {
 		}
 
 		return waypoints;
-		
 	}
 
 	
-	int TurningCost(Node from, Node to) 
+	private int TurningCost(Node from, Node to) 
 	{
 		return 0;
 	}
 	
-	Vector2[] RetracePath(Node startNode, Node endNode) 
+	private Vector2[] RetracePath(Node startNode, Node endNode) 
 	{
 		List<Node> path = new List<Node>();
 		Node currentNode = endNode;
@@ -115,7 +113,7 @@ public class Pathfinding : MonoBehaviour {
 		
 	}
 	
-	Vector2[] SimplifyPath(List<Node> path) 
+	private Vector2[] SimplifyPath(List<Node> path) 
 	{
 		List<Vector2> waypoints = new List<Vector2>();
 		Vector2 directionOld = Vector2.zero;
@@ -132,7 +130,7 @@ public class Pathfinding : MonoBehaviour {
 		return waypoints.ToArray();
 	}
 	
-	int GetDistance(Node nodeA, Node nodeB) 
+	private int GetDistance(Node nodeA, Node nodeB) 
 	{
 		int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
 		int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
@@ -141,6 +139,4 @@ public class Pathfinding : MonoBehaviour {
 			return 14*dstY + 10* (dstX-dstY);
 		return 14*dstX + 10 * (dstY-dstX);
 	}
-	
-	
 }

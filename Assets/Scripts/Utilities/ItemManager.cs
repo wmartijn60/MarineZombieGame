@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class ItemManager : MonoBehaviour
 {   
-    public static ItemManager Instance;
+    public static ItemManager instance;
 
     [SerializeField]private int startCoins = 100;
     [SerializeField]private int balloonCost;
@@ -25,10 +23,10 @@ public class ItemManager : MonoBehaviour
 
     void Awake()
     {
-        if (ItemManager.Instance == null)
-            ItemManager.Instance = this;
+        if (instance == null)
+            instance = this;
         else
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
         fmodPlayer = GetComponent<FmodPlayer>();
     }
@@ -47,14 +45,12 @@ public class ItemManager : MonoBehaviour
         {
             GameManager.ChangeCoinAmount(startCoins);
         }
-        
     }
 
     public void BuyBalloon()
     {
         if (GameManager.Coins >= balloonCost)
         {
-            
             GameManager.ChangeCoinAmount(-balloonCost);
             fmodPlayer.PlaySound("event:/Purchase");
             balloonAmount++;
@@ -64,7 +60,7 @@ public class ItemManager : MonoBehaviour
             fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
-    public void BuyMine()//may be outdated
+    public void BuyMine()
     {
         if (GameManager.Coins >= mineCost)
         {
@@ -75,7 +71,7 @@ public class ItemManager : MonoBehaviour
             fmodPlayer.PlaySound("event:/NotEnoughMoney");
     }
 
-    public void BuyWall()//may be outdated
+    public void BuyWall()
     {
         if (GameManager.Coins >= balloonCost)
         {
@@ -125,5 +121,4 @@ public class ItemManager : MonoBehaviour
     {
         balloonsTotal.text = balloonAmount.ToString();
     }
-
 }

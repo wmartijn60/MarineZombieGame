@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CountDown : MonoBehaviour
 {
@@ -19,23 +17,28 @@ public class CountDown : MonoBehaviour
 
     private UIManager uiManager;
 
-    private void Start() {
+    private void Start() 
+    {
         uiManager = GetComponent<UIManager>();
         StartCountDown(30);
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (!countingDown) return;
-        if (timeLeft > 0) {
+        if (timeLeft > 0)
+        {
             timeLeft -= Time.fixedDeltaTime;
             uiManager.UpdateCountDownText((int)timeLeft);
         }
-        if (timeLeft <= 0) {
+        if (timeLeft <= 0)
+        {
             StopCountDown();
         }
     }
 
-    public void StartCountDown(float time) {
+    public void StartCountDown(float time)
+    {
         timeLeft = time;
         countingDown = true;
         uiManager.UpdateCountDownText((int)timeLeft);
@@ -44,15 +47,18 @@ public class CountDown : MonoBehaviour
         if(startingCountDown != null) startingCountDown();
     }
 
-    public void PauseCountDown() {
+    public void PauseCountDown()
+    {
         countingDown = false;
         if (pausingCountdown != null) pausingCountdown();
     }
-    public void ContinueCountDown() {
+    public void ContinueCountDown()
+    {
         countingDown = true;
         if (contineCountdown != null) contineCountdown();
     }
-    public void StopCountDown() {
+    public void StopCountDown()
+    {
         timeLeft = 0;
         uiManager.UpdateCountDownText((int)timeLeft);
         countingDown = false;

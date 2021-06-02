@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    public static ScoreManager instance;
+
+    [SerializeField] private TextMeshProUGUI scoreUI;
     private int playerScore;
-    [SerializeField]private TextMeshProUGUI scoreUI;
 
     void Awake()
     {
-        if (ScoreManager.Instance == null)
-            ScoreManager.Instance = this;
+        if (instance == null)
+            instance = this;
         else
-            Destroy(this.gameObject);
+            Destroy(gameObject);
     }
 
     void Start()

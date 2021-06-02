@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DefenceGridNode : MonoBehaviour
 {
@@ -14,5 +12,4 @@ public class DefenceGridNode : MonoBehaviour
     public int GridX { get { return gridX; } set { gridX = value; } }
     private int gridY;
     public int GridY { get { return gridY; } set { gridY = value; } }
-
 }

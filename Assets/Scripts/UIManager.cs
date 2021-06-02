@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI WaveNumberText;
-    [SerializeField] private TextMeshProUGUI WaveChangeNumberText;
+    [SerializeField] private TextMeshProUGUI waveNumberText;
+    [SerializeField] private TextMeshProUGUI waveChangeNumberText;
     [SerializeField] private TextMeshProUGUI coinsText;
     [SerializeField] private TextMeshProUGUI countDownText;
     [SerializeField] private TextMeshProUGUI playerHealthText;
@@ -14,18 +13,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI maxSurvivorSurvivedText;
     [SerializeField] private GameObject shopUIPanel;
     [SerializeField] private GameObject gameUIPanel;
-    [SerializeField] private Animator warningSignAnim;
     [SerializeField] private GameObject winScreenUI;
     [SerializeField] private GameObject loseScreenUI;
+    [SerializeField] private Animator warningSignAnim;
 
     private void Start()
     {
         UpdateUI();
     }
 
-    public void UpdateUI() {
- 
-
+    public void UpdateUI()
+    {
         coinsText.text = GameManager.Coins.ToString();
         float currentHealth = GameManager.PlayerHealth.MaxHealth - GameManager.PlayerHealth.Health;
         playerHealthText.text = currentHealth.ToString();
@@ -38,17 +36,18 @@ public class UIManager : MonoBehaviour
 
     public void WaveStart()
     {
-        WaveNumberText.text = WaveSystem.instance.WaveNumber.ToString();
-        WaveChangeNumberText.text = WaveSystem.instance.WaveNumber.ToString();
+        waveNumberText.text = WaveSystem.instance.WaveNumber.ToString();
+        waveChangeNumberText.text = WaveSystem.instance.WaveNumber.ToString();
     }
 
-    // Name may need to get changed to a better one
-    public void ShowGameUIPanel() {
+    public void ShowGameUIPanel() 
+    {
         shopUIPanel.SetActive(false);
         gameUIPanel.SetActive(true);
     }
 
-    public void ShowShopPanel() {
+    public void ShowShopPanel()
+    {
         shopUIPanel.SetActive(true);
         gameUIPanel.SetActive(false);
     }
@@ -71,10 +70,12 @@ public class UIManager : MonoBehaviour
             warningSignAnim.gameObject.SetActive(false);
         }
     }
+
     public void WinGame()
     {
         winScreenUI.SetActive(true);
     }
+
     public void LoseGame()
     {
        loseScreenUI.SetActive(true);

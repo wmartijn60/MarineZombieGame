@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WaterBalloon : MonoBehaviour
 {
-    [SerializeField]private float balloonCooldown = 1f;
+    [SerializeField] private float balloonCooldown = 1f;
 
-    [SerializeField]private ItemManager itemManager;
+    [SerializeField] private ItemManager itemManager;
 
-    [SerializeField]private Animator balloonLeft;
-    [SerializeField]private Animator balloonMid;
-    [SerializeField]private Animator balloonRight;
+    [SerializeField] private Animator balloonLeft;
+    [SerializeField] private Animator balloonMid;
+    [SerializeField] private Animator balloonRight;
 
     private float balloonLeftCD;
     private float balloonMidCD;
@@ -77,5 +75,4 @@ public class WaterBalloon : MonoBehaviour
             balloonRightCD -= Time.deltaTime;
         }
     }
-
 }

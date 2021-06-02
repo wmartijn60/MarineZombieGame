@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Splash : MonoBehaviour
 {
-    [SerializeField]private GameObject impactLocation;
-    [SerializeField]private GameObject puddle1;
-    [SerializeField]private GameObject puddle2;
-    [SerializeField]private ImpactDamage impactDamage;
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject impactLocation;
+    [SerializeField] private GameObject puddle1;
+    [SerializeField] private GameObject puddle2;
+    [SerializeField] private ImpactDamage impactDamage;
 
     public void MakeASplash()
     {
@@ -29,7 +22,4 @@ public class Splash : MonoBehaviour
             puddle.GetComponent<Animator>().SetTrigger("Puddle2");
         }
     }
-
-
-
 }

@@ -1,21 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class InfoPopup : MonoBehaviour
 {
-    [SerializeField]private GameObject popup;
-    [SerializeField]private GameObject upgrades;
-    [SerializeField]private TextMeshProUGUI itemName;
-    [SerializeField]private TextMeshProUGUI itemDescription;
-    [SerializeField]private Animator infoAnim;
-    [SerializeField]private CountDown countDown;
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject popup;
+    [SerializeField] private GameObject upgrades;
+    [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private TextMeshProUGUI itemDescription;
+    [SerializeField] private Animator infoAnim;
+    [SerializeField] private CountDown countDown;
 
     public void PlaceItemName(string newName)
     {

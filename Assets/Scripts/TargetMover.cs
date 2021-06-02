@@ -10,7 +10,7 @@ public class TargetMover : MonoBehaviour
 
     void Start()
     {
-        target = this.gameObject;
+        target = gameObject;
         targetStartPosition = target.transform.position;
         moveDirection = Vector3.right * stepSize;
     }
@@ -20,8 +20,10 @@ public class TargetMover : MonoBehaviour
         MoveTarget();
     }
 
-    private void MoveTarget() {
-        if (Vector3.Distance(targetStartPosition, target.transform.position) >= maximumDistanceAway) {
+    private void MoveTarget()
+    {
+        if (Vector3.Distance(targetStartPosition, target.transform.position) >= maximumDistanceAway)
+        {
             moveDirection *= -1;
         }
         target.transform.position += moveDirection;

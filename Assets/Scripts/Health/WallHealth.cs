@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class WallHealth : HealthSystem
 {
-    public SpriteRenderer wallSprite;
-    public List<Sprite> damageStates;
-    public List<int> stateValues;
-    public ParticleSystem breakLeft;
-    public ParticleSystem breakRight;
+    [SerializeField] private SpriteRenderer wallSprite;
+    [SerializeField] private List<Sprite> damageStates;
+    [SerializeField] private List<int> stateValues;
+    [SerializeField] private ParticleSystem breakLeft;
+    [SerializeField] private ParticleSystem breakRight;
 
     public IEnumerator TakeDamage(int damage)
     {        

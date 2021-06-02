@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FmodPlayer : MonoBehaviour
 {
-public void PlaySound(string path)
+    public void PlaySound(string path)
     {
         FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
     }

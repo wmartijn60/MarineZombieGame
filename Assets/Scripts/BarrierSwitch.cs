@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class BarrierSwitch : MonoBehaviour
@@ -9,18 +8,6 @@ public class BarrierSwitch : MonoBehaviour
     void Start()
     {
         DisableBarriers();
-    }
-
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.O))
-        {
-            EnableBarriers();
-        }
-        else if (Input.GetKey(KeyCode.P))
-        {
-            DisableBarriers();
-        }
     }
 
     public void EnableBarriers()

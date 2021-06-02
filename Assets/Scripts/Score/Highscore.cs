@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Highscore : MonoBehaviour
 {
-
     private int scoreCount;
     private int highScoreCount;
 
     private string playerName;
 
-    public TMP_InputField nameInputField;
+    [SerializeField] private TMP_InputField nameInputField;
 
     void Start()
     {
@@ -23,8 +20,6 @@ public class Highscore : MonoBehaviour
             highScoreCount = scoreCount;
             PlayerPrefs.SetInt("highScore", highScoreCount);
         }
-
-
     }
 
     public void EnterName()
@@ -55,6 +50,5 @@ public class Highscore : MonoBehaviour
 
         PlayerPrefs.GetInt("highScore");
         PlayerPrefs.Save();
-
     }
 }

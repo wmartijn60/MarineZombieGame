@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+
 public  class Survivor : HumanoidBehavior
 {
+    [SerializeField]private float leapDistance = 1;
     [SerializeField]private int coinsAmountToGive = 20;
     public int CoinsAmountToGive { get { return coinsAmountToGive; } }
-    [SerializeField]private float leapDistance = 1;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,7 +25,7 @@ public  class Survivor : HumanoidBehavior
         }
     }
       
-        public void JumpOver()
+    private void JumpOver()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y - leapDistance);
         anim.SetBool("isJumping", false);

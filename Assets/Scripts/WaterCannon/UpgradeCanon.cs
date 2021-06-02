@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class UpgradeCanon : MonoBehaviour
 {
-    [SerializeField]private int maxLevel = 3;
-    [SerializeField]private SpriteRenderer canon;
-    [SerializeField]private SpriteRenderer canonHinge;
-    [SerializeField]private Animator upgradeVFX;
+    [SerializeField] private int maxLevel = 3;
+    [SerializeField] private SpriteRenderer canon;
+    [SerializeField] private SpriteRenderer canonHinge;
+    [SerializeField] private Animator upgradeVFX;
 
-    [SerializeField]private TextMeshProUGUI capacityPrize;
-    [SerializeField]private TextMeshProUGUI rechargePrize;
-    [SerializeField]private TextMeshProUGUI repressurePrize;
-    [SerializeField]private TextMeshProUGUI allPrize;
+    [SerializeField] private TextMeshProUGUI capacityPrize;
+    [SerializeField] private TextMeshProUGUI rechargePrize;
+    [SerializeField] private TextMeshProUGUI repressurePrize;
+    [SerializeField] private TextMeshProUGUI allPrize;
 
     [SerializeField] private WaterPressure waterPressure;
     [SerializeField] private List<int> upgradeCost;
@@ -30,7 +29,6 @@ public class UpgradeCanon : MonoBehaviour
         allPrize.text = upgradeCostAll[upgradeLevel[3]].ToString();
     }
 
-
     public void UpgradeCapacity()
     {
         if (maxLevel != upgradeLevel[0] && GameManager.Coins >= upgradeCost[upgradeLevel[0]])
@@ -46,7 +44,6 @@ public class UpgradeCanon : MonoBehaviour
             {
                 capacityPrize.text = upgradeCost[upgradeLevel[0]].ToString();
             }
-            
         }
     }
 
@@ -65,7 +62,6 @@ public class UpgradeCanon : MonoBehaviour
             {
                 rechargePrize.text = upgradeCost[upgradeLevel[1]].ToString();
             }
-            
         }
     }
 
@@ -84,13 +80,11 @@ public class UpgradeCanon : MonoBehaviour
             {
                 repressurePrize.text = upgradeCost[upgradeLevel[2]].ToString();
             }
-            
         }
     }
 
     public void UpgradeAll()
     {
-
         if (maxLevel != upgradeLevel[3] && GameManager.Coins >= upgradeCostAll[upgradeLevel[3]])
         {
             GameManager.ChangeCoinAmount(-upgradeCostAll[upgradeLevel[3]]);
@@ -117,5 +111,4 @@ public class UpgradeCanon : MonoBehaviour
             }
         }
     }
-
 }

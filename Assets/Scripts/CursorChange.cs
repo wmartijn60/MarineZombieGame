@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CursorChange : MonoBehaviour
 {
@@ -11,5 +9,4 @@ public class CursorChange : MonoBehaviour
     {
         Cursor.SetCursor(cursor, positionOffset, CursorMode.Auto);
     }
-
 }

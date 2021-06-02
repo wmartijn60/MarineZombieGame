@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,12 +20,14 @@ public class SceneSwitch : MonoBehaviour
         SceneManager.LoadScene(sceneBuildIndex: scene);
 
     }
+
     public void ButtonSelectSceneWithDelay(int scene)
     {
 
         StartCoroutine(LoadSceneAfterDelay(scene, 0.2f));
 
     }
+
     public void LoadSceneWithDelay(int sceneName, float delay)
     {
         StartCoroutine(LoadSceneAfterDelay(sceneName, delay));
@@ -37,7 +38,7 @@ public class SceneSwitch : MonoBehaviour
         if (delay > 0)
             yield return new WaitForSeconds(delay);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
         yield break;
     }
 }

@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SlowArea : MonoBehaviour
 {
-    [SerializeField]private float effectTime = 1f;
-    [SerializeField]private float slowSpeed = 0.2f;
+    [SerializeField] private float effectTime = 1f;
+    [SerializeField] private float slowSpeed = 0.2f;
     [SerializeField] private Collider2D area;
 
     public List<GameObject> inRange;
@@ -35,7 +34,6 @@ public class SlowArea : MonoBehaviour
             {
                 inRange.RemoveAt(i);
             }
-
         }
     }
 
@@ -91,7 +89,6 @@ public class SlowArea : MonoBehaviour
             {
                 inRange.RemoveAt(i);
             }
-
         }
     }
 }

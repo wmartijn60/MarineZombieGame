@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    [SerializeField] Animator backgroundAnimator;
+    [SerializeField] private Animator backgroundAnimator;
 
 
     private void Start()
     {
         OpenDoor();
     }
+
     public void CloseDoor()
     {
         backgroundAnimator.SetTrigger("CloseDoor");

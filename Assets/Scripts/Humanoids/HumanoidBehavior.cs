@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HumanoidBehavior : MonoBehaviour {
+public class HumanoidBehavior : MonoBehaviour
+{
 	
 	public Transform target;
     protected Transform defaultTarget;
@@ -22,7 +23,7 @@ public class HumanoidBehavior : MonoBehaviour {
         StartCoroutine (RefreshPath ());       
     }
 
-	IEnumerator RefreshPath() 
+	private IEnumerator RefreshPath() 
 	{
 		Vector2 targetPositionOld = (Vector2)target.position + Vector2.up; // ensure != to target.position initially
 			
@@ -39,12 +40,11 @@ public class HumanoidBehavior : MonoBehaviour {
                 anim.SetBool("isRunning", true);
             }
 
-
 			yield return new WaitForSeconds (refreshTime);
 		}
 	}
 		
-	IEnumerator FollowPath() 
+	private IEnumerator FollowPath() 
 	{
 		if (path.Length > 0)
 		{
@@ -64,14 +64,12 @@ public class HumanoidBehavior : MonoBehaviour {
 
 				transform.position = Vector2.MoveTowards (transform.position, currentWaypoint, speed * Time.deltaTime);
 				yield return null;
-
 			}
 		}
 	}
 
 	private void Die() 
 	{
-		// play death animation
 		anim.SetBool("isAlive", false);
         
 		Destroy(gameObject, 1f); // change time depending on animation duration
@@ -84,7 +82,6 @@ public class HumanoidBehavior : MonoBehaviour {
 			for (int i = targetIndex; i < path.Length; i ++)
 			{
 				Gizmos.color = Color.green;
-				//Gizmos.DrawCube((Vector3)path[i], Vector3.one *.5f);
 
 				if (i == targetIndex) 
 				{
@@ -98,7 +95,8 @@ public class HumanoidBehavior : MonoBehaviour {
 		}
 	}
 
-    protected virtual void OnDestroy() {
+    protected virtual void OnDestroy()
+	{
 		GameManager.CheckWaveStatus();
     }
 }
