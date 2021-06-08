@@ -64,13 +64,13 @@ public class WaterPressure : MonoBehaviour
         {
             isCharging = true;
             isSoundPlayed = true;
-            steam.SetActive(true);
+            steam.GetComponent<ParticleSystem>().Play();
             waterCanon.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
         else if (pressure >= rechargeTreshhold)
         {
             isCharging = false;
-            steam.SetActive(false);
+            steam.GetComponent<ParticleSystem>().Stop();
         }
         if (isSoundPlayed == false && Input.GetKey(KeyCode.Mouse0) && isActive == true && isCharging == false) 
         {
