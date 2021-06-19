@@ -14,6 +14,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI balloonsTotal;
     [SerializeField] private TextMeshProUGUI teleporterTotal;
     [SerializeField] private TextMeshProUGUI balloonPrizetag;
+    [SerializeField] private TextMeshProUGUI teleporterPrizetag;
     [SerializeField] private TextMeshProUGUI minePrizetag;
     [SerializeField] private TextMeshProUGUI wallPrizetag;
 
@@ -37,6 +38,7 @@ public class ItemManager : MonoBehaviour
     void Start()
     {
         balloonPrizetag.text = balloonCost.ToString();
+        teleporterPrizetag.text = teleporterCost.ToString();
         minePrizetag.text = mineCost.ToString();
         wallPrizetag.text = wallCost.ToString();
         UpdateBalloonCount();
@@ -71,6 +73,19 @@ public class ItemManager : MonoBehaviour
             fmodPlayer.PlaySound("event:/Purchase");
             balloonAmount++;
             UpdateBalloonCount();
+        }
+        else
+            fmodPlayer.PlaySound("event:/NotEnoughMoney");
+    }
+
+    public void BuyTeleporter()
+    {
+        if (GameManager.Coins >= teleporterCost)
+        {
+            GameManager.ChangeCoinAmount(-teleporterCost);
+            fmodPlayer.PlaySound("event:/Purchase");
+            teleporterAmount++;
+            UpdateteleporterCount();
         }
         else
             fmodPlayer.PlaySound("event:/NotEnoughMoney");
@@ -124,6 +139,18 @@ public class ItemManager : MonoBehaviour
     public bool UseBalloon()
     {
         if (balloonAmount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool UseTeleporter()
+    {
+        if (teleporterAmount > 0)
         {
             return true;
         }
