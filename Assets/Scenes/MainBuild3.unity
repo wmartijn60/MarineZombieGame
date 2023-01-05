@@ -1640,6 +1640,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 12.211426}
   m_EdgeRadius: 0
+--- !u!1 &268654314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3790967626791780224, guid: 1145258b1a976df4aad9159f229427be,
+    type: 3}
+  m_PrefabInstance: {fileID: 641333062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &296747257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,12 +3101,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &540790854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1497438904544236676, guid: 1145258b1a976df4aad9159f229427be,
-    type: 3}
-  m_PrefabInstance: {fileID: 641333062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &578310878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,7 +7982,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steam
       value: 
-      objectReference: {fileID: 540790854}
+      objectReference: {fileID: 268654314}
     - target: {fileID: 3975406164359004540, guid: 38a23e37ce44b7546b58625a53bce7e1,
         type: 3}
       propertyPath: countDown
